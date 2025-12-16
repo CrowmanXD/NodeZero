@@ -2,6 +2,7 @@
 
 #include <functional>
 #include "Services/IUpgradeService.h"
+#include "Services/UpgradeStrategy.h"
 
 class ISaveService;
 struct SaveData;
@@ -64,5 +65,6 @@ private:
      * @param applyEffect A lambda function that applies the specific stat change.
      * @return True if the transaction succeeded.
      */
-    bool AttemptPurchase(int cost, const std::function<void(SaveData&)>& applyEffect);
+    bool AttemptPurchase(UpgradeStrategy& strategy);
+
 };

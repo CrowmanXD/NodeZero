@@ -4,6 +4,11 @@
 #include "Services/ISaveService.h"
 #include "Types/SaveData.h"
 
+#include "Services/Upgrades/HealthUpgradeStrategy.h"
+#include "Services/Upgrades/RegenUpgradeStrategy.h"
+#include "Services/Upgrades/DamageZoneUpgradeStrategy.h"
+#include "Services/Upgrades/DamageUpgradeStrategy.h"
+
 UpgradeService::UpgradeService()
     : m_MaxHealth(GameConfig::HEALTH_DEFAULT),
     m_RegenRate(0.0f),
@@ -24,68 +29,57 @@ void UpgradeService::SetSaveService(ISaveService* saveService) {
 }
 
 // -----------------------------------------------------------------------------
-// Refactor: Upgrade logic now uses AttemptPurchase
+// Implemented strategy pattern for upgrade purchases
 // -----------------------------------------------------------------------------
 
-bool UpgradeService::BuyHealthUpgrade() {
-    return AttemptPurchase(GameConfig::HEALTH_UPGRADE_COST, [this](SaveData& data) {
-        m_MaxHealth += HEALTH_INCREMENT;
-
-        data.maxHealth = m_MaxHealth;
-        });
-}
-
-bool UpgradeService::BuyRegenUpgrade() {
-    return AttemptPurchase(GameConfig::REGEN_UPGRADE_COST, [this](SaveData& data) {
-        m_RegenRate += GameConfig::REGEN_UPGRADE_AMOUNT;
-        data.regenRate = m_RegenRate;
-        });
-}
-
-bool UpgradeService::BuyDamageZoneUpgrade() {
-    if (m_DamageZoneSize >= GameConfig::DAMAGE_ZONE_MAX_SIZE) {
-        return false;
-    }
-
-    return AttemptPurchase(GameConfig::DAMAGE_ZONE_UPGRADE_COST, [this](SaveData& data) {
-        m_DamageZoneSize += GameConfig::DAMAGE_ZONE_UPGRADE_AMOUNT;
-
-        if (m_DamageZoneSize > GameConfig::DAMAGE_ZONE_MAX_SIZE) {
-            m_DamageZoneSize = GameConfig::DAMAGE_ZONE_MAX_SIZE;
-        }
-
-        data.damageZoneSize = m_DamageZoneSize;
-        });
-}
-
-bool UpgradeService::BuyDamageUpgrade() {
-    return AttemptPurchase(GameConfig::DAMAGE_UPGRADE_COST, [this](SaveData& data) {
-        m_DamagePerTick += GameConfig::DAMAGE_UPGRADE_AMOUNT;
-        data.damagePerTick = m_DamagePerTick;
-        });
-}
-
-// -----------------------------------------------------------------------------
-// Refactor: Common Transaction Handler
-// -----------------------------------------------------------------------------
-
-bool UpgradeService::AttemptPurchase(int cost, const std::function<void(SaveData&)>& applyEffect) {
+bool UpgradeService::AttemptPurchase(UpgradeStrategy& strategy)
+{
     if (!m_SaveService) {
         return false;
     }
 
     SaveData saveData = m_SaveService->GetCurrentData();
 
-    if (saveData.points < cost) {
+    if (saveData.points < strategy.GetCost()) {
         return false;
     }
 
-    saveData.points -= cost;
-    applyEffect(saveData);
+    saveData.points -= strategy.GetCost();
+    strategy.Apply(saveData);
+
+    // Sync internal cached values
+    m_MaxHealth = saveData.maxHealth;
+    m_RegenRate = saveData.regenRate;
+    m_DamageZoneSize = saveData.damageZoneSize;
+    m_DamagePerTick = saveData.damagePerTick;
 
     m_SaveService->SaveProgress(saveData);
     return true;
 }
+
+
+
+bool UpgradeService::BuyHealthUpgrade() {
+    HealthUpgradeStrategy strategy;
+    return AttemptPurchase(strategy);
+}
+
+bool UpgradeService::BuyRegenUpgrade() {
+    RegenUpgradeStrategy strategy;
+    return AttemptPurchase(strategy);
+}
+
+bool UpgradeService::BuyDamageZoneUpgrade() {
+    DamageZoneUpgradeStrategy strategy;
+    strategy.SetCurrentSize(m_DamageZoneSize);
+    return AttemptPurchase(strategy);
+}
+
+bool UpgradeService::BuyDamageUpgrade() {
+    DamageUpgradeStrategy strategy;
+    return AttemptPurchase(strategy);
+}
+
 
 int UpgradeService::GetHealthUpgradeCost() const {
     return GameConfig::HEALTH_UPGRADE_COST;
