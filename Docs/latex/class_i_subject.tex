@@ -1,0 +1,96 @@
+\doxysection{ISubject Class Reference}
+\hypertarget{class_i_subject}{}\label{class_i_subject}\index{ISubject@{ISubject}}
+
+
+Interface for the \doxylink{class_subject}{Subject} (Publisher) in the Observer Pattern.  
+
+
+
+
+{\ttfamily \#include $<$ISubject.\+h$>$}
+
+Inheritance diagram for ISubject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a49b5debdf1d06d9f9911d2369aa032b1}{Attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Registers an observer to receive notifications. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_subject_a790eabbfafd693f9ac55173cc774c314}{Detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Unregisters an observer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_subject_a7b4f818be6b31354f24e7c6025da0263}{Notify}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event)=0
+\begin{DoxyCompactList}\small\item\em Broadcasts an event to all attached observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the \doxylink{class_subject}{Subject} (Publisher) in the Observer Pattern. 
+
+Manages a list of observers and broadcasts events to them. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_subject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_subject_ae7264a3f132816d45581a1b31845ecac}\index{ISubject@{ISubject}!````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}}
+\index{````~ISubject@{\texorpdfstring{$\sim$}{\string~}ISubject}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ISubject()}{\string~ISubject()}}
+{\footnotesize\ttfamily \label{class_i_subject_ae7264a3f132816d45581a1b31845ecac} 
+virtual ISubject\+::\texorpdfstring{$\sim$}{\string~}\+ISubject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_subject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_subject_a49b5debdf1d06d9f9911d2369aa032b1}\index{ISubject@{ISubject}!Attach@{Attach}}
+\index{Attach@{Attach}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily \label{class_i_subject_a49b5debdf1d06d9f9911d2369aa032b1} 
+virtual void ISubject\+::\+Attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers an observer to receive notifications. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a0d7ecabf2a2539039a6a331d85a2b2b1}{Game}}, and \mbox{\hyperlink{class_subject_a1ad7c3dfa77e8b4d06601f3c22510cb2}{Subject}}.
+
+\Hypertarget{class_i_subject_a790eabbfafd693f9ac55173cc774c314}\index{ISubject@{ISubject}!Detach@{Detach}}
+\index{Detach@{Detach}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily \label{class_i_subject_a790eabbfafd693f9ac55173cc774c314} 
+virtual void ISubject\+::\+Detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Unregisters an observer. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a6f0a89b26a6b2cb24839e82c136d2668}{Game}}, and \mbox{\hyperlink{class_subject_ac36c9756a9df9b4b0f787b744b1cd477}{Subject}}.
+
+\Hypertarget{class_i_subject_a7b4f818be6b31354f24e7c6025da0263}\index{ISubject@{ISubject}!Notify@{Notify}}
+\index{Notify@{Notify}!ISubject@{ISubject}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily \label{class_i_subject_a7b4f818be6b31354f24e7c6025da0263} 
+virtual void ISubject\+::\+Notify (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Broadcasts an event to all attached observers. 
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ae94383de4b443daf3bdddcf96c7a2474}{Game}}, and \mbox{\hyperlink{class_subject_a163cfae64cb06d87e74b36a499747356}{Subject}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Events/\mbox{\hyperlink{_i_subject_8h}{ISubject.\+h}}\end{DoxyCompactItemize}

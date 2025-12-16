@@ -1,0 +1,177 @@
+\doxysection{Label Class Reference}
+\hypertarget{class_label}{}\label{class_label}\index{Label@{Label}}
+
+
+A static, non-\/interactive UI component for displaying text.  
+
+
+
+
+{\ttfamily \#include $<$Label.\+h$>$}
+
+Inheritance diagram for Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_label}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_label_a2594da88cfd2f1b1b64498550193bec0}{Label}} (float x, float y, const char \texorpdfstring{$\ast$}{*}text, Font font, int font\+Size=20, Color color=BLACK)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_label}{Label} at a specific position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_label_af021691b39b1b4e87d5d1fca3e12b915}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Renders the widget to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_label_aeb2c17a43914bd2e22ff9391264a8e92}{Update}} () override
+\begin{DoxyCompactList}\small\item\em Handles input or logic updates for the widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_label_a82f5a4f97d5cb470855992447ca61445}{Is\+Hovered}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is currently over the widget area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_label_a5cef50edc724c74af0c1a4768fadb16a}{Is\+Active}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the widget is enabled and should be drawn/updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_label_a370e40b60ce4d346a4a96175deabd27d}{Set\+Active}} (bool active) override
+\begin{DoxyCompactList}\small\item\em Sets the active/enabled state of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_label_a690003f7a6653ca92a6eca88cba20ac6}{Set\+Text}} (const char \texorpdfstring{$\ast$}{*}text)
+\begin{DoxyCompactList}\small\item\em Sets the text content of the label. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_label_a41d9c775baa0e23e6737554ec727a6ec}{Get\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Gets the text content of the label. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_widget}{IWidget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_widget_ae524e118f3b69361e5e34be86ac74597}{\texorpdfstring{$\sim$}{\string~}\+IWidget}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A static, non-\/interactive UI component for displaying text. 
+
+Implements \doxylink{class_i_widget}{IWidget} but typically returns false for \doxylink{class_label_a82f5a4f97d5cb470855992447ca61445}{Is\+Hovered()}. 
+
+\label{doc-constructors}
+\Hypertarget{class_label_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_label_a2594da88cfd2f1b1b64498550193bec0}\index{Label@{Label}!Label@{Label}}
+\index{Label@{Label}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{Label()}{Label()}}
+{\footnotesize\ttfamily \label{class_label_a2594da88cfd2f1b1b64498550193bec0} 
+Label\+::\+Label (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{Font}]{font}{, }\item[{int}]{font\+Size}{ = {\ttfamily 20}, }\item[{Color}]{color}{ = {\ttfamily BLACK}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_label}{Label} at a specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The starting X coordinate. \\
+\hline
+{\em y} & The starting Y coordinate. \\
+\hline
+{\em text} & The string content. \\
+\hline
+{\em font} & The raylib Font resource to use. \\
+\hline
+{\em font\+Size} & The size of the text. \\
+\hline
+{\em color} & The text color. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_label_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_label_af021691b39b1b4e87d5d1fca3e12b915}\index{Label@{Label}!Draw@{Draw}}
+\index{Draw@{Draw}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_label_af021691b39b1b4e87d5d1fca3e12b915} 
+void Label\+::\+Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the widget to the screen. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_af3f732b4e0f6bab9d0f4e3a2b75d5c5a}{IWidget}}.
+
+\Hypertarget{class_label_a41d9c775baa0e23e6737554ec727a6ec}\index{Label@{Label}!GetText@{GetText}}
+\index{GetText@{GetText}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}}
+{\footnotesize\ttfamily \label{class_label_a41d9c775baa0e23e6737554ec727a6ec} 
+const char \texorpdfstring{$\ast$}{*} Label\+::\+Get\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the text content of the label. 
+
+\Hypertarget{class_label_a5cef50edc724c74af0c1a4768fadb16a}\index{Label@{Label}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily \label{class_label_a5cef50edc724c74af0c1a4768fadb16a} 
+bool Label\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the widget is enabled and should be drawn/updated. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a9051b17c95eedaea550b0ce93fddcdbc}{IWidget}}.
+
+\Hypertarget{class_label_a82f5a4f97d5cb470855992447ca61445}\index{Label@{Label}!IsHovered@{IsHovered}}
+\index{IsHovered@{IsHovered}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{IsHovered()}{IsHovered()}}
+{\footnotesize\ttfamily \label{class_label_a82f5a4f97d5cb470855992447ca61445} 
+bool Label\+::\+Is\+Hovered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the mouse cursor is currently over the widget area. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a6e291d888681ccc1a979fd8c4e00be63}{IWidget}}.
+
+\Hypertarget{class_label_a370e40b60ce4d346a4a96175deabd27d}\index{Label@{Label}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily \label{class_label_a370e40b60ce4d346a4a96175deabd27d} 
+void Label\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the active/enabled state of the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a42ef777f15a4d91973c0d3024f5223f7}{IWidget}}.
+
+\Hypertarget{class_label_a690003f7a6653ca92a6eca88cba20ac6}\index{Label@{Label}!SetText@{SetText}}
+\index{SetText@{SetText}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily \label{class_label_a690003f7a6653ca92a6eca88cba20ac6} 
+void Label\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets the text content of the label. 
+
+\Hypertarget{class_label_aeb2c17a43914bd2e22ff9391264a8e92}\index{Label@{Label}!Update@{Update}}
+\index{Update@{Update}!Label@{Label}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_label_aeb2c17a43914bd2e22ff9391264a8e92} 
+void Label\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles input or logic updates for the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_ae485a818816334d6e0c0fa2fc377013a}{IWidget}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\+Widgets/\mbox{\hyperlink{_label_8h}{Label.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/src/\+Widgets/\mbox{\hyperlink{_label_8cpp}{Label.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,250 @@
+\doxysection{Pickup\+Service Class Reference}
+\hypertarget{class_pickup_service}{}\label{class_pickup_service}\index{PickupService@{PickupService}}
+
+
+Concrete implementation of the pickup system.  
+
+
+
+
+{\ttfamily \#include $<$Pickup\+Service.\+h$>$}
+
+Inheritance diagram for Pickup\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pickup_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pickup_service_ab604641fda15e415c489775e49020519}{Pickup\+Service}} ()
+\item 
+\mbox{\hyperlink{class_pickup_service_aca2321177b32e44d89ccb020b9e64e51}{\texorpdfstring{$\sim$}{\string~}\+Pickup\+Service}} () override=default
+\item 
+void \mbox{\hyperlink{class_pickup_service_aa02c116264e4a646ccb0fca14463e363}{Initialize}} (float screen\+Height)
+\begin{DoxyCompactList}\small\item\em Initializes the service with screen dimensions for scaling. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_service_a3c8d6111f35939ea6dfcff0371dda947}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates the lifetime of all active pickups and removes expired ones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_service_a23558186ef999279512d30478bf08be4}{Clear}} () override
+\begin{DoxyCompactList}\small\item\em Removes all pickups and resets counters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_service_a44da5f49802d7401472445a19bfea47b}{Reset}} ()
+\item 
+void \mbox{\hyperlink{class_pickup_service_a0219a8abca1db71574035776fd5eff1c}{Spawn\+Point\+Pickups}} (const \mbox{\hyperlink{struct_position}{Position}} \&origin, int count, int point\+Value) override
+\begin{DoxyCompactList}\small\item\em Spawns a cluster of pickups around a specific origin point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_service_ac78c6cffa7dec5ba2c21898bb7de8592}{Spawn\+Point\+Pickups}} (const \mbox{\hyperlink{struct_position}{Position}} \&origin)
+\item 
+bool \mbox{\hyperlink{class_pickup_service_a6d5d5bb65789abbee3160085bcdc8af4}{Collect\+Pickup}} (int pickup\+Id) override
+\begin{DoxyCompactList}\small\item\em Attempts to collect a specific pickup by ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ \mbox{\hyperlink{class_pickup_service_a66b7650064b0dbbbcc606a32e1e3a0e2}{Process\+Pickup\+Collection}} (float centerX, float centerY, float zone\+Size)
+\begin{DoxyCompactList}\small\item\em Deprecated/\+Legacy method. Consider using the void version instead. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_service_ab89895cb30956df5ffecf9b28f4a7482}{Process\+Pickup\+Collection}} (float mouseX, float mouseY, float damage\+Zone\+Size, std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ \&collected\+Pickups) override
+\begin{DoxyCompactList}\small\item\em Checks for pickups within a specific area and collects them. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ \& \mbox{\hyperlink{class_pickup_service_a175fdd8f569de12cdc1ea7d9984ccbb7}{Get\+Pickups}} () const override
+\begin{DoxyCompactList}\small\item\em Gets a read-\/only list of all currently active pickups. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_pickup_service_a8fa5e691704cb1c914f883c2b4406e92}{Get\+Pickup\+Points}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the total points accumulated from collected pickups. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_pickup_service}{IPickup\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_pickup_service_aff4b58c8efaf708f10d09a4cbff6ab91}{\texorpdfstring{$\sim$}{\string~}\+IPickup\+Service}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the pickup system. 
+
+Manages the lifecycle, random spawning logic, and collision detection for point pickups. 
+
+\label{doc-constructors}
+\Hypertarget{class_pickup_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pickup_service_ab604641fda15e415c489775e49020519}\index{PickupService@{PickupService}!PickupService@{PickupService}}
+\index{PickupService@{PickupService}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{PickupService()}{PickupService()}}
+{\footnotesize\ttfamily \label{class_pickup_service_ab604641fda15e415c489775e49020519} 
+Pickup\+Service\+::\+Pickup\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_pickup_service_aca2321177b32e44d89ccb020b9e64e51}\index{PickupService@{PickupService}!````~PickupService@{\texorpdfstring{$\sim$}{\string~}PickupService}}
+\index{````~PickupService@{\texorpdfstring{$\sim$}{\string~}PickupService}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PickupService()}{\string~PickupService()}}
+{\footnotesize\ttfamily \label{class_pickup_service_aca2321177b32e44d89ccb020b9e64e51} 
+Pickup\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Pickup\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_pickup_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pickup_service_a23558186ef999279512d30478bf08be4}\index{PickupService@{PickupService}!Clear@{Clear}}
+\index{Clear@{Clear}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_pickup_service_a23558186ef999279512d30478bf08be4} 
+void Pickup\+Service\+::\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes all pickups and resets counters. 
+
+
+
+Implements \mbox{\hyperlink{class_i_pickup_service_a75858bbf85aeca5ecd89e88901f96dd1}{IPickup\+Service}}.
+
+\Hypertarget{class_pickup_service_a6d5d5bb65789abbee3160085bcdc8af4}\index{PickupService@{PickupService}!CollectPickup@{CollectPickup}}
+\index{CollectPickup@{CollectPickup}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{CollectPickup()}{CollectPickup()}}
+{\footnotesize\ttfamily \label{class_pickup_service_a6d5d5bb65789abbee3160085bcdc8af4} 
+bool Pickup\+Service\+::\+Collect\+Pickup (\begin{DoxyParamCaption}\item[{int}]{pickup\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to collect a specific pickup by ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pickup\+Id} & The unique ID of the pickup to collect. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the pickup existed and was collected, False otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_pickup_service_abd441cdb44e02545c43d2898afc89c33}{IPickup\+Service}}.
+
+\Hypertarget{class_pickup_service_a8fa5e691704cb1c914f883c2b4406e92}\index{PickupService@{PickupService}!GetPickupPoints@{GetPickupPoints}}
+\index{GetPickupPoints@{GetPickupPoints}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{GetPickupPoints()}{GetPickupPoints()}}
+{\footnotesize\ttfamily \label{class_pickup_service_a8fa5e691704cb1c914f883c2b4406e92} 
+int Pickup\+Service\+::\+Get\+Pickup\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the total points accumulated from collected pickups. 
+
+
+
+Implements \mbox{\hyperlink{class_i_pickup_service_a2d48c868306fb39f4e3d21bd049522a6}{IPickup\+Service}}.
+
+\Hypertarget{class_pickup_service_a175fdd8f569de12cdc1ea7d9984ccbb7}\index{PickupService@{PickupService}!GetPickups@{GetPickups}}
+\index{GetPickups@{GetPickups}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{GetPickups()}{GetPickups()}}
+{\footnotesize\ttfamily \label{class_pickup_service_a175fdd8f569de12cdc1ea7d9984ccbb7} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ \& Pickup\+Service\+::\+Get\+Pickups (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a read-\/only list of all currently active pickups. 
+
+
+
+Implements \mbox{\hyperlink{class_i_pickup_service_a9eeb1c89a3c9cd59bc5c3406109f8e00}{IPickup\+Service}}.
+
+\Hypertarget{class_pickup_service_aa02c116264e4a646ccb0fca14463e363}\index{PickupService@{PickupService}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_pickup_service_aa02c116264e4a646ccb0fca14463e363} 
+void Pickup\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{screen\+Height}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the service with screen dimensions for scaling. 
+
+\Hypertarget{class_pickup_service_a66b7650064b0dbbbcc606a32e1e3a0e2}\index{PickupService@{PickupService}!ProcessPickupCollection@{ProcessPickupCollection}}
+\index{ProcessPickupCollection@{ProcessPickupCollection}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{ProcessPickupCollection()}{ProcessPickupCollection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_pickup_service_a66b7650064b0dbbbcc606a32e1e3a0e2} 
+std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ Pickup\+Service\+::\+Process\+Pickup\+Collection (\begin{DoxyParamCaption}\item[{float}]{centerX}{, }\item[{float}]{centerY}{, }\item[{float}]{zone\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Deprecated/\+Legacy method. Consider using the void version instead. 
+
+\Hypertarget{class_pickup_service_ab89895cb30956df5ffecf9b28f4a7482}\index{PickupService@{PickupService}!ProcessPickupCollection@{ProcessPickupCollection}}
+\index{ProcessPickupCollection@{ProcessPickupCollection}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{ProcessPickupCollection()}{ProcessPickupCollection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_pickup_service_ab89895cb30956df5ffecf9b28f4a7482} 
+void Pickup\+Service\+::\+Process\+Pickup\+Collection (\begin{DoxyParamCaption}\item[{float}]{mouseX}{, }\item[{float}]{mouseY}{, }\item[{float}]{damage\+Zone\+Size}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ \&}]{collected\+Pickups}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks for pickups within a specific area and collects them. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The X coordinate of the collection center (e.\+g., mouse cursor). \\
+\hline
+{\em mouseY} & The Y coordinate of the collection center. \\
+\hline
+{\em damage\+Zone\+Size} & The width/height of the collection area. \\
+\hline
+{\em collected\+Pickups} & Output vector that will be filled with the collected items. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{class_i_pickup_service_adef683ff12ce5beaec656855619fc55d}{IPickup\+Service}}.
+
+\Hypertarget{class_pickup_service_a44da5f49802d7401472445a19bfea47b}\index{PickupService@{PickupService}!Reset@{Reset}}
+\index{Reset@{Reset}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_pickup_service_a44da5f49802d7401472445a19bfea47b} 
+void Pickup\+Service\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_pickup_service_ac78c6cffa7dec5ba2c21898bb7de8592}\index{PickupService@{PickupService}!SpawnPointPickups@{SpawnPointPickups}}
+\index{SpawnPointPickups@{SpawnPointPickups}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{SpawnPointPickups()}{SpawnPointPickups()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_pickup_service_ac78c6cffa7dec5ba2c21898bb7de8592} 
+void Pickup\+Service\+::\+Spawn\+Point\+Pickups (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_position}{Position}} \&}]{origin}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_pickup_service_a0219a8abca1db71574035776fd5eff1c}\index{PickupService@{PickupService}!SpawnPointPickups@{SpawnPointPickups}}
+\index{SpawnPointPickups@{SpawnPointPickups}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{SpawnPointPickups()}{SpawnPointPickups()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_pickup_service_a0219a8abca1db71574035776fd5eff1c} 
+void Pickup\+Service\+::\+Spawn\+Point\+Pickups (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_position}{Position}} \&}]{origin}{, }\item[{int}]{count}{, }\item[{int}]{point\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Spawns a cluster of pickups around a specific origin point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The center position to spawn around. \\
+\hline
+{\em count} & The number of pickups to generate. \\
+\hline
+{\em point\+Value} & The score value of each pickup. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_pickup_service_a3813540cf8c43508d8d5831c1484a46e}{IPickup\+Service}}.
+
+\Hypertarget{class_pickup_service_a3c8d6111f35939ea6dfcff0371dda947}\index{PickupService@{PickupService}!Update@{Update}}
+\index{Update@{Update}!PickupService@{PickupService}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_pickup_service_a3c8d6111f35939ea6dfcff0371dda947} 
+void Pickup\+Service\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the lifetime of all active pickups and removes expired ones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_pickup_service_a866449dbe3d10f94bc92dd53251e8ab7}{IPickup\+Service}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_pickup_service_8h}{Pickup\+Service.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_pickup_service_8cpp}{Pickup\+Service.\+cpp}}\end{DoxyCompactItemize}

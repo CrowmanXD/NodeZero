@@ -1,0 +1,39 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Core/include/\+Enums/\+Node\+State.h File Reference}
+\hypertarget{_node_state_8h}{}\label{_node_state_8h}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Enums/NodeState.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Enums/NodeState.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{Node\+State}} \{ \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea3cab03c00dbd11bc3569afa0748013f0}{Inactive}}
+, \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea4d3d769b812b6faa6b76e1a8abaece2d}{Active}}
+, \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea183b62c7f067711f9c5a54913c054617}{Dead}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the lifecycle state of a game entity (\doxylink{class_node}{Node}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{_node_state_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}\index{NodeState.h@{NodeState.h}!NodeState@{NodeState}}
+\index{NodeState@{NodeState}!NodeState.h@{NodeState.h}}
+\doxysubsubsection{\texorpdfstring{NodeState}{NodeState}}
+{\footnotesize\ttfamily \label{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e} 
+enum class \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{Node\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the lifecycle state of a game entity (\doxylink{class_node}{Node}). 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inactive@{Inactive}!NodeState.h@{NodeState.h}}\index{NodeState.h@{NodeState.h}!Inactive@{Inactive}}}\Hypertarget{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea3cab03c00dbd11bc3569afa0748013f0}\label{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea3cab03c00dbd11bc3569afa0748013f0} 
+Inactive&The node is in the object pool but not currently active in the world. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Active@{Active}!NodeState.h@{NodeState.h}}\index{NodeState.h@{NodeState.h}!Active@{Active}}}\Hypertarget{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea4d3d769b812b6faa6b76e1a8abaece2d}\label{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea4d3d769b812b6faa6b76e1a8abaece2d} 
+Active&The node is alive, updating, and rendering. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dead@{Dead}!NodeState.h@{NodeState.h}}\index{NodeState.h@{NodeState.h}!Dead@{Dead}}}\Hypertarget{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea183b62c7f067711f9c5a54913c054617}\label{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5ea183b62c7f067711f9c5a54913c054617} 
+Dead&The node has been destroyed (health \texorpdfstring{$<$}{<}= 0) and is awaiting cleanup. \\
+\hline
+
+\end{DoxyEnumFields}

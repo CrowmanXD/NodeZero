@@ -1,0 +1,40 @@
+\doxysection{Point\+Pickup.\+h}
+\hypertarget{_point_pickup_8h_source}{}\label{_point_pickup_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Types/PointPickup.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Types/PointPickup.h}}
+\mbox{\hyperlink{_point_pickup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_position_8h}{Position.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point_pickup}{PointPickup}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\{\ 0\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_position}{Position}}\ \mbox{\hyperlink{struct_point_pickup_a7d4dd2752d98f06117f99654b17d479e}{position}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_position}{Position}}\ \mbox{\hyperlink{struct_point_pickup_a7f5df4e320b21b838af634bc2a240931}{spawnOrigin}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_point_pickup_a55e6f9d5f570fd47c74ef0e0528c0cb6}{size}}\{\ 0.0f\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54}{lifetime}}\{\ 0.0f\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_point_pickup_ab24fa82f821cf7d235eff64a8cdf6f74}{remainingTime}}\{\ 0.0f\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_point_pickup_a228a95dc945eeb660a461952d68f90d1}{points}}\{\ 0\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_point_pickup_a66c787689bfe24c356988b1a1198d163}{GetLifeRatio}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54}{lifetime}}\ <=\ 0.0f)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0f;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_pickup_ab24fa82f821cf7d235eff64a8cdf6f74}{remainingTime}}\ /\ \mbox{\hyperlink{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54}{lifetime}};}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_point_pickup_aa0d6565b808ae023a3e12d4ccf8216cb}{GetAge}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54}{lifetime}}\ -\/\ \mbox{\hyperlink{struct_point_pickup_ab24fa82f821cf7d235eff64a8cdf6f74}{remainingTime}};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,137 @@
+\doxysection{Save\+Data Struct Reference}
+\hypertarget{struct_save_data}{}\label{struct_save_data}\index{SaveData@{SaveData}}
+
+
+Container for persistent player progression.  
+
+
+
+
+{\ttfamily \#include $<$Save\+Data.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_save_data_a9604bdb21a7b5ed30d7efbf0c9d481df}{high\+Points}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em The highest score ever achieved by the player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_data_a31a60a342f4fea7e4defe444f072329a}{points}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Current currency available for spending in the shop. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_data_a7f161e6b081088c19b11a379fbfd6675}{games\+Played}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Total number of rounds/sessions played. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_data_a76225bc248f358264ce882fe1319ad69}{total\+Nodes\+Destroyed}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Cumulative count of enemies destroyed across all games. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_data_af125c9a844345f6099c06d2238346bfa}{current\+Level}} \{ 1 \}
+\begin{DoxyCompactList}\small\item\em The level the player is currently on (affects difficulty). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_save_data_aebf102972ee50069b3b3554c0228b48f}{max\+Health}} \{ \mbox{\hyperlink{struct_game_config_ad7f35b98c4c257a522a63e6504c16292}{Game\+Config\+::\+HEALTH\+\_\+\+DEFAULT}} \}
+\begin{DoxyCompactList}\small\item\em Player\textquotesingle{}s maximum health cap. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_save_data_a4306392b7637ffafb39c0701c5ae0047}{regen\+Rate}} \{ 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em Health regenerated per second. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_save_data_a5d3ab0ac0f30743f2753a4b7083f7c1a}{damage\+Zone\+Size}} \{ \mbox{\hyperlink{struct_game_config_a0788a52653c0265913097910f42d8aa6}{Game\+Config\+::\+DAMAGE\+\_\+\+ZONE\+\_\+\+DEFAULT\+\_\+\+SIZE}} \}
+\begin{DoxyCompactList}\small\item\em Radius of the damage dealing area. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_save_data_a3e0c398b6b20e572dc870ffea2250e11}{damage\+Per\+Tick}} \{ \mbox{\hyperlink{struct_game_config_ac371d4a242452c3ab0c0cdc8f900476c}{Game\+Config\+::\+DAMAGE\+\_\+\+PER\+\_\+\+TICK\+\_\+\+DEFAULT}} \}
+\begin{DoxyCompactList}\small\item\em Damage dealt per tick to enemies in the zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container for persistent player progression. 
+
+This struct mirrors the JSON structure used in the \doxylink{class_save_service}{Save\+Service}. It holds everything that needs to be remembered between game sessions. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_save_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_save_data_af125c9a844345f6099c06d2238346bfa}\index{SaveData@{SaveData}!currentLevel@{currentLevel}}
+\index{currentLevel@{currentLevel}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{currentLevel}{currentLevel}}
+{\footnotesize\ttfamily \label{struct_save_data_af125c9a844345f6099c06d2238346bfa} 
+int Save\+Data\+::current\+Level \{ 1 \}}
+
+
+
+The level the player is currently on (affects difficulty). 
+
+\Hypertarget{struct_save_data_a3e0c398b6b20e572dc870ffea2250e11}\index{SaveData@{SaveData}!damagePerTick@{damagePerTick}}
+\index{damagePerTick@{damagePerTick}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{damagePerTick}{damagePerTick}}
+{\footnotesize\ttfamily \label{struct_save_data_a3e0c398b6b20e572dc870ffea2250e11} 
+float Save\+Data\+::damage\+Per\+Tick \{ \mbox{\hyperlink{struct_game_config_ac371d4a242452c3ab0c0cdc8f900476c}{Game\+Config\+::\+DAMAGE\+\_\+\+PER\+\_\+\+TICK\+\_\+\+DEFAULT}} \}}
+
+
+
+Damage dealt per tick to enemies in the zone. 
+
+\Hypertarget{struct_save_data_a5d3ab0ac0f30743f2753a4b7083f7c1a}\index{SaveData@{SaveData}!damageZoneSize@{damageZoneSize}}
+\index{damageZoneSize@{damageZoneSize}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{damageZoneSize}{damageZoneSize}}
+{\footnotesize\ttfamily \label{struct_save_data_a5d3ab0ac0f30743f2753a4b7083f7c1a} 
+float Save\+Data\+::damage\+Zone\+Size \{ \mbox{\hyperlink{struct_game_config_a0788a52653c0265913097910f42d8aa6}{Game\+Config\+::\+DAMAGE\+\_\+\+ZONE\+\_\+\+DEFAULT\+\_\+\+SIZE}} \}}
+
+
+
+Radius of the damage dealing area. 
+
+\Hypertarget{struct_save_data_a7f161e6b081088c19b11a379fbfd6675}\index{SaveData@{SaveData}!gamesPlayed@{gamesPlayed}}
+\index{gamesPlayed@{gamesPlayed}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{gamesPlayed}{gamesPlayed}}
+{\footnotesize\ttfamily \label{struct_save_data_a7f161e6b081088c19b11a379fbfd6675} 
+int Save\+Data\+::games\+Played \{ 0 \}}
+
+
+
+Total number of rounds/sessions played. 
+
+\Hypertarget{struct_save_data_a9604bdb21a7b5ed30d7efbf0c9d481df}\index{SaveData@{SaveData}!highPoints@{highPoints}}
+\index{highPoints@{highPoints}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{highPoints}{highPoints}}
+{\footnotesize\ttfamily \label{struct_save_data_a9604bdb21a7b5ed30d7efbf0c9d481df} 
+int Save\+Data\+::high\+Points \{ 0 \}}
+
+
+
+The highest score ever achieved by the player. 
+
+\Hypertarget{struct_save_data_aebf102972ee50069b3b3554c0228b48f}\index{SaveData@{SaveData}!maxHealth@{maxHealth}}
+\index{maxHealth@{maxHealth}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{maxHealth}{maxHealth}}
+{\footnotesize\ttfamily \label{struct_save_data_aebf102972ee50069b3b3554c0228b48f} 
+float Save\+Data\+::max\+Health \{ \mbox{\hyperlink{struct_game_config_ad7f35b98c4c257a522a63e6504c16292}{Game\+Config\+::\+HEALTH\+\_\+\+DEFAULT}} \}}
+
+
+
+Player\textquotesingle{}s maximum health cap. 
+
+\Hypertarget{struct_save_data_a31a60a342f4fea7e4defe444f072329a}\index{SaveData@{SaveData}!points@{points}}
+\index{points@{points}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \label{struct_save_data_a31a60a342f4fea7e4defe444f072329a} 
+int Save\+Data\+::points \{ 0 \}}
+
+
+
+Current currency available for spending in the shop. 
+
+\Hypertarget{struct_save_data_a4306392b7637ffafb39c0701c5ae0047}\index{SaveData@{SaveData}!regenRate@{regenRate}}
+\index{regenRate@{regenRate}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{regenRate}{regenRate}}
+{\footnotesize\ttfamily \label{struct_save_data_a4306392b7637ffafb39c0701c5ae0047} 
+float Save\+Data\+::regen\+Rate \{ 0.\+0f \}}
+
+
+
+Health regenerated per second. 
+
+\Hypertarget{struct_save_data_a76225bc248f358264ce882fe1319ad69}\index{SaveData@{SaveData}!totalNodesDestroyed@{totalNodesDestroyed}}
+\index{totalNodesDestroyed@{totalNodesDestroyed}!SaveData@{SaveData}}
+\doxysubsubsection{\texorpdfstring{totalNodesDestroyed}{totalNodesDestroyed}}
+{\footnotesize\ttfamily \label{struct_save_data_a76225bc248f358264ce882fe1319ad69} 
+int Save\+Data\+::total\+Nodes\+Destroyed \{ 0 \}}
+
+
+
+Cumulative count of enemies destroyed across all games. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Types/\mbox{\hyperlink{_save_data_8h}{Save\+Data.\+h}}\end{DoxyCompactItemize}

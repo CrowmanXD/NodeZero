@@ -1,0 +1,77 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Core/include/\+Enums/\+Event\+Type.h File Reference}
+\hypertarget{_event_type_8h}{}\label{_event_type_8h}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Enums/EventType.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Enums/EventType.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \{ \newline
+\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaac21532fcf309cabf9806f15fb14e329}{Node\+Spawned}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7907b8287245086099e7a899a30e63a0}{Node\+Damaged}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa26f144d67e0ad8f02012eee328ca3baa}{Node\+Destroyed}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6ab14a2e8d26dc22424909cde2d6cb3a}{Points\+Changed}}
+, \newline
+\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaae7e2cf02c6e8b8bc38c5bf907e3cb27}{Multiplier\+Changed}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa4ac16ba94c874a2bdd856c4756b1db7d}{Game\+State\+Changed}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa8f347bc7cebca9fa6d97e70c6bc29eb3}{Game\+Over}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee8cf5aed48c3a8d4058f102a49d926f}{Boss\+Spawned}}
+, \newline
+\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa68f7c11f1057f94357093f8d29530c55}{Boss\+Defeated}}
+, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaf3f8a8d70e59a2f75919906f9429e8c2}{Level\+Completed}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifiers for the internal event messaging system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{_event_type_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}\index{EventType.h@{EventType.h}!EventType@{EventType}}
+\index{EventType@{EventType}!EventType.h@{EventType.h}}
+\doxysubsubsection{\texorpdfstring{EventType}{EventType}}
+{\footnotesize\ttfamily \label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa} 
+enum class \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Identifiers for the internal event messaging system. 
+
+Used to decouple systems; for example, the Audio system can listen for \textquotesingle{}Node\+Destroyed\textquotesingle{} to play a sound without needing access to the game logic code. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeSpawned@{NodeSpawned}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!NodeSpawned@{NodeSpawned}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaac21532fcf309cabf9806f15fb14e329}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaac21532fcf309cabf9806f15fb14e329} 
+Node\+Spawned&Triggered when a new enemy node spawns. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeDamaged@{NodeDamaged}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!NodeDamaged@{NodeDamaged}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7907b8287245086099e7a899a30e63a0}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7907b8287245086099e7a899a30e63a0} 
+Node\+Damaged&Triggered when a node takes damage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeDestroyed@{NodeDestroyed}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!NodeDestroyed@{NodeDestroyed}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa26f144d67e0ad8f02012eee328ca3baa}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa26f144d67e0ad8f02012eee328ca3baa} 
+Node\+Destroyed&Triggered when a node\textquotesingle{}s health reaches zero. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointsChanged@{PointsChanged}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!PointsChanged@{PointsChanged}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6ab14a2e8d26dc22424909cde2d6cb3a}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6ab14a2e8d26dc22424909cde2d6cb3a} 
+Points\+Changed&Triggered when the player\textquotesingle{}s score changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MultiplierChanged@{MultiplierChanged}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!MultiplierChanged@{MultiplierChanged}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaae7e2cf02c6e8b8bc38c5bf907e3cb27}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaae7e2cf02c6e8b8bc38c5bf907e3cb27} 
+Multiplier\+Changed&Triggered when the combo multiplier changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameStateChanged@{GameStateChanged}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!GameStateChanged@{GameStateChanged}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa4ac16ba94c874a2bdd856c4756b1db7d}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa4ac16ba94c874a2bdd856c4756b1db7d} 
+Game\+State\+Changed&Triggered when the game state changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameOver@{GameOver}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!GameOver@{GameOver}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa8f347bc7cebca9fa6d97e70c6bc29eb3}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa8f347bc7cebca9fa6d97e70c6bc29eb3} 
+Game\+Over&Triggered when the player loses (Health \texorpdfstring{$<$}{<}= 0). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BossSpawned@{BossSpawned}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!BossSpawned@{BossSpawned}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee8cf5aed48c3a8d4058f102a49d926f}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee8cf5aed48c3a8d4058f102a49d926f} 
+Boss\+Spawned&Triggered when the boss appears. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BossDefeated@{BossDefeated}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!BossDefeated@{BossDefeated}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa68f7c11f1057f94357093f8d29530c55}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa68f7c11f1057f94357093f8d29530c55} 
+Boss\+Defeated&Triggered when the boss is defeated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LevelCompleted@{LevelCompleted}!EventType.h@{EventType.h}}\index{EventType.h@{EventType.h}!LevelCompleted@{LevelCompleted}}}\Hypertarget{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaf3f8a8d70e59a2f75919906f9429e8c2}\label{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaf3f8a8d70e59a2f75919906f9429e8c2} 
+Level\+Completed&Triggered when the level timer expires successfully. \\
+\hline
+
+\end{DoxyEnumFields}

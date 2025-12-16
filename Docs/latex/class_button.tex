@@ -1,0 +1,188 @@
+\doxysection{Button Class Reference}
+\hypertarget{class_button}{}\label{class_button}\index{Button@{Button}}
+
+
+An interactive UI component that triggers an action on click.  
+
+
+
+
+{\ttfamily \#include $<$Button.\+h$>$}
+
+Inheritance diagram for Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_a1ab645bfb73c6095e9ff7c66297999b4}{Button}} (float x, float y, float width, float height, const char \texorpdfstring{$\ast$}{*}text, Font font)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_button}{Button}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a592226e08baaecbea531fa4539f558ca}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Renders the widget to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a25bb759f840f630f901d349b9efbcd28}{Update}} () override
+\begin{DoxyCompactList}\small\item\em Handles input or logic updates for the widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_a98d4cfa253ca5ab72c1096163ea1784f}{Is\+Hovered}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is currently over the widget area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_a9cfbfe39990feb874e8f7f84f43036d0}{Is\+Active}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the widget is enabled and should be drawn/updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_ab9ac7233eb67a5682d91e80a9bac1931}{Set\+Active}} (bool active) override
+\begin{DoxyCompactList}\small\item\em Sets the active/enabled state of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a78b5dd1e4f3ad295d0cc06511ad1b602}{Set\+On\+Click}} (std\+::function$<$ void()$>$ callback)
+\begin{DoxyCompactList}\small\item\em Sets the function to be executed when the button is clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_a0d02e244213f7fc66c53fc27d501989d}{Set\+Colors}} (Color normal, Color hover, Color pressed, Color text)
+\begin{DoxyCompactList}\small\item\em Sets the background colors for different states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_widget}{IWidget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_widget_ae524e118f3b69361e5e34be86ac74597}{\texorpdfstring{$\sim$}{\string~}\+IWidget}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interactive UI component that triggers an action on click. 
+
+Supports three visual states\+: Normal, Hovered, and Pressed. 
+
+\label{doc-constructors}
+\Hypertarget{class_button_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_a1ab645bfb73c6095e9ff7c66297999b4}\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}}
+{\footnotesize\ttfamily \label{class_button_a1ab645bfb73c6095e9ff7c66297999b4} 
+Button\+::\+Button (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{width}{, }\item[{float}]{height}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{Font}]{font}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_button}{Button}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Top-\/left X coordinate. \\
+\hline
+{\em y} & Top-\/left Y coordinate. \\
+\hline
+{\em width} & \doxylink{class_button}{Button} width. \\
+\hline
+{\em height} & \doxylink{class_button}{Button} height. \\
+\hline
+{\em text} & The label text. \\
+\hline
+{\em font} & The raylib Font resource. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_button_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_a592226e08baaecbea531fa4539f558ca}\index{Button@{Button}!Draw@{Draw}}
+\index{Draw@{Draw}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_button_a592226e08baaecbea531fa4539f558ca} 
+void Button\+::\+Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the widget to the screen. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_af3f732b4e0f6bab9d0f4e3a2b75d5c5a}{IWidget}}.
+
+\Hypertarget{class_button_a9cfbfe39990feb874e8f7f84f43036d0}\index{Button@{Button}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily \label{class_button_a9cfbfe39990feb874e8f7f84f43036d0} 
+bool Button\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the widget is enabled and should be drawn/updated. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a9051b17c95eedaea550b0ce93fddcdbc}{IWidget}}.
+
+\Hypertarget{class_button_a98d4cfa253ca5ab72c1096163ea1784f}\index{Button@{Button}!IsHovered@{IsHovered}}
+\index{IsHovered@{IsHovered}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{IsHovered()}{IsHovered()}}
+{\footnotesize\ttfamily \label{class_button_a98d4cfa253ca5ab72c1096163ea1784f} 
+bool Button\+::\+Is\+Hovered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the mouse cursor is currently over the widget area. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a6e291d888681ccc1a979fd8c4e00be63}{IWidget}}.
+
+\Hypertarget{class_button_ab9ac7233eb67a5682d91e80a9bac1931}\index{Button@{Button}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily \label{class_button_ab9ac7233eb67a5682d91e80a9bac1931} 
+void Button\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the active/enabled state of the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a42ef777f15a4d91973c0d3024f5223f7}{IWidget}}.
+
+\Hypertarget{class_button_a0d02e244213f7fc66c53fc27d501989d}\index{Button@{Button}!SetColors@{SetColors}}
+\index{SetColors@{SetColors}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{SetColors()}{SetColors()}}
+{\footnotesize\ttfamily \label{class_button_a0d02e244213f7fc66c53fc27d501989d} 
+void Button\+::\+Set\+Colors (\begin{DoxyParamCaption}\item[{Color}]{normal}{, }\item[{Color}]{hover}{, }\item[{Color}]{pressed}{, }\item[{Color}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Sets the background colors for different states. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em normal} & Color when idle. \\
+\hline
+{\em hover} & Color when mouse is over the button. \\
+\hline
+{\em pressed} & Color when the mouse button is down over the button. \\
+\hline
+{\em text} & Color of the button text. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_button_a78b5dd1e4f3ad295d0cc06511ad1b602}\index{Button@{Button}!SetOnClick@{SetOnClick}}
+\index{SetOnClick@{SetOnClick}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{SetOnClick()}{SetOnClick()}}
+{\footnotesize\ttfamily \label{class_button_a78b5dd1e4f3ad295d0cc06511ad1b602} 
+void Button\+::\+Set\+On\+Click (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Sets the function to be executed when the button is clicked. 
+
+\Hypertarget{class_button_a25bb759f840f630f901d349b9efbcd28}\index{Button@{Button}!Update@{Update}}
+\index{Update@{Update}!Button@{Button}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_button_a25bb759f840f630f901d349b9efbcd28} 
+void Button\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles input or logic updates for the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_ae485a818816334d6e0c0fa2fc377013a}{IWidget}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\+Widgets/\mbox{\hyperlink{_button_8h}{Button.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/src/\+Widgets/\mbox{\hyperlink{_button_8cpp}{Button.\+cpp}}\end{DoxyCompactItemize}

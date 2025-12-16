@@ -1,0 +1,136 @@
+\doxysection{ISave\+Service Class Reference}
+\hypertarget{class_i_save_service}{}\label{class_i_save_service}\index{ISaveService@{ISaveService}}
+
+
+Interface for the data persistence system.  
+
+
+
+
+{\ttfamily \#include $<$ISave\+Service.\+h$>$}
+
+Inheritance diagram for ISave\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_save_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_save_service_a521f49b3df66c26f3bdf8f1bed6c8e9c}{\texorpdfstring{$\sim$}{\string~}\+ISave\+Service}} ()=default
+\item 
+virtual \mbox{\hyperlink{struct_save_data}{Save\+Data}} \mbox{\hyperlink{class_i_save_service_a477c7f189b31e13d73612ff8e6088f6c}{Load\+Progress}} ()=0
+\begin{DoxyCompactList}\small\item\em Loads game progress from the disk. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_save_service_af2df49bfee25e6a07f42528b23151233}{Save\+Progress}} (const \mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data)=0
+\begin{DoxyCompactList}\small\item\em Saves the current game progress to disk. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_i_save_service_aeaf85ded37fcb3875c8d74bbb41180f1}{Get\+Points}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current available currency/points from the cached data. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_i_save_service_ac3047e4e8ab1c5672bfb969d246e7cc2}{Get\+High\+Points}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the all-\/time high score from the cached data. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_save_data}{Save\+Data}} \mbox{\hyperlink{class_i_save_service_a6a5de9a05ee672f957fe361ff6d99e0f}{Get\+Current\+Data}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the full cached save data object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the data persistence system. 
+
+Provides methods to save and load game progress (scores, levels, upgrades) to permanent storage (disk). 
+
+\label{doc-constructors}
+\Hypertarget{class_i_save_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_save_service_a521f49b3df66c26f3bdf8f1bed6c8e9c}\index{ISaveService@{ISaveService}!````~ISaveService@{\texorpdfstring{$\sim$}{\string~}ISaveService}}
+\index{````~ISaveService@{\texorpdfstring{$\sim$}{\string~}ISaveService}!ISaveService@{ISaveService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ISaveService()}{\string~ISaveService()}}
+{\footnotesize\ttfamily \label{class_i_save_service_a521f49b3df66c26f3bdf8f1bed6c8e9c} 
+virtual ISave\+Service\+::\texorpdfstring{$\sim$}{\string~}\+ISave\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_save_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_save_service_a6a5de9a05ee672f957fe361ff6d99e0f}\index{ISaveService@{ISaveService}!GetCurrentData@{GetCurrentData}}
+\index{GetCurrentData@{GetCurrentData}!ISaveService@{ISaveService}}
+\doxysubsubsection{\texorpdfstring{GetCurrentData()}{GetCurrentData()}}
+{\footnotesize\ttfamily \label{class_i_save_service_a6a5de9a05ee672f957fe361ff6d99e0f} 
+virtual \mbox{\hyperlink{struct_save_data}{Save\+Data}} ISave\+Service\+::\+Get\+Current\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the full cached save data object. 
+
+
+
+Implemented in \mbox{\hyperlink{class_mock_save_service_a3835509aaaddb2b0e5a9913cbb7004fa}{Mock\+Save\+Service}}, and \mbox{\hyperlink{class_save_service_af22a45c1f53e18de4d1ed77160207ac5}{Save\+Service}}.
+
+\Hypertarget{class_i_save_service_ac3047e4e8ab1c5672bfb969d246e7cc2}\index{ISaveService@{ISaveService}!GetHighPoints@{GetHighPoints}}
+\index{GetHighPoints@{GetHighPoints}!ISaveService@{ISaveService}}
+\doxysubsubsection{\texorpdfstring{GetHighPoints()}{GetHighPoints()}}
+{\footnotesize\ttfamily \label{class_i_save_service_ac3047e4e8ab1c5672bfb969d246e7cc2} 
+virtual int ISave\+Service\+::\+Get\+High\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the all-\/time high score from the cached data. 
+
+
+
+Implemented in \mbox{\hyperlink{class_mock_save_service_a9d4c124a437cdd07d5300857055a5ddb}{Mock\+Save\+Service}}, and \mbox{\hyperlink{class_save_service_ad8af30fda87343add9fb6d642582b72f}{Save\+Service}}.
+
+\Hypertarget{class_i_save_service_aeaf85ded37fcb3875c8d74bbb41180f1}\index{ISaveService@{ISaveService}!GetPoints@{GetPoints}}
+\index{GetPoints@{GetPoints}!ISaveService@{ISaveService}}
+\doxysubsubsection{\texorpdfstring{GetPoints()}{GetPoints()}}
+{\footnotesize\ttfamily \label{class_i_save_service_aeaf85ded37fcb3875c8d74bbb41180f1} 
+virtual int ISave\+Service\+::\+Get\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current available currency/points from the cached data. 
+
+
+
+Implemented in \mbox{\hyperlink{class_mock_save_service_aa522be2b9b6c3e7ee505e987a5b668a8}{Mock\+Save\+Service}}, and \mbox{\hyperlink{class_save_service_a13ee241e72f135a6a685709fec7fb1a5}{Save\+Service}}.
+
+\Hypertarget{class_i_save_service_a477c7f189b31e13d73612ff8e6088f6c}\index{ISaveService@{ISaveService}!LoadProgress@{LoadProgress}}
+\index{LoadProgress@{LoadProgress}!ISaveService@{ISaveService}}
+\doxysubsubsection{\texorpdfstring{LoadProgress()}{LoadProgress()}}
+{\footnotesize\ttfamily \label{class_i_save_service_a477c7f189b31e13d73612ff8e6088f6c} 
+virtual \mbox{\hyperlink{struct_save_data}{Save\+Data}} ISave\+Service\+::\+Load\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Loads game progress from the disk. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_save_data}{Save\+Data} structure containing the loaded values, or defaults if no save exists. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mock_save_service_a96444d6e86253c761cc0d4d40c0de483}{Mock\+Save\+Service}}, and \mbox{\hyperlink{class_save_service_aa11baf98639cc7eca50f31b5acdfe0cf}{Save\+Service}}.
+
+\Hypertarget{class_i_save_service_af2df49bfee25e6a07f42528b23151233}\index{ISaveService@{ISaveService}!SaveProgress@{SaveProgress}}
+\index{SaveProgress@{SaveProgress}!ISaveService@{ISaveService}}
+\doxysubsubsection{\texorpdfstring{SaveProgress()}{SaveProgress()}}
+{\footnotesize\ttfamily \label{class_i_save_service_af2df49bfee25e6a07f42528b23151233} 
+virtual void ISave\+Service\+::\+Save\+Progress (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Saves the current game progress to disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data structure containing values to serialize. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_mock_save_service_aaeb6855fa0e40b92d39237f58e9c0f16}{Mock\+Save\+Service}}, and \mbox{\hyperlink{class_save_service_a5f64bd7ffbeb020a1be7c02d74fece87}{Save\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Services/\mbox{\hyperlink{_i_save_service_8h}{ISave\+Service.\+h}}\end{DoxyCompactItemize}

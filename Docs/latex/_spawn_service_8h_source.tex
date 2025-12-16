@@ -1,0 +1,55 @@
+\doxysection{Spawn\+Service.\+h}
+\hypertarget{_spawn_service_8h_source}{}\label{_spawn_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/SpawnService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/SpawnService.h}}
+\mbox{\hyperlink{_spawn_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_shape_8h}{Enums/NodeShape.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_spawn_service_8h}{Services/ISpawnService.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_spawn_service_a9a0805e6d4aba45d8ada5285f9847021}{SpawnService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_spawn_service}{ISpawnService}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ScreenWidth;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ScreenHeight;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_SpawnTimer;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_CurrentLevel;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//Refactor:\ Game\ balance\ tweaks}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Spawning\ Geometry}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ SPAWN\_EDGE\_OFFSET\ =\ 50.0f;\ \ \ \ \ \textcolor{comment}{//\ Distance\ outside\ screen\ to\ spawn}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ TARGET\_CENTER\_VARIANCE\ =\ 150.0f;\ \textcolor{comment}{//\ Random\ aim\ offset\ from\ center}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Difficulty\ Scaling}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ HP\_SCALING\_FACTOR\ =\ 0.2f;\ \ \ \ \ \ \textcolor{comment}{//\ 20\%\ HP\ increase\ per\ level}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ MIN\_SPAWN\_INTERVAL\ =\ 0.5f;\ \ \ \ \ \textcolor{comment}{//\ Cap:\ Fastest\ spawn\ rate\ (0.5s)}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BASE\_SPAWN\_INTERVAL\ =\ 2.0f;\ \ \ \ \textcolor{comment}{//\ Starting\ spawn\ rate\ (2.0s)}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ INTERVAL\_DECAY\_RATE\ =\ 0.15f;\ \ \ \textcolor{comment}{//\ Seconds\ removed\ per\ level}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Shape\ Probabilities\ (Must\ sum\ to\ <\ 100\ for\ the\ last\ case)}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ CHANCE\_SQUARE\ =\ 60;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0-\/59\ (60\%)}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ CHANCE\_CIRCLE\ =\ 90;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 60-\/89\ (30\%)}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Remainder\ is\ Hexagon\ (10\%)}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_spawn_service_a9a0805e6d4aba45d8ada5285f9847021}{SpawnService}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_spawn_service_a0b7338dd4befcf2f16b3af2d575e0ba6}{\string~SpawnService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spawn_service_aefe31fbf66e249cb10e7b8d3d2c09290}{Initialize}}(\textcolor{keywordtype}{float}\ screenWidth,\ \textcolor{keywordtype}{float}\ screenHeight);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spawn_service_a88a000d6220068ea306a661c9c99ad18}{UpdateAutoSpawn}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spawn_service_a525ef9cd4b52af97293b3cef359ee254}{ResetSpawnTimer}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_spawn_service_add6ae9cc05db9d64c869ac54a8c75261}{SetCurrentLevel}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_spawn_info}{SpawnInfo}}\ \mbox{\hyperlink{class_spawn_service_ab182e601f8d561c72e0e5d1ec4dc62dd}{GetNextSpawn}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_spawn_service_a99125fc2c2abe6c552d5c4bf262dec4c}{CalculateNodeHP}}(\textcolor{keywordtype}{float}\ baseHP)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_spawn_service_a268daef330e6eef1122f9330aed5129a}{ShouldAutoSpawn}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ RandomRange(\textcolor{keywordtype}{float}\ minValue,\ \textcolor{keywordtype}{float}\ maxValue)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ GetRandomShape()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

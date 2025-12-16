@@ -1,0 +1,299 @@
+\doxysection{IGame Class Reference}
+\hypertarget{class_i_game}{}\label{class_i_game}\index{IGame@{IGame}}
+
+
+Central hub interface for the game application.  
+
+
+
+
+{\ttfamily \#include $<$IGame.\+h$>$}
+
+Inheritance diagram for IGame\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}{\texorpdfstring{$\sim$}{\string~}\+IGame}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_game_ad499b83c4a617c4a40d9d59c5bd7f25e}{Initialize}} (float screen\+Width, float screen\+Height)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a124ed9f5e298e053ed13962bdc7fa0a6}{Update}} (float delta\+Time)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a4eeec2619870e4f61e6e4be8f26ddc99}{Reset}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a73480c5850c1eabab89aa0dee9efcc64}{Start\+Next\+Level}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_afdc2c699e2815ab2eb1e4221310e3e1a}{Set\+Mouse\+Position}} (float x, float y)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a6d2dd882ceba51360e2e550727c5e82f}{Spawn\+Node}} (const \mbox{\hyperlink{struct_spawn_info}{Spawn\+Info}} \&info)=0
+\item 
+virtual const std\+::vector$<$ \mbox{\hyperlink{class_i_node}{INode}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_i_game_acbea33e93a97198b0b3532b74771b07d}{Get\+Nodes}} () const =0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ \mbox{\hyperlink{class_i_game_a6c1e6bd57bd4a62a6cb1ed7fc190c103}{Get\+Collected\+Pickups\+This\+Frame}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_game_aee616c6b4c838254c2d08ff7f3c8b651}{Get\+Screen\+Width}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_game_ae1ffbb44369ecada3f3a1a802a1d45c7}{Get\+Screen\+Height}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_game_a4360013903d2b8c7025971077cb26b26}{Get\+Nodes\+Destroyed}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_game_abb7ff3363da720b45fbb08364b59ef1e}{Get\+High\+Points}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_game_a8f0e6f60832eda8afa32e0a8572677b9}{Save\+Progress}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_upgrade_service}{IUpgrade\+Service}} \& \mbox{\hyperlink{class_i_game_a782e5de2af86b4ba71ea24c695397768}{Get\+Upgrade\+Service}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_pickup_service}{IPickup\+Service}} \& \mbox{\hyperlink{class_i_game_a6cfc1165b23dd033a19832b7fab57e20}{Get\+Pickup\+Service}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_health_service}{IHealth\+Service}} \& \mbox{\hyperlink{class_i_game_a06d1336fa0cfa02c65b3b60006c14f30}{Get\+Health\+Service}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_level_service}{ILevel\+Service}} \& \mbox{\hyperlink{class_i_game_a3a027d84c97b63692225efbb03f124af}{Get\+Level\+Service}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_damage_zone_service}{IDamage\+Zone\+Service}} \& \mbox{\hyperlink{class_i_game_aed50660920210c46cbcdd5adefcdfb91}{Get\+Damage\+Zone\+Service}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_spawn_service}{ISpawn\+Service}} \& \mbox{\hyperlink{class_i_game_ab09fb98fa6d2abf914d4771035ca6256}{Get\+Spawn\+Service}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_i_save_service}{ISave\+Service}} \& \mbox{\hyperlink{class_i_game_aa959c5717bba63d2e3d2f97eedda14c7}{Get\+Save\+Service}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_subject_a49b5debdf1d06d9f9911d2369aa032b1}{Attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Registers an observer to receive notifications. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_subject_a790eabbfafd693f9ac55173cc774c314}{Detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$ observer)=0
+\begin{DoxyCompactList}\small\item\em Unregisters an observer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_subject_a7b4f818be6b31354f24e7c6025da0263}{Notify}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event)=0
+\begin{DoxyCompactList}\small\item\em Broadcasts an event to all attached observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Central hub interface for the game application. 
+
+Acts as a Mediator between different services (Score, Health, Spawning) and the main game loop. It also implements the \doxylink{class_subject}{Subject} interface to broadcast events to the UI and Audio systems. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_game_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_game_a91b14c1b6019364120d5c5e4d4c64414}\index{IGame@{IGame}!````~IGame@{\texorpdfstring{$\sim$}{\string~}IGame}}
+\index{````~IGame@{\texorpdfstring{$\sim$}{\string~}IGame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IGame()}{\string~IGame()}}
+{\footnotesize\ttfamily \label{class_i_game_a91b14c1b6019364120d5c5e4d4c64414} 
+virtual IGame\+::\texorpdfstring{$\sim$}{\string~}\+IGame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_game_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_game_a6c1e6bd57bd4a62a6cb1ed7fc190c103}\index{IGame@{IGame}!GetCollectedPickupsThisFrame@{GetCollectedPickupsThisFrame}}
+\index{GetCollectedPickupsThisFrame@{GetCollectedPickupsThisFrame}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetCollectedPickupsThisFrame()}{GetCollectedPickupsThisFrame()}}
+{\footnotesize\ttfamily \label{class_i_game_a6c1e6bd57bd4a62a6cb1ed7fc190c103} 
+virtual std\+::vector$<$ \mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} $>$ IGame\+::\+Get\+Collected\+Pickups\+This\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a43d607f8c200eb70fd13390318ce33ac}{Game}}.
+
+\Hypertarget{class_i_game_aed50660920210c46cbcdd5adefcdfb91}\index{IGame@{IGame}!GetDamageZoneService@{GetDamageZoneService}}
+\index{GetDamageZoneService@{GetDamageZoneService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetDamageZoneService()}{GetDamageZoneService()}}
+{\footnotesize\ttfamily \label{class_i_game_aed50660920210c46cbcdd5adefcdfb91} 
+virtual \mbox{\hyperlink{class_i_damage_zone_service}{IDamage\+Zone\+Service}} \& IGame\+::\+Get\+Damage\+Zone\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a1f4074f3f4ab89f60e70e3826baa01e4}{Game}}.
+
+\Hypertarget{class_i_game_a06d1336fa0cfa02c65b3b60006c14f30}\index{IGame@{IGame}!GetHealthService@{GetHealthService}}
+\index{GetHealthService@{GetHealthService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetHealthService()}{GetHealthService()}}
+{\footnotesize\ttfamily \label{class_i_game_a06d1336fa0cfa02c65b3b60006c14f30} 
+virtual \mbox{\hyperlink{class_i_health_service}{IHealth\+Service}} \& IGame\+::\+Get\+Health\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a5ede7acbda518919625f5841df5a3cb9}{Game}}.
+
+\Hypertarget{class_i_game_abb7ff3363da720b45fbb08364b59ef1e}\index{IGame@{IGame}!GetHighPoints@{GetHighPoints}}
+\index{GetHighPoints@{GetHighPoints}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetHighPoints()}{GetHighPoints()}}
+{\footnotesize\ttfamily \label{class_i_game_abb7ff3363da720b45fbb08364b59ef1e} 
+virtual int IGame\+::\+Get\+High\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a06d9d1419de9a34ef21f63517e24fc1f}{Game}}.
+
+\Hypertarget{class_i_game_a3a027d84c97b63692225efbb03f124af}\index{IGame@{IGame}!GetLevelService@{GetLevelService}}
+\index{GetLevelService@{GetLevelService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetLevelService()}{GetLevelService()}}
+{\footnotesize\ttfamily \label{class_i_game_a3a027d84c97b63692225efbb03f124af} 
+virtual \mbox{\hyperlink{class_i_level_service}{ILevel\+Service}} \& IGame\+::\+Get\+Level\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a9b3ec7a101c5497ee2c38c77e8c1e2f1}{Game}}.
+
+\Hypertarget{class_i_game_acbea33e93a97198b0b3532b74771b07d}\index{IGame@{IGame}!GetNodes@{GetNodes}}
+\index{GetNodes@{GetNodes}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetNodes()}{GetNodes()}}
+{\footnotesize\ttfamily \label{class_i_game_acbea33e93a97198b0b3532b74771b07d} 
+virtual const std\+::vector$<$ \mbox{\hyperlink{class_i_node}{INode}} \texorpdfstring{$\ast$}{*} $>$ \& IGame\+::\+Get\+Nodes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a49f213eb85041920340439f71be3eedf}{Game}}.
+
+\Hypertarget{class_i_game_a4360013903d2b8c7025971077cb26b26}\index{IGame@{IGame}!GetNodesDestroyed@{GetNodesDestroyed}}
+\index{GetNodesDestroyed@{GetNodesDestroyed}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetNodesDestroyed()}{GetNodesDestroyed()}}
+{\footnotesize\ttfamily \label{class_i_game_a4360013903d2b8c7025971077cb26b26} 
+virtual int IGame\+::\+Get\+Nodes\+Destroyed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ae6f7ceb3fc8b0b8e89ef46f50f5dc0f2}{Game}}.
+
+\Hypertarget{class_i_game_a6cfc1165b23dd033a19832b7fab57e20}\index{IGame@{IGame}!GetPickupService@{GetPickupService}}
+\index{GetPickupService@{GetPickupService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetPickupService()}{GetPickupService()}}
+{\footnotesize\ttfamily \label{class_i_game_a6cfc1165b23dd033a19832b7fab57e20} 
+virtual \mbox{\hyperlink{class_i_pickup_service}{IPickup\+Service}} \& IGame\+::\+Get\+Pickup\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a8c487daf637cdeabcedebd378c596f34}{Game}}.
+
+\Hypertarget{class_i_game_aa959c5717bba63d2e3d2f97eedda14c7}\index{IGame@{IGame}!GetSaveService@{GetSaveService}}
+\index{GetSaveService@{GetSaveService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetSaveService()}{GetSaveService()}}
+{\footnotesize\ttfamily \label{class_i_game_aa959c5717bba63d2e3d2f97eedda14c7} 
+virtual \mbox{\hyperlink{class_i_save_service}{ISave\+Service}} \& IGame\+::\+Get\+Save\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a0800b3bbc9157e56f7aadcb5ff3fb247}{Game}}.
+
+\Hypertarget{class_i_game_ae1ffbb44369ecada3f3a1a802a1d45c7}\index{IGame@{IGame}!GetScreenHeight@{GetScreenHeight}}
+\index{GetScreenHeight@{GetScreenHeight}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetScreenHeight()}{GetScreenHeight()}}
+{\footnotesize\ttfamily \label{class_i_game_ae1ffbb44369ecada3f3a1a802a1d45c7} 
+virtual float IGame\+::\+Get\+Screen\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ac74cdce9fa1cfc91056c6bc74f011d8c}{Game}}.
+
+\Hypertarget{class_i_game_aee616c6b4c838254c2d08ff7f3c8b651}\index{IGame@{IGame}!GetScreenWidth@{GetScreenWidth}}
+\index{GetScreenWidth@{GetScreenWidth}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetScreenWidth()}{GetScreenWidth()}}
+{\footnotesize\ttfamily \label{class_i_game_aee616c6b4c838254c2d08ff7f3c8b651} 
+virtual float IGame\+::\+Get\+Screen\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a9bd7ae2df65eb9fe175716fc27a825d6}{Game}}.
+
+\Hypertarget{class_i_game_ab09fb98fa6d2abf914d4771035ca6256}\index{IGame@{IGame}!GetSpawnService@{GetSpawnService}}
+\index{GetSpawnService@{GetSpawnService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetSpawnService()}{GetSpawnService()}}
+{\footnotesize\ttfamily \label{class_i_game_ab09fb98fa6d2abf914d4771035ca6256} 
+virtual \mbox{\hyperlink{class_i_spawn_service}{ISpawn\+Service}} \& IGame\+::\+Get\+Spawn\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a858f7124feaa3009abd0b9f424b30d6d}{Game}}.
+
+\Hypertarget{class_i_game_a782e5de2af86b4ba71ea24c695397768}\index{IGame@{IGame}!GetUpgradeService@{GetUpgradeService}}
+\index{GetUpgradeService@{GetUpgradeService}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{GetUpgradeService()}{GetUpgradeService()}}
+{\footnotesize\ttfamily \label{class_i_game_a782e5de2af86b4ba71ea24c695397768} 
+virtual \mbox{\hyperlink{class_i_upgrade_service}{IUpgrade\+Service}} \& IGame\+::\+Get\+Upgrade\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a92f476303beeebda728ee99331eb4d0f}{Game}}.
+
+\Hypertarget{class_i_game_ad499b83c4a617c4a40d9d59c5bd7f25e}\index{IGame@{IGame}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_i_game_ad499b83c4a617c4a40d9d59c5bd7f25e} 
+virtual void IGame\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{screen\+Width}{, }\item[{float}]{screen\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_aa378fc5100869802cf5a1cb9af030923}{Game}}.
+
+\Hypertarget{class_i_game_a4eeec2619870e4f61e6e4be8f26ddc99}\index{IGame@{IGame}!Reset@{Reset}}
+\index{Reset@{Reset}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_i_game_a4eeec2619870e4f61e6e4be8f26ddc99} 
+virtual void IGame\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a1e393478d0cb99e76485c99ed8b3493c}{Game}}.
+
+\Hypertarget{class_i_game_a8f0e6f60832eda8afa32e0a8572677b9}\index{IGame@{IGame}!SaveProgress@{SaveProgress}}
+\index{SaveProgress@{SaveProgress}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{SaveProgress()}{SaveProgress()}}
+{\footnotesize\ttfamily \label{class_i_game_a8f0e6f60832eda8afa32e0a8572677b9} 
+virtual void IGame\+::\+Save\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_ab683174bba2ffd2e96281bcc3ef39e01}{Game}}.
+
+\Hypertarget{class_i_game_afdc2c699e2815ab2eb1e4221310e3e1a}\index{IGame@{IGame}!SetMousePosition@{SetMousePosition}}
+\index{SetMousePosition@{SetMousePosition}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{SetMousePosition()}{SetMousePosition()}}
+{\footnotesize\ttfamily \label{class_i_game_afdc2c699e2815ab2eb1e4221310e3e1a} 
+virtual void IGame\+::\+Set\+Mouse\+Position (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a9d468db34993a0698944d5f823bbd497}{Game}}.
+
+\Hypertarget{class_i_game_a6d2dd882ceba51360e2e550727c5e82f}\index{IGame@{IGame}!SpawnNode@{SpawnNode}}
+\index{SpawnNode@{SpawnNode}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{SpawnNode()}{SpawnNode()}}
+{\footnotesize\ttfamily \label{class_i_game_a6d2dd882ceba51360e2e550727c5e82f} 
+virtual void IGame\+::\+Spawn\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_spawn_info}{Spawn\+Info}} \&}]{info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a159ab5de0783c1528c9034e58e0cb2f6}{Game}}.
+
+\Hypertarget{class_i_game_a73480c5850c1eabab89aa0dee9efcc64}\index{IGame@{IGame}!StartNextLevel@{StartNextLevel}}
+\index{StartNextLevel@{StartNextLevel}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{StartNextLevel()}{StartNextLevel()}}
+{\footnotesize\ttfamily \label{class_i_game_a73480c5850c1eabab89aa0dee9efcc64} 
+virtual void IGame\+::\+Start\+Next\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a9bd75cfec2458153940a5b84b7158a41}{Game}}.
+
+\Hypertarget{class_i_game_a124ed9f5e298e053ed13962bdc7fa0a6}\index{IGame@{IGame}!Update@{Update}}
+\index{Update@{Update}!IGame@{IGame}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_i_game_a124ed9f5e298e053ed13962bdc7fa0a6} 
+virtual void IGame\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_game_a8bcf6c2af098a041d84581f94f0b9b88}{Game}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\mbox{\hyperlink{_i_game_8h}{IGame.\+h}}\end{DoxyCompactItemize}

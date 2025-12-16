@@ -1,0 +1,82 @@
+\doxysection{Game\+Events.\+h}
+\hypertarget{_game_events_8h_source}{}\label{_game_events_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Events/GameEvents.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Events/GameEvents.h}}
+\mbox{\hyperlink{_game_events_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_event_type_8h}{Enums/EventType.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_screen_8h}{Enums/GameScreen.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_shape_8h}{Enums/NodeShape.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_event_8h}{IEvent.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_position_8h}{Types/Position.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_event_ad7de75d7d0b067161d8c2195a2c0f705}{GameEvent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_event}{IEvent}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Header\ Data\ -\/-\/-\/}}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{EventType}}\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Node/Entity\ Data\ -\/-\/-\/}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ \mbox{\hyperlink{class_game_event_af33798a4b2be18409ae2f18e32c130f5}{shape}}\ =\ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70a30954d90085f6eaaf5817917fc5fecb3}{NodeShape::Circle}};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{struct_position}{Position}}\ \mbox{\hyperlink{class_game_event_aa538f12a1ecd8c90e805f75c02c50073}{position}}\ =\ \{\ 0.0f,\ 0.0f\ \};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a5753fb2be1b45d51d42128656589afb6}{size}}\ =\ 0.0f;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_a9a6f658498e72488c4ad7b5ddfd1f593}{hp}}\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_ad2f44a1535fef02a9a517fa686cdb1b1}{damage}}\ =\ 0;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Scoring\ Data\ -\/-\/-\/}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_a39053cc5aba1d8df833653d73051df08}{points}}\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_a3ec9bc7c72cec8aa11c98ca15f0b4ed4}{delta}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Change\ in\ value\ (points\ added/removed)}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}{multiplier}}\ =\ 1.0f;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a177e18ba275c8391a3f8cfd23fef0425}{oldMultiplier}}\ =\ 1.0f;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Game\ State/Level\ Data\ -\/-\/-\/}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}}\ \mbox{\hyperlink{class_game_event_a73a08a51f341909a78425000eb394f1c}{screenState}}\ =\ \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{GameScreen::MainMenu}};}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}}\ \mbox{\hyperlink{class_game_event_abf122b087e51469cac71107def9ca857}{oldScreenState}}\ =\ \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{GameScreen::MainMenu}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_aa110c45ba6aa3969b4e76c5af3aca47f}{level}}\ =\ 1;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_ae4b124c214d9a79e172ee28389b9124f}{nextLevel}}\ =\ 1;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a7bc935a99568c175cb1ce43c1fcfd62e}{bossHP}}\ =\ 0.0f;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Constructors\ (Refactor:\ Logic\ Simplification)}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_game_event_ad7de75d7d0b067161d8c2195a2c0f705}{GameEvent}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}},\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{EventType}}\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}})}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}(\mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}),\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}(\mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}})\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_game_event_a59cc80b167b61a1fd0ee6fb58dd0cc2a}{GameEvent}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}},\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{EventType}}\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}},\ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ \mbox{\hyperlink{class_game_event_af33798a4b2be18409ae2f18e32c130f5}{shape}},\ \mbox{\hyperlink{struct_position}{Position}}\ pos,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a5753fb2be1b45d51d42128656589afb6}{size}})}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}(\mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}),\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}(\mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}),\ \mbox{\hyperlink{class_game_event_af33798a4b2be18409ae2f18e32c130f5}{shape}}(\mbox{\hyperlink{class_game_event_af33798a4b2be18409ae2f18e32c130f5}{shape}}),\ \mbox{\hyperlink{class_game_event_aa538f12a1ecd8c90e805f75c02c50073}{position}}(pos),\ \mbox{\hyperlink{class_game_event_a5753fb2be1b45d51d42128656589afb6}{size}}(\mbox{\hyperlink{class_game_event_a5753fb2be1b45d51d42128656589afb6}{size}})\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_game_event_a57d3d8c9e0d9ae5801d01eedc1269b6f}{GameEvent}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}},\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{EventType}}\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_event_a39053cc5aba1d8df833653d73051df08}{points}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}{multiplier}})}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}(\mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}),\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}(\mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}),\ \mbox{\hyperlink{class_game_event_a39053cc5aba1d8df833653d73051df08}{points}}(\mbox{\hyperlink{class_game_event_a39053cc5aba1d8df833653d73051df08}{points}}),\ \mbox{\hyperlink{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}{multiplier}}(\mbox{\hyperlink{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}{multiplier}})\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Interface\ Implementation}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_event_acc67abc12755cd044e6d38a1b6ff70ad}{GetTimestamp}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}};}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ \mbox{\hyperlink{class_game_event_a85cbec912318e3be2a348b467cdbaafe}{GetType}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}})\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaac21532fcf309cabf9806f15fb14e329}{EventType::NodeSpawned}}:\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NodeSpawned"{}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7907b8287245086099e7a899a30e63a0}{EventType::NodeDamaged}}:\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NodeDamaged"{}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa26f144d67e0ad8f02012eee328ca3baa}{EventType::NodeDestroyed}}:\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NodeDestroyed"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa6ab14a2e8d26dc22424909cde2d6cb3a}{EventType::PointsChanged}}:\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}PointsChanged"{}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaae7e2cf02c6e8b8bc38c5bf907e3cb27}{EventType::MultiplierChanged}}:\textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}MultiplierChanged"{}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa4ac16ba94c874a2bdd856c4756b1db7d}{EventType::GameStateChanged}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}GameStateChanged"{}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa8f347bc7cebca9fa6d97e70c6bc29eb3}{EventType::GameOver}}:\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}GameOver"{}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee8cf5aed48c3a8d4058f102a49d926f}{EventType::BossSpawned}}:\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}BossSpawned"{}};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa68f7c11f1057f94357093f8d29530c55}{EventType::BossDefeated}}:\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}BossDefeated"{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaf3f8a8d70e59a2f75919906f9429e8c2}{EventType::LevelCompleted}}:\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}LevelCompleted"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown"{}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \};}
+
+\end{DoxyCode}

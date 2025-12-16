@@ -1,0 +1,162 @@
+\doxysection{Save\+Service Class Reference}
+\hypertarget{class_save_service}{}\label{class_save_service}\index{SaveService@{SaveService}}
+
+
+Concrete implementation of the save system using a simple text-\/based format.  
+
+
+
+
+{\ttfamily \#include $<$Save\+Service.\+h$>$}
+
+Inheritance diagram for Save\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_save_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_save_service_ab85e79d65de26d650ccfc1752012eb97}{Save\+Service}} ()
+\item 
+\mbox{\hyperlink{class_save_service_a7850aacd9977bcede3698d2f6960f109}{\texorpdfstring{$\sim$}{\string~}\+Save\+Service}} () override=default
+\item 
+void \mbox{\hyperlink{class_save_service_a40bf71aaceeb0abfe24182dd5242a84e}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the service by attempting to load existing data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} \mbox{\hyperlink{class_save_service_aa11baf98639cc7eca50f31b5acdfe0cf}{Load\+Progress}} () override
+\begin{DoxyCompactList}\small\item\em Loads game progress from the disk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_save_service_a5f64bd7ffbeb020a1be7c02d74fece87}{Save\+Progress}} (const \mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Saves the current game progress to disk. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_save_service_a13ee241e72f135a6a685709fec7fb1a5}{Get\+Points}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current available currency/points from the cached data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_save_service_ad8af30fda87343add9fb6d642582b72f}{Get\+High\+Points}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the all-\/time high score from the cached data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} \mbox{\hyperlink{class_save_service_af22a45c1f53e18de4d1ed77160207ac5}{Get\+Current\+Data}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the full cached save data object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_save_service}{ISave\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_save_service_a521f49b3df66c26f3bdf8f1bed6c8e9c}{\texorpdfstring{$\sim$}{\string~}\+ISave\+Service}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the save system using a simple text-\/based format. 
+
+This service handles file I/O, platform-\/specific path resolution (App\+Data on Windows, Home on Linux), and serialization of the \doxylink{struct_save_data}{Save\+Data} structure. 
+
+\label{doc-constructors}
+\Hypertarget{class_save_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_save_service_ab85e79d65de26d650ccfc1752012eb97}\index{SaveService@{SaveService}!SaveService@{SaveService}}
+\index{SaveService@{SaveService}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{SaveService()}{SaveService()}}
+{\footnotesize\ttfamily \label{class_save_service_ab85e79d65de26d650ccfc1752012eb97} 
+Save\+Service\+::\+Save\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_save_service_a7850aacd9977bcede3698d2f6960f109}\index{SaveService@{SaveService}!````~SaveService@{\texorpdfstring{$\sim$}{\string~}SaveService}}
+\index{````~SaveService@{\texorpdfstring{$\sim$}{\string~}SaveService}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SaveService()}{\string~SaveService()}}
+{\footnotesize\ttfamily \label{class_save_service_a7850aacd9977bcede3698d2f6960f109} 
+Save\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Save\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_save_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_save_service_af22a45c1f53e18de4d1ed77160207ac5}\index{SaveService@{SaveService}!GetCurrentData@{GetCurrentData}}
+\index{GetCurrentData@{GetCurrentData}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{GetCurrentData()}{GetCurrentData()}}
+{\footnotesize\ttfamily \label{class_save_service_af22a45c1f53e18de4d1ed77160207ac5} 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} Save\+Service\+::\+Get\+Current\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the full cached save data object. 
+
+
+
+Implements \mbox{\hyperlink{class_i_save_service_a6a5de9a05ee672f957fe361ff6d99e0f}{ISave\+Service}}.
+
+\Hypertarget{class_save_service_ad8af30fda87343add9fb6d642582b72f}\index{SaveService@{SaveService}!GetHighPoints@{GetHighPoints}}
+\index{GetHighPoints@{GetHighPoints}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{GetHighPoints()}{GetHighPoints()}}
+{\footnotesize\ttfamily \label{class_save_service_ad8af30fda87343add9fb6d642582b72f} 
+int Save\+Service\+::\+Get\+High\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the all-\/time high score from the cached data. 
+
+
+
+Implements \mbox{\hyperlink{class_i_save_service_ac3047e4e8ab1c5672bfb969d246e7cc2}{ISave\+Service}}.
+
+\Hypertarget{class_save_service_a13ee241e72f135a6a685709fec7fb1a5}\index{SaveService@{SaveService}!GetPoints@{GetPoints}}
+\index{GetPoints@{GetPoints}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{GetPoints()}{GetPoints()}}
+{\footnotesize\ttfamily \label{class_save_service_a13ee241e72f135a6a685709fec7fb1a5} 
+int Save\+Service\+::\+Get\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current available currency/points from the cached data. 
+
+
+
+Implements \mbox{\hyperlink{class_i_save_service_aeaf85ded37fcb3875c8d74bbb41180f1}{ISave\+Service}}.
+
+\Hypertarget{class_save_service_a40bf71aaceeb0abfe24182dd5242a84e}\index{SaveService@{SaveService}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_save_service_a40bf71aaceeb0abfe24182dd5242a84e} 
+void Save\+Service\+::\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the service by attempting to load existing data. 
+
+\Hypertarget{class_save_service_aa11baf98639cc7eca50f31b5acdfe0cf}\index{SaveService@{SaveService}!LoadProgress@{LoadProgress}}
+\index{LoadProgress@{LoadProgress}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{LoadProgress()}{LoadProgress()}}
+{\footnotesize\ttfamily \label{class_save_service_aa11baf98639cc7eca50f31b5acdfe0cf} 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} Save\+Service\+::\+Load\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads game progress from the disk. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_save_data}{Save\+Data} structure containing the loaded values, or defaults if no save exists. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_save_service_a477c7f189b31e13d73612ff8e6088f6c}{ISave\+Service}}.
+
+\Hypertarget{class_save_service_a5f64bd7ffbeb020a1be7c02d74fece87}\index{SaveService@{SaveService}!SaveProgress@{SaveProgress}}
+\index{SaveProgress@{SaveProgress}!SaveService@{SaveService}}
+\doxysubsubsection{\texorpdfstring{SaveProgress()}{SaveProgress()}}
+{\footnotesize\ttfamily \label{class_save_service_a5f64bd7ffbeb020a1be7c02d74fece87} 
+void Save\+Service\+::\+Save\+Progress (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Saves the current game progress to disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data structure containing values to serialize. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_save_service_af2df49bfee25e6a07f42528b23151233}{ISave\+Service}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_save_service_8h}{Save\+Service.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_save_service_8cpp}{Save\+Service.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\doxysection{Event\+Logger.\+h}
+\hypertarget{_event_logger_8h_source}{}\label{_event_logger_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/EventLogger.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/EventLogger.h}}
+\mbox{\hyperlink{_event_logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_events_8h}{Events/GameEvents.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{Events/IObserver.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_logger_a52ad4341307b8e67544a32bfa0539aeb}{EventLogger}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_observer}{IObserver}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_event_logger_a52ad4341307b8e67544a32bfa0539aeb}{EventLogger}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_event_logger_a5a4c73901330d9d9349a9847eff1d01a}{\string~EventLogger}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_logger_a2c940a1810714256735495415e238faa}{Update}}(\textcolor{keyword}{const}\ std::shared\_ptr<IEvent>\&\ event)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!event)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ gameEvent\ =\ std::static\_pointer\_cast<GameEvent>(event);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (gameEvent-\/>type)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaac21532fcf309cabf9806f15fb14e329}{EventType::NodeSpawned}}:\ \ \ \ \ \ LogNodeSpawn(gameEvent);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa26f144d67e0ad8f02012eee328ca3baa}{EventType::NodeDestroyed}}:\ \ \ \ LogNodeDestroy(gameEvent);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa7907b8287245086099e7a899a30e63a0}{EventType::NodeDamaged}}:\ \ \ \ \ \ LogNodeDamage(gameEvent);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaee8cf5aed48c3a8d4058f102a49d926f}{EventType::BossSpawned}}:\ \ \ \ \ \ LogBossSpawn(gameEvent);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faa68f7c11f1057f94357093f8d29530c55}{EventType::BossDefeated}}:\ \ \ \ \ LogBossDefeat(gameEvent);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6faaf3f8a8d70e59a2f75919906f9429e8c2}{EventType::LevelCompleted}}:\ \ \ LogLevelComplete(gameEvent);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Helper\ to\ standardize\ output\ format}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ Log(\textcolor{keyword}{const}\ std::string\&\ msg)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[GAME\ EVENT]\ "{}}\ <<\ msg\ <<\ std::endl;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ LogNodeSpawn(\textcolor{keyword}{const}\ std::shared\_ptr<GameEvent>\&\ e)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Log(\textcolor{stringliteral}{"{}Spawn:\ Node\ at\ ("{}}\ +\ std::to\_string(e-\/>position.x)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(e-\/>position.y)\ +\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ LogNodeDestroy(\textcolor{keyword}{const}\ std::shared\_ptr<GameEvent>\&\ e)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Log(\textcolor{stringliteral}{"{}Destroy:\ Points\ gained:\ "{}}\ +\ std::to\_string(e-\/>points));}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ LogNodeDamage(\textcolor{keyword}{const}\ std::shared\_ptr<GameEvent>\&\ e)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Log(\textcolor{stringliteral}{"{}Damage:\ "{}}\ +\ std::to\_string(e-\/>damage)\ +\ \textcolor{stringliteral}{"{}\ dealt.\ Remaining\ HP:\ "{}}\ +\ std::to\_string(e-\/>hp));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ LogBossSpawn(\textcolor{keyword}{const}\ std::shared\_ptr<GameEvent>\&\ e)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Log(\textcolor{stringliteral}{"{}BOSS\ SPAWN:\ Level\ "{}}\ +\ std::to\_string(e-\/>level)\ +\ \textcolor{stringliteral}{"{},\ HP:\ "{}}\ +\ std::to\_string(e-\/>bossHP));}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ LogBossDefeat(\textcolor{keyword}{const}\ std::shared\_ptr<GameEvent>\&\ e)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Log(\textcolor{stringliteral}{"{}BOSS\ DEFEATED:\ Level\ "{}}\ +\ std::to\_string(e-\/>level));}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ LogLevelComplete(\textcolor{keyword}{const}\ std::shared\_ptr<GameEvent>\&\ e)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ Log(\textcolor{stringliteral}{"{}LEVEL\ COMPLETE:\ Advancing\ to\ Level\ "{}}\ +\ std::to\_string(e-\/>nextLevel));}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

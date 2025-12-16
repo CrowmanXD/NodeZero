@@ -1,0 +1,103 @@
+\doxysection{Gameplay\+Screen Class Reference}
+\hypertarget{class_gameplay_screen}{}\label{class_gameplay_screen}\index{GameplayScreen@{GameplayScreen}}
+
+
+The main active game screen where rendering and primary update logic occurs.  
+
+
+
+
+{\ttfamily \#include $<$Gameplay\+Screen.\+h$>$}
+
+Inheritance diagram for Gameplay\+Screen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.836066cm]{class_gameplay_screen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gameplay_screen_aa86a8074db4e67bb278cbbc78dcbef29}{Gameplay\+Screen}} (\mbox{\hyperlink{class_i_game}{IGame}} \&game, std\+::function$<$ void(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}})$>$ state\+Change\+Callback, Font font)
+\item 
+void \mbox{\hyperlink{class_gameplay_screen_a367bc6ad453569064528c7501825d883}{Update}} (float delta\+Time)
+\item 
+void \mbox{\hyperlink{class_gameplay_screen_a5605ce37f5e586b2c09d75ff88ca2062}{Draw}} ()
+\item 
+void \mbox{\hyperlink{class_gameplay_screen_a77e0f966dbc61804ab05071e949eb2ba}{Clear\+Effects}} ()
+\begin{DoxyCompactList}\small\item\em Clears all running visual effects, typically when transitioning out of the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gameplay_screen_ad8aac8074d3413ab37283285caeba780}{Update}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event) override
+\begin{DoxyCompactList}\small\item\em Called by the \doxylink{class_subject}{Subject} when an event occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_observer}{IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_observer_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main active game screen where rendering and primary update logic occurs. 
+
+Implements the \doxylink{class_i_observer}{IObserver} interface to react to game events (e.\+g., Node\+Damaged) to trigger visual effects (screen shake, particles). 
+
+\label{doc-constructors}
+\Hypertarget{class_gameplay_screen_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gameplay_screen_aa86a8074db4e67bb278cbbc78dcbef29}\index{GameplayScreen@{GameplayScreen}!GameplayScreen@{GameplayScreen}}
+\index{GameplayScreen@{GameplayScreen}!GameplayScreen@{GameplayScreen}}
+\doxysubsubsection{\texorpdfstring{GameplayScreen()}{GameplayScreen()}}
+{\footnotesize\ttfamily \label{class_gameplay_screen_aa86a8074db4e67bb278cbbc78dcbef29} 
+Gameplay\+Screen\+::\+Gameplay\+Screen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_game}{IGame}} \&}]{game}{, }\item[{std\+::function$<$ void(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}})$>$}]{state\+Change\+Callback}{, }\item[{Font}]{font}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_gameplay_screen_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gameplay_screen_a77e0f966dbc61804ab05071e949eb2ba}\index{GameplayScreen@{GameplayScreen}!ClearEffects@{ClearEffects}}
+\index{ClearEffects@{ClearEffects}!GameplayScreen@{GameplayScreen}}
+\doxysubsubsection{\texorpdfstring{ClearEffects()}{ClearEffects()}}
+{\footnotesize\ttfamily \label{class_gameplay_screen_a77e0f966dbc61804ab05071e949eb2ba} 
+void Gameplay\+Screen\+::\+Clear\+Effects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all running visual effects, typically when transitioning out of the screen. 
+
+\Hypertarget{class_gameplay_screen_a5605ce37f5e586b2c09d75ff88ca2062}\index{GameplayScreen@{GameplayScreen}!Draw@{Draw}}
+\index{Draw@{Draw}!GameplayScreen@{GameplayScreen}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_gameplay_screen_a5605ce37f5e586b2c09d75ff88ca2062} 
+void Gameplay\+Screen\+::\+Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_gameplay_screen_ad8aac8074d3413ab37283285caeba780}\index{GameplayScreen@{GameplayScreen}!Update@{Update}}
+\index{Update@{Update}!GameplayScreen@{GameplayScreen}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_gameplay_screen_ad8aac8074d3413ab37283285caeba780} 
+void Gameplay\+Screen\+::\+Update (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called by the \doxylink{class_subject}{Subject} when an event occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The generic event data. Cast to specific types (e.\+g., \doxylink{class_game_event}{Game\+Event}) to use. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_observer_a258cfc61fcbf3ca8af7bacf8387c3a79}{IObserver}}.
+
+\Hypertarget{class_gameplay_screen_a367bc6ad453569064528c7501825d883}\index{GameplayScreen@{GameplayScreen}!Update@{Update}}
+\index{Update@{Update}!GameplayScreen@{GameplayScreen}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_gameplay_screen_a367bc6ad453569064528c7501825d883} 
+void Gameplay\+Screen\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\+Screens/\mbox{\hyperlink{_gameplay_screen_8h}{Gameplay\+Screen.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/src/\+Screens/\mbox{\hyperlink{_gameplay_screen_8cpp}{Gameplay\+Screen.\+cpp}}\end{DoxyCompactItemize}

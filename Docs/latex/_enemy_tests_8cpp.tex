@@ -1,0 +1,223 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Tests/\+Enemy\+Tests.cpp File Reference}
+\hypertarget{_enemy_tests_8cpp}{}\label{_enemy_tests_8cpp}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/EnemyTests.cpp@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/EnemyTests.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Game.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+IGame.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+INode.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Types/\+Spawn\+Info.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Services/\+ILevel\+Service.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests related to the instantiation and placement of enemies. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests related to health reduction and death logic. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for physical attributes (Speed, Size, Shape). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_enemy_destruction_test}{Enemy\+Destruction\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests related to the removal of enemies and score/stats updates. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests ensuring the update loop runs correctly for entities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_ab6079c070fb001cd213d55cca5d048a6}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}, Enemy\+Spawns\+At\+Specified\+Position)
+\begin{DoxyCompactList}\small\item\em Verifies that an enemy appears exactly where requested. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a1a88e528ce5bbe510544f5532796284d}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}, Multiple\+Enemies\+Can\+Spawn)
+\begin{DoxyCompactList}\small\item\em Verifies that multiple spawn calls result in multiple entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a4051825a1f7619d17260813bd1135ae6}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}, Enemy\+Has\+Valid\+Initial\+State)
+\begin{DoxyCompactList}\small\item\em Verifies that a newly spawned enemy has valid health and size stats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_acf4d031ead42e4bdf6d7b1841acfe9e6}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}, Enemy\+Takes\+Damage)
+\begin{DoxyCompactList}\small\item\em Verifies that taking damage reduces HP by the correct amount. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_ad5d0c864e8c105fbfb33a32b8ac039b5}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}, Enemy\+HPCannot\+Go\+Below\+Zero)
+\begin{DoxyCompactList}\small\item\em Verifies that HP is clamped at 0 and does not become negative. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a18dd5fe066c85f6ee0e4f531c4fed8e3}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}, Enemy\+Dies\+When\+HPReaches\+Zero)
+\begin{DoxyCompactList}\small\item\em Verifies that exact lethal damage kills the enemy logic state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_abf526b66cd3a81b2d193eb1a883ddcae}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}, Multiple\+Damage\+Applications)
+\begin{DoxyCompactList}\small\item\em Verifies cumulative damage application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a30c12c2d97b3666506d04b1d9d4572bb}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}, Enemy\+Has\+Valid\+Speed)
+\begin{DoxyCompactList}\small\item\em Verifies speed is initialized to a non-\/negative value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_aa230d5aff1dff9c08334bf8b6a5c26d2}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}, Enemy\+Has\+Valid\+Size)
+\begin{DoxyCompactList}\small\item\em Verifies size is positive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a934cb6b1583d77274a8a26432785b635}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}, Enemy\+Has\+Shape)
+\begin{DoxyCompactList}\small\item\em Verifies the shape enum is one of the expected values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a4c9f0c1f95abe19fc76b813386d2d0e7}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}, Enemy\+Has\+Rotation)
+\begin{DoxyCompactList}\small\item\em Verifies rotation is initialized correctly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a189c28964899c7914adc6464d7a405cd}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_destruction_test}{Enemy\+Destruction\+Test}}, Destroyed\+Enemies\+Increment\+Counter)
+\begin{DoxyCompactList}\small\item\em Verifies that killing an enemy increments the global destroyed counter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a037fc36b2f2e07572fb9c277fb03c4d1}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_destruction_test}{Enemy\+Destruction\+Test}}, Level\+Counter\+Tracks\+Destroyed\+Enemies)
+\begin{DoxyCompactList}\small\item\em Verifies that killing an enemy increments the level-\/specific counter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a9fd65e8577d780d280536a292cb37063}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}, Enemy\+Update\+Does\+Not\+Crash)
+\begin{DoxyCompactList}\small\item\em Verifies that calling Update() on an entity doesn\textquotesingle{}t cause exceptions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_aae615b041c444b144645c17eea47d1a0}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}, Multiple\+Enemies\+Update\+Without\+Crash)
+\begin{DoxyCompactList}\small\item\em Verifies that multiple enemies can be updated in sequence safely. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_enemy_tests_8cpp_a4774605a37f1035a2eb683e7f03a9ec8}{TEST\+\_\+F}} (\mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}, Enemy\+Position\+Valid\+After\+Update)
+\begin{DoxyCompactList}\small\item\em Verifies that position data remains valid (not Na\+N/\+Inf) after movement updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_enemy_tests_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_enemy_tests_8cpp_a18dd5fe066c85f6ee0e4f531c4fed8e3}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a18dd5fe066c85f6ee0e4f531c4fed8e3} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}}]{}{, }\item[{Enemy\+Dies\+When\+HPReaches\+Zero}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that exact lethal damage kills the enemy logic state. 
+
+\Hypertarget{_enemy_tests_8cpp_ad5d0c864e8c105fbfb33a32b8ac039b5}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_ad5d0c864e8c105fbfb33a32b8ac039b5} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}}]{}{, }\item[{Enemy\+HPCannot\+Go\+Below\+Zero}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that HP is clamped at 0 and does not become negative. 
+
+\Hypertarget{_enemy_tests_8cpp_acf4d031ead42e4bdf6d7b1841acfe9e6}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_acf4d031ead42e4bdf6d7b1841acfe9e6} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}}]{}{, }\item[{Enemy\+Takes\+Damage}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that taking damage reduces HP by the correct amount. 
+
+\Hypertarget{_enemy_tests_8cpp_abf526b66cd3a81b2d193eb1a883ddcae}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [4/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_abf526b66cd3a81b2d193eb1a883ddcae} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}}}]{}{, }\item[{Multiple\+Damage\+Applications}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies cumulative damage application. 
+
+\Hypertarget{_enemy_tests_8cpp_a189c28964899c7914adc6464d7a405cd}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [5/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a189c28964899c7914adc6464d7a405cd} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_destruction_test}{Enemy\+Destruction\+Test}}}]{}{, }\item[{Destroyed\+Enemies\+Increment\+Counter}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that killing an enemy increments the global destroyed counter. 
+
+\Hypertarget{_enemy_tests_8cpp_a037fc36b2f2e07572fb9c277fb03c4d1}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [6/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a037fc36b2f2e07572fb9c277fb03c4d1} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_destruction_test}{Enemy\+Destruction\+Test}}}]{}{, }\item[{Level\+Counter\+Tracks\+Destroyed\+Enemies}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that killing an enemy increments the level-\/specific counter. 
+
+\Hypertarget{_enemy_tests_8cpp_a4c9f0c1f95abe19fc76b813386d2d0e7}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [7/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a4c9f0c1f95abe19fc76b813386d2d0e7} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}}]{}{, }\item[{Enemy\+Has\+Rotation}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies rotation is initialized correctly. 
+
+\Hypertarget{_enemy_tests_8cpp_a934cb6b1583d77274a8a26432785b635}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [8/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a934cb6b1583d77274a8a26432785b635} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}}]{}{, }\item[{Enemy\+Has\+Shape}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies the shape enum is one of the expected values. 
+
+\Hypertarget{_enemy_tests_8cpp_aa230d5aff1dff9c08334bf8b6a5c26d2}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [9/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_aa230d5aff1dff9c08334bf8b6a5c26d2} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}}]{}{, }\item[{Enemy\+Has\+Valid\+Size}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies size is positive. 
+
+\Hypertarget{_enemy_tests_8cpp_a30c12c2d97b3666506d04b1d9d4572bb}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [10/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a30c12c2d97b3666506d04b1d9d4572bb} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}}}]{}{, }\item[{Enemy\+Has\+Valid\+Speed}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies speed is initialized to a non-\/negative value. 
+
+\Hypertarget{_enemy_tests_8cpp_a4051825a1f7619d17260813bd1135ae6}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [11/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a4051825a1f7619d17260813bd1135ae6} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}}]{}{, }\item[{Enemy\+Has\+Valid\+Initial\+State}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that a newly spawned enemy has valid health and size stats. 
+
+\Hypertarget{_enemy_tests_8cpp_ab6079c070fb001cd213d55cca5d048a6}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [12/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_ab6079c070fb001cd213d55cca5d048a6} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}}]{}{, }\item[{Enemy\+Spawns\+At\+Specified\+Position}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that an enemy appears exactly where requested. 
+
+\Hypertarget{_enemy_tests_8cpp_a1a88e528ce5bbe510544f5532796284d}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [13/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a1a88e528ce5bbe510544f5532796284d} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_spawn_test}{Enemy\+Spawn\+Test}}}]{}{, }\item[{Multiple\+Enemies\+Can\+Spawn}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that multiple spawn calls result in multiple entities. 
+
+\Hypertarget{_enemy_tests_8cpp_a4774605a37f1035a2eb683e7f03a9ec8}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [14/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a4774605a37f1035a2eb683e7f03a9ec8} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}}]{}{, }\item[{Enemy\+Position\+Valid\+After\+Update}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that position data remains valid (not Na\+N/\+Inf) after movement updates. 
+
+\Hypertarget{_enemy_tests_8cpp_a9fd65e8577d780d280536a292cb37063}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [15/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_a9fd65e8577d780d280536a292cb37063} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}}]{}{, }\item[{Enemy\+Update\+Does\+Not\+Crash}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that calling Update() on an entity doesn\textquotesingle{}t cause exceptions. 
+
+\Hypertarget{_enemy_tests_8cpp_aae615b041c444b144645c17eea47d1a0}\index{EnemyTests.cpp@{EnemyTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!EnemyTests.cpp@{EnemyTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [16/16]}}
+{\footnotesize\ttfamily \label{_enemy_tests_8cpp_aae615b041c444b144645c17eea47d1a0} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_update_test}{Enemy\+Update\+Test}}}]{}{, }\item[{Multiple\+Enemies\+Update\+Without\+Crash}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that multiple enemies can be updated in sequence safely. 
+

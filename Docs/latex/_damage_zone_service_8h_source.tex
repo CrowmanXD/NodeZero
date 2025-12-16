@@ -1,0 +1,49 @@
+\doxysection{Damage\+Zone\+Service.\+h}
+\hypertarget{_damage_zone_service_8h_source}{}\label{_damage_zone_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/DamageZoneService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/DamageZoneService.h}}
+\mbox{\hyperlink{_damage_zone_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_damage_zone_service_8h}{Services/IDamageZoneService.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_node}{Node}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_damage_zone_service_ad01f61896ef7db083a684a8958c4b7a3}{DamageZoneService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_damage_zone_service}{IDamageZoneService}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_DamageTimer;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_DamageInterval;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//Refactor:\ No\ magic\ numbers,\ turned\ into\ constants}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ SQUARE\_DIAGONAL\_RATIO\ =\ 1.414f;\ \textcolor{comment}{//\ approx\ sqrt(2)}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BASE\_HEALTH\_COST\ =\ 0.5f;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BOSS\_COST\_MULTIPLIER\ =\ 8.0f;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ LEVEL\_SCALING\_FACTOR\ =\ 0.20f;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_damage_zone_service_ad01f61896ef7db083a684a8958c4b7a3}{DamageZoneService}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_damage_zone_service_a3ccffd8a96da04781b86f734960833ce}{\string~DamageZoneService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_zone_service_a767fb59cebe530d6c4ad4476d2dd5483}{UpdateTimer}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_zone_service_ac96a63f7eda79b21d744eb6d78888b8b}{ResetTimer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_damage_zone_service_ab84d0ad683d50bd0000ca13b72ffc0fe}{ShouldDealDamage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_zone_service_a386a171d3b643e31a3db53775c6c3ee1}{ProcessDamageZone}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ centerX,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ centerY,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zoneSize,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ damage,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentLevel,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Node*>\&\ nodes,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_node}{Node}}*,\ \textcolor{keywordtype}{float})>\ onNodeDamaged)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsNodeInZone(\mbox{\hyperlink{class_node}{Node}}*\ node,\ \textcolor{keywordtype}{float}\ rectX,\ \textcolor{keywordtype}{float}\ rectY,\ \textcolor{keywordtype}{float}\ rectRight,\ \textcolor{keywordtype}{float}\ rectBottom)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ CalculateDamageCost(\mbox{\hyperlink{class_node}{Node}}*\ node,\ \textcolor{keywordtype}{int}\ currentLevel)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \};}
+
+\end{DoxyCode}

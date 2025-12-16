@@ -1,0 +1,274 @@
+\doxysection{Upgrade\+Service Class Reference}
+\hypertarget{class_upgrade_service}{}\label{class_upgrade_service}\index{UpgradeService@{UpgradeService}}
+
+
+Concrete implementation of the upgrade logic.  
+
+
+
+
+{\ttfamily \#include $<$Upgrade\+Service.\+h$>$}
+
+Inheritance diagram for Upgrade\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_upgrade_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e}{Upgrade\+Service}} ()
+\item 
+\mbox{\hyperlink{class_upgrade_service_a46a404e10767223f2c56a0714857fe87}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Service}} () override=default
+\item 
+void \mbox{\hyperlink{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7}{Initialize}} (float max\+Health, float regen\+Rate, float damage\+Zone\+Size, float damage\+Per\+Tick)
+\begin{DoxyCompactList}\small\item\em Initializes the service with values loaded from the save file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_upgrade_service_ace26654bca8c5a60f5b2d386fb42e06a}{Set\+Save\+Service}} (\mbox{\hyperlink{class_i_save_service}{ISave\+Service}} \texorpdfstring{$\ast$}{*}save\+Service)
+\begin{DoxyCompactList}\small\item\em Injects the \doxylink{class_save_service}{Save\+Service} dependency. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_upgrade_service_a8ded3e1b083aed40c39a7509c5c7fc55}{Buy\+Health\+Upgrade}} () override
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Maximum Health upgrade. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upgrade_service_a7a33dc837874cfe4e1ba221389d7a6f8}{Get\+Health\+Upgrade\+Cost}} () const override
+\item 
+float \mbox{\hyperlink{class_upgrade_service_aee35e6eb278ee34cc61e7e4e53e590ee}{Get\+Max\+Health}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current maximum health value including upgrades. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_upgrade_service_ab9bb5279bc08f1d5be2d9810f5a0c31a}{Buy\+Regen\+Upgrade}} () override
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Health Regeneration upgrade. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upgrade_service_aa80128209d4444af16ee87c2f01bda1e}{Get\+Regen\+Upgrade\+Cost}} () const override
+\item 
+float \mbox{\hyperlink{class_upgrade_service_a711086fe6b15daaca1fb14b009253688}{Get\+Regen\+Rate}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current regeneration rate per second. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_upgrade_service_a4661886c0fac0c9c05c8ab7be6fb130a}{Buy\+Damage\+Zone\+Upgrade}} () override
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Damage Zone size upgrade. Capped at a maximum size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upgrade_service_af150878af602071e242384d90f9a73bc}{Get\+Damage\+Zone\+Upgrade\+Cost}} () const override
+\item 
+float \mbox{\hyperlink{class_upgrade_service_a17d970da64048a3572a22534483ecd45}{Get\+Damage\+Zone\+Size}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current size of the damage zone. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_upgrade_service_ae4a57f6157571b596db8d71c38a42c6a}{Buy\+Damage\+Upgrade}} () override
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Damage Per Tick upgrade. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upgrade_service_a9fd55b6e80ae4cc83c5ca48f09940ba4}{Get\+Damage\+Upgrade\+Cost}} () const override
+\item 
+float \mbox{\hyperlink{class_upgrade_service_aa54bf3f51a31cfc7ac013c31379291ae}{Get\+Damage\+Per\+Tick}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current damage dealt per tick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_upgrade_service}{IUpgrade\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_upgrade_service_a337d88db5bb3bf5ce1e73e2ef64ab7a4}{\texorpdfstring{$\sim$}{\string~}\+IUpgrade\+Service}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the upgrade logic. 
+
+Interacts with the \doxylink{class_save_service}{Save\+Service} to persist upgrades immediately upon purchase. Validates point balances and applies stat changes. 
+
+\label{doc-constructors}
+\Hypertarget{class_upgrade_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e}\index{UpgradeService@{UpgradeService}!UpgradeService@{UpgradeService}}
+\index{UpgradeService@{UpgradeService}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{UpgradeService()}{UpgradeService()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e} 
+Upgrade\+Service\+::\+Upgrade\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_upgrade_service_a46a404e10767223f2c56a0714857fe87}\index{UpgradeService@{UpgradeService}!````~UpgradeService@{\texorpdfstring{$\sim$}{\string~}UpgradeService}}
+\index{````~UpgradeService@{\texorpdfstring{$\sim$}{\string~}UpgradeService}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UpgradeService()}{\string~UpgradeService()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a46a404e10767223f2c56a0714857fe87} 
+Upgrade\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_upgrade_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_upgrade_service_ae4a57f6157571b596db8d71c38a42c6a}\index{UpgradeService@{UpgradeService}!BuyDamageUpgrade@{BuyDamageUpgrade}}
+\index{BuyDamageUpgrade@{BuyDamageUpgrade}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyDamageUpgrade()}{BuyDamageUpgrade()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_ae4a57f6157571b596db8d71c38a42c6a} 
+bool Upgrade\+Service\+::\+Buy\+Damage\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to purchase a Damage Per Tick upgrade. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, False otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a58b7f534c7c38b76dc9fac6c6bc7ba57}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a4661886c0fac0c9c05c8ab7be6fb130a}\index{UpgradeService@{UpgradeService}!BuyDamageZoneUpgrade@{BuyDamageZoneUpgrade}}
+\index{BuyDamageZoneUpgrade@{BuyDamageZoneUpgrade}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyDamageZoneUpgrade()}{BuyDamageZoneUpgrade()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a4661886c0fac0c9c05c8ab7be6fb130a} 
+bool Upgrade\+Service\+::\+Buy\+Damage\+Zone\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to purchase a Damage Zone size upgrade. Capped at a maximum size. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, False if insufficient funds or max level reached. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a50ef46de54df87f96ccaae024939f292}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a8ded3e1b083aed40c39a7509c5c7fc55}\index{UpgradeService@{UpgradeService}!BuyHealthUpgrade@{BuyHealthUpgrade}}
+\index{BuyHealthUpgrade@{BuyHealthUpgrade}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyHealthUpgrade()}{BuyHealthUpgrade()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a8ded3e1b083aed40c39a7509c5c7fc55} 
+bool Upgrade\+Service\+::\+Buy\+Health\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to purchase a Maximum Health upgrade. 
+
+\begin{DoxyReturn}{Returns}
+True if the purchase was successful, False if insufficient funds. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a71577cd88516de36a6a91bb6edaf4915}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_ab9bb5279bc08f1d5be2d9810f5a0c31a}\index{UpgradeService@{UpgradeService}!BuyRegenUpgrade@{BuyRegenUpgrade}}
+\index{BuyRegenUpgrade@{BuyRegenUpgrade}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyRegenUpgrade()}{BuyRegenUpgrade()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_ab9bb5279bc08f1d5be2d9810f5a0c31a} 
+bool Upgrade\+Service\+::\+Buy\+Regen\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to purchase a Health Regeneration upgrade. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, False otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_aa54bf3f51a31cfc7ac013c31379291ae}\index{UpgradeService@{UpgradeService}!GetDamagePerTick@{GetDamagePerTick}}
+\index{GetDamagePerTick@{GetDamagePerTick}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamagePerTick()}{GetDamagePerTick()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_aa54bf3f51a31cfc7ac013c31379291ae} 
+float Upgrade\+Service\+::\+Get\+Damage\+Per\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current damage dealt per tick. 
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_abc3f8cc301a4f07a976a90e80cde97a5}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a9fd55b6e80ae4cc83c5ca48f09940ba4}\index{UpgradeService@{UpgradeService}!GetDamageUpgradeCost@{GetDamageUpgradeCost}}
+\index{GetDamageUpgradeCost@{GetDamageUpgradeCost}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamageUpgradeCost()}{GetDamageUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a9fd55b6e80ae4cc83c5ca48f09940ba4} 
+int Upgrade\+Service\+::\+Get\+Damage\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_adad68ef5ff90883aba88a7643d1950b4}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a17d970da64048a3572a22534483ecd45}\index{UpgradeService@{UpgradeService}!GetDamageZoneSize@{GetDamageZoneSize}}
+\index{GetDamageZoneSize@{GetDamageZoneSize}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamageZoneSize()}{GetDamageZoneSize()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a17d970da64048a3572a22534483ecd45} 
+float Upgrade\+Service\+::\+Get\+Damage\+Zone\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current size of the damage zone. 
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_af7a9247440335ab1df49a03ce5f57b16}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_af150878af602071e242384d90f9a73bc}\index{UpgradeService@{UpgradeService}!GetDamageZoneUpgradeCost@{GetDamageZoneUpgradeCost}}
+\index{GetDamageZoneUpgradeCost@{GetDamageZoneUpgradeCost}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamageZoneUpgradeCost()}{GetDamageZoneUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_af150878af602071e242384d90f9a73bc} 
+int Upgrade\+Service\+::\+Get\+Damage\+Zone\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a20e6254bffb8a4c68673d1dfd94ab0fb}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a7a33dc837874cfe4e1ba221389d7a6f8}\index{UpgradeService@{UpgradeService}!GetHealthUpgradeCost@{GetHealthUpgradeCost}}
+\index{GetHealthUpgradeCost@{GetHealthUpgradeCost}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetHealthUpgradeCost()}{GetHealthUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a7a33dc837874cfe4e1ba221389d7a6f8} 
+int Upgrade\+Service\+::\+Get\+Health\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a8b8c38a9f7fc97a3688128c2e7bf8971}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_aee35e6eb278ee34cc61e7e4e53e590ee}\index{UpgradeService@{UpgradeService}!GetMaxHealth@{GetMaxHealth}}
+\index{GetMaxHealth@{GetMaxHealth}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetMaxHealth()}{GetMaxHealth()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_aee35e6eb278ee34cc61e7e4e53e590ee} 
+float Upgrade\+Service\+::\+Get\+Max\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current maximum health value including upgrades. 
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a7af399b732c988459bcb2bdf99ab45c4}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a711086fe6b15daaca1fb14b009253688}\index{UpgradeService@{UpgradeService}!GetRegenRate@{GetRegenRate}}
+\index{GetRegenRate@{GetRegenRate}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetRegenRate()}{GetRegenRate()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a711086fe6b15daaca1fb14b009253688} 
+float Upgrade\+Service\+::\+Get\+Regen\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current regeneration rate per second. 
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_ab796fb8616841d0d844e68117e702e97}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_aa80128209d4444af16ee87c2f01bda1e}\index{UpgradeService@{UpgradeService}!GetRegenUpgradeCost@{GetRegenUpgradeCost}}
+\index{GetRegenUpgradeCost@{GetRegenUpgradeCost}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetRegenUpgradeCost()}{GetRegenUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_aa80128209d4444af16ee87c2f01bda1e} 
+int Upgrade\+Service\+::\+Get\+Regen\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a42607eee379c8133298caa4e6a30b1fe}{IUpgrade\+Service}}.
+
+\Hypertarget{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7}\index{UpgradeService@{UpgradeService}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7} 
+void Upgrade\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{, }\item[{float}]{regen\+Rate}{, }\item[{float}]{damage\+Zone\+Size}{, }\item[{float}]{damage\+Per\+Tick}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the service with values loaded from the save file. 
+
+\Hypertarget{class_upgrade_service_ace26654bca8c5a60f5b2d386fb42e06a}\index{UpgradeService@{UpgradeService}!SetSaveService@{SetSaveService}}
+\index{SetSaveService@{SetSaveService}!UpgradeService@{UpgradeService}}
+\doxysubsubsection{\texorpdfstring{SetSaveService()}{SetSaveService()}}
+{\footnotesize\ttfamily \label{class_upgrade_service_ace26654bca8c5a60f5b2d386fb42e06a} 
+void Upgrade\+Service\+::\+Set\+Save\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_save_service}{ISave\+Service}} \texorpdfstring{$\ast$}{*}}]{save\+Service}{}\end{DoxyParamCaption})}
+
+
+
+Injects the \doxylink{class_save_service}{Save\+Service} dependency. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_upgrade_service_8h}{Upgrade\+Service.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_upgrade_service_8cpp}{Upgrade\+Service.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,245 @@
+\doxysection{Game\+Config Struct Reference}
+\hypertarget{struct_game_config}{}\label{struct_game_config}\index{GameConfig@{GameConfig}}
+
+
+Central configuration container for game balance constants.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Config.\+h$>$}
+
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a2f4eb7453ecb1aabd08dd9981e956b58}{NODE\+\_\+\+DEFAULT\+\_\+\+SPEED}} = 75.\+0f
+\begin{DoxyCompactList}\small\item\em Base movement speed of enemy nodes (Pixels per Second). \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a100da2449a8d8037a21131ff3cb2ee06}{PICKUP\+\_\+\+LIFETIME}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em How long a point pickup remains on screen before vanishing (Seconds). \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a39c7dcd53c72bcc97575b31692bbe31f}{PICKUP\+\_\+\+COLLECT\+\_\+\+DELAY}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Minimum age of a pickup before it can be collected (Seconds). Prevents accidental collection immediately upon spawn. \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{struct_game_config_a11f777e2872867a4d9ab46d8983f4be1}{POINTS\+\_\+\+MULTIPLIER\+\_\+\+MAX}} = 5
+\begin{DoxyCompactList}\small\item\em Maximum combo multiplier for score calculation. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_ad7f35b98c4c257a522a63e6504c16292}{HEALTH\+\_\+\+DEFAULT}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em Starting maximum health for the player. \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{struct_game_config_afdef4094a71b5f2325b59c023d544151}{HEALTH\+\_\+\+UPGRADE\+\_\+\+COST}} = 50
+\begin{DoxyCompactList}\small\item\em Cost in points to purchase a +1 Max Health upgrade. \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{struct_game_config_a57bd9f88c26ac075b3014eb65cc41966}{REGEN\+\_\+\+UPGRADE\+\_\+\+COST}} = 100
+\begin{DoxyCompactList}\small\item\em Cost in points to purchase a regeneration upgrade. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a7f6b8e389679cd27bf739e88306ae471}{REGEN\+\_\+\+UPGRADE\+\_\+\+AMOUNT}} = 0.\+1f
+\begin{DoxyCompactList}\small\item\em Amount of health restored per second per upgrade level. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a0788a52653c0265913097910f42d8aa6}{DAMAGE\+\_\+\+ZONE\+\_\+\+DEFAULT\+\_\+\+SIZE}} = 70.\+0f
+\begin{DoxyCompactList}\small\item\em Initial radius of the player\textquotesingle{}s damage zone (Pixels). \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{struct_game_config_a52dbbb32743ba42d5f3a089b031b2348}{DAMAGE\+\_\+\+ZONE\+\_\+\+UPGRADE\+\_\+\+COST}} = 75
+\begin{DoxyCompactList}\small\item\em Cost to upgrade the size of the damage zone. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a492ca7dcc63281efccc87f11c5d84b6c}{DAMAGE\+\_\+\+ZONE\+\_\+\+UPGRADE\+\_\+\+AMOUNT}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em Radius added to the zone per upgrade level (Pixels). \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_adca55adf7f4913629690484433c2afcd}{DAMAGE\+\_\+\+ZONE\+\_\+\+MAX\+\_\+\+SIZE}} = 300.\+0f
+\begin{DoxyCompactList}\small\item\em Hard cap for the damage zone radius (Pixels). \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_ac371d4a242452c3ab0c0cdc8f900476c}{DAMAGE\+\_\+\+PER\+\_\+\+TICK\+\_\+\+DEFAULT}} = 50.\+0f
+\begin{DoxyCompactList}\small\item\em Base damage dealt to enemies per hit/tick. \end{DoxyCompactList}\item 
+static constexpr int \mbox{\hyperlink{struct_game_config_a9d41698744fee6d2b283b22504bd8a08}{DAMAGE\+\_\+\+UPGRADE\+\_\+\+COST}} = 60
+\begin{DoxyCompactList}\small\item\em Cost to increase damage per tick. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_a647af63b3373ea4795ab6047526fd8c5}{DAMAGE\+\_\+\+UPGRADE\+\_\+\+AMOUNT}} = 5.\+0f
+\begin{DoxyCompactList}\small\item\em Additional damage added per upgrade level. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_ab20347c166f9d73a96cafd4d12a6f2f5}{BOSS\+\_\+\+SPEED}} = 35.\+0f
+\begin{DoxyCompactList}\small\item\em Movement speed of the Boss node (Pixels per Second). \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_aea225743df549c101e5d9bc08731db34}{BOSS\+\_\+\+HP\+\_\+\+BASE}} = 200.\+0f
+\begin{DoxyCompactList}\small\item\em Starting health pool for the Boss. \end{DoxyCompactList}\item 
+static constexpr float \mbox{\hyperlink{struct_game_config_ac11068fa36ab7457927c3f109e41531f}{LEVEL\+\_\+\+DURATION}} = 60.\+0f
+\begin{DoxyCompactList}\small\item\em Time required to survive to complete a level (Seconds). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Central configuration container for game balance constants. 
+
+Defines spawn rates, upgrade costs, damage values, and other gameplay parameters. Modify these values to tune the game\textquotesingle{}s difficulty and pacing. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_game_config_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_game_config_aea225743df549c101e5d9bc08731db34}\index{GameConfig@{GameConfig}!BOSS\_HP\_BASE@{BOSS\_HP\_BASE}}
+\index{BOSS\_HP\_BASE@{BOSS\_HP\_BASE}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{BOSS\_HP\_BASE}{BOSS\_HP\_BASE}}
+{\footnotesize\ttfamily \label{struct_game_config_aea225743df549c101e5d9bc08731db34} 
+float Game\+Config\+::\+BOSS\+\_\+\+HP\+\_\+\+BASE = 200.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Starting health pool for the Boss. 
+
+\Hypertarget{struct_game_config_ab20347c166f9d73a96cafd4d12a6f2f5}\index{GameConfig@{GameConfig}!BOSS\_SPEED@{BOSS\_SPEED}}
+\index{BOSS\_SPEED@{BOSS\_SPEED}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{BOSS\_SPEED}{BOSS\_SPEED}}
+{\footnotesize\ttfamily \label{struct_game_config_ab20347c166f9d73a96cafd4d12a6f2f5} 
+float Game\+Config\+::\+BOSS\+\_\+\+SPEED = 35.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Movement speed of the Boss node (Pixels per Second). 
+
+\Hypertarget{struct_game_config_ac371d4a242452c3ab0c0cdc8f900476c}\index{GameConfig@{GameConfig}!DAMAGE\_PER\_TICK\_DEFAULT@{DAMAGE\_PER\_TICK\_DEFAULT}}
+\index{DAMAGE\_PER\_TICK\_DEFAULT@{DAMAGE\_PER\_TICK\_DEFAULT}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_PER\_TICK\_DEFAULT}{DAMAGE\_PER\_TICK\_DEFAULT}}
+{\footnotesize\ttfamily \label{struct_game_config_ac371d4a242452c3ab0c0cdc8f900476c} 
+float Game\+Config\+::\+DAMAGE\+\_\+\+PER\+\_\+\+TICK\+\_\+\+DEFAULT = 50.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Base damage dealt to enemies per hit/tick. 
+
+\Hypertarget{struct_game_config_a647af63b3373ea4795ab6047526fd8c5}\index{GameConfig@{GameConfig}!DAMAGE\_UPGRADE\_AMOUNT@{DAMAGE\_UPGRADE\_AMOUNT}}
+\index{DAMAGE\_UPGRADE\_AMOUNT@{DAMAGE\_UPGRADE\_AMOUNT}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_UPGRADE\_AMOUNT}{DAMAGE\_UPGRADE\_AMOUNT}}
+{\footnotesize\ttfamily \label{struct_game_config_a647af63b3373ea4795ab6047526fd8c5} 
+float Game\+Config\+::\+DAMAGE\+\_\+\+UPGRADE\+\_\+\+AMOUNT = 5.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Additional damage added per upgrade level. 
+
+\Hypertarget{struct_game_config_a9d41698744fee6d2b283b22504bd8a08}\index{GameConfig@{GameConfig}!DAMAGE\_UPGRADE\_COST@{DAMAGE\_UPGRADE\_COST}}
+\index{DAMAGE\_UPGRADE\_COST@{DAMAGE\_UPGRADE\_COST}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_UPGRADE\_COST}{DAMAGE\_UPGRADE\_COST}}
+{\footnotesize\ttfamily \label{struct_game_config_a9d41698744fee6d2b283b22504bd8a08} 
+int Game\+Config\+::\+DAMAGE\+\_\+\+UPGRADE\+\_\+\+COST = 60\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Cost to increase damage per tick. 
+
+\Hypertarget{struct_game_config_a0788a52653c0265913097910f42d8aa6}\index{GameConfig@{GameConfig}!DAMAGE\_ZONE\_DEFAULT\_SIZE@{DAMAGE\_ZONE\_DEFAULT\_SIZE}}
+\index{DAMAGE\_ZONE\_DEFAULT\_SIZE@{DAMAGE\_ZONE\_DEFAULT\_SIZE}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_ZONE\_DEFAULT\_SIZE}{DAMAGE\_ZONE\_DEFAULT\_SIZE}}
+{\footnotesize\ttfamily \label{struct_game_config_a0788a52653c0265913097910f42d8aa6} 
+float Game\+Config\+::\+DAMAGE\+\_\+\+ZONE\+\_\+\+DEFAULT\+\_\+\+SIZE = 70.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Initial radius of the player\textquotesingle{}s damage zone (Pixels). 
+
+\Hypertarget{struct_game_config_adca55adf7f4913629690484433c2afcd}\index{GameConfig@{GameConfig}!DAMAGE\_ZONE\_MAX\_SIZE@{DAMAGE\_ZONE\_MAX\_SIZE}}
+\index{DAMAGE\_ZONE\_MAX\_SIZE@{DAMAGE\_ZONE\_MAX\_SIZE}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_ZONE\_MAX\_SIZE}{DAMAGE\_ZONE\_MAX\_SIZE}}
+{\footnotesize\ttfamily \label{struct_game_config_adca55adf7f4913629690484433c2afcd} 
+float Game\+Config\+::\+DAMAGE\+\_\+\+ZONE\+\_\+\+MAX\+\_\+\+SIZE = 300.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Hard cap for the damage zone radius (Pixels). 
+
+\Hypertarget{struct_game_config_a492ca7dcc63281efccc87f11c5d84b6c}\index{GameConfig@{GameConfig}!DAMAGE\_ZONE\_UPGRADE\_AMOUNT@{DAMAGE\_ZONE\_UPGRADE\_AMOUNT}}
+\index{DAMAGE\_ZONE\_UPGRADE\_AMOUNT@{DAMAGE\_ZONE\_UPGRADE\_AMOUNT}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_ZONE\_UPGRADE\_AMOUNT}{DAMAGE\_ZONE\_UPGRADE\_AMOUNT}}
+{\footnotesize\ttfamily \label{struct_game_config_a492ca7dcc63281efccc87f11c5d84b6c} 
+float Game\+Config\+::\+DAMAGE\+\_\+\+ZONE\+\_\+\+UPGRADE\+\_\+\+AMOUNT = 10.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Radius added to the zone per upgrade level (Pixels). 
+
+\Hypertarget{struct_game_config_a52dbbb32743ba42d5f3a089b031b2348}\index{GameConfig@{GameConfig}!DAMAGE\_ZONE\_UPGRADE\_COST@{DAMAGE\_ZONE\_UPGRADE\_COST}}
+\index{DAMAGE\_ZONE\_UPGRADE\_COST@{DAMAGE\_ZONE\_UPGRADE\_COST}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{DAMAGE\_ZONE\_UPGRADE\_COST}{DAMAGE\_ZONE\_UPGRADE\_COST}}
+{\footnotesize\ttfamily \label{struct_game_config_a52dbbb32743ba42d5f3a089b031b2348} 
+int Game\+Config\+::\+DAMAGE\+\_\+\+ZONE\+\_\+\+UPGRADE\+\_\+\+COST = 75\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Cost to upgrade the size of the damage zone. 
+
+\Hypertarget{struct_game_config_ad7f35b98c4c257a522a63e6504c16292}\index{GameConfig@{GameConfig}!HEALTH\_DEFAULT@{HEALTH\_DEFAULT}}
+\index{HEALTH\_DEFAULT@{HEALTH\_DEFAULT}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{HEALTH\_DEFAULT}{HEALTH\_DEFAULT}}
+{\footnotesize\ttfamily \label{struct_game_config_ad7f35b98c4c257a522a63e6504c16292} 
+float Game\+Config\+::\+HEALTH\+\_\+\+DEFAULT = 10.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Starting maximum health for the player. 
+
+\Hypertarget{struct_game_config_afdef4094a71b5f2325b59c023d544151}\index{GameConfig@{GameConfig}!HEALTH\_UPGRADE\_COST@{HEALTH\_UPGRADE\_COST}}
+\index{HEALTH\_UPGRADE\_COST@{HEALTH\_UPGRADE\_COST}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{HEALTH\_UPGRADE\_COST}{HEALTH\_UPGRADE\_COST}}
+{\footnotesize\ttfamily \label{struct_game_config_afdef4094a71b5f2325b59c023d544151} 
+int Game\+Config\+::\+HEALTH\+\_\+\+UPGRADE\+\_\+\+COST = 50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Cost in points to purchase a +1 Max Health upgrade. 
+
+\Hypertarget{struct_game_config_ac11068fa36ab7457927c3f109e41531f}\index{GameConfig@{GameConfig}!LEVEL\_DURATION@{LEVEL\_DURATION}}
+\index{LEVEL\_DURATION@{LEVEL\_DURATION}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{LEVEL\_DURATION}{LEVEL\_DURATION}}
+{\footnotesize\ttfamily \label{struct_game_config_ac11068fa36ab7457927c3f109e41531f} 
+float Game\+Config\+::\+LEVEL\+\_\+\+DURATION = 60.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Time required to survive to complete a level (Seconds). 
+
+\Hypertarget{struct_game_config_a2f4eb7453ecb1aabd08dd9981e956b58}\index{GameConfig@{GameConfig}!NODE\_DEFAULT\_SPEED@{NODE\_DEFAULT\_SPEED}}
+\index{NODE\_DEFAULT\_SPEED@{NODE\_DEFAULT\_SPEED}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{NODE\_DEFAULT\_SPEED}{NODE\_DEFAULT\_SPEED}}
+{\footnotesize\ttfamily \label{struct_game_config_a2f4eb7453ecb1aabd08dd9981e956b58} 
+float Game\+Config\+::\+NODE\+\_\+\+DEFAULT\+\_\+\+SPEED = 75.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Base movement speed of enemy nodes (Pixels per Second). 
+
+\Hypertarget{struct_game_config_a39c7dcd53c72bcc97575b31692bbe31f}\index{GameConfig@{GameConfig}!PICKUP\_COLLECT\_DELAY@{PICKUP\_COLLECT\_DELAY}}
+\index{PICKUP\_COLLECT\_DELAY@{PICKUP\_COLLECT\_DELAY}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{PICKUP\_COLLECT\_DELAY}{PICKUP\_COLLECT\_DELAY}}
+{\footnotesize\ttfamily \label{struct_game_config_a39c7dcd53c72bcc97575b31692bbe31f} 
+float Game\+Config\+::\+PICKUP\+\_\+\+COLLECT\+\_\+\+DELAY = 0.\+1f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Minimum age of a pickup before it can be collected (Seconds). Prevents accidental collection immediately upon spawn. 
+
+\Hypertarget{struct_game_config_a100da2449a8d8037a21131ff3cb2ee06}\index{GameConfig@{GameConfig}!PICKUP\_LIFETIME@{PICKUP\_LIFETIME}}
+\index{PICKUP\_LIFETIME@{PICKUP\_LIFETIME}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{PICKUP\_LIFETIME}{PICKUP\_LIFETIME}}
+{\footnotesize\ttfamily \label{struct_game_config_a100da2449a8d8037a21131ff3cb2ee06} 
+float Game\+Config\+::\+PICKUP\+\_\+\+LIFETIME = 10.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+How long a point pickup remains on screen before vanishing (Seconds). 
+
+\Hypertarget{struct_game_config_a11f777e2872867a4d9ab46d8983f4be1}\index{GameConfig@{GameConfig}!POINTS\_MULTIPLIER\_MAX@{POINTS\_MULTIPLIER\_MAX}}
+\index{POINTS\_MULTIPLIER\_MAX@{POINTS\_MULTIPLIER\_MAX}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{POINTS\_MULTIPLIER\_MAX}{POINTS\_MULTIPLIER\_MAX}}
+{\footnotesize\ttfamily \label{struct_game_config_a11f777e2872867a4d9ab46d8983f4be1} 
+int Game\+Config\+::\+POINTS\+\_\+\+MULTIPLIER\+\_\+\+MAX = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Maximum combo multiplier for score calculation. 
+
+\Hypertarget{struct_game_config_a7f6b8e389679cd27bf739e88306ae471}\index{GameConfig@{GameConfig}!REGEN\_UPGRADE\_AMOUNT@{REGEN\_UPGRADE\_AMOUNT}}
+\index{REGEN\_UPGRADE\_AMOUNT@{REGEN\_UPGRADE\_AMOUNT}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{REGEN\_UPGRADE\_AMOUNT}{REGEN\_UPGRADE\_AMOUNT}}
+{\footnotesize\ttfamily \label{struct_game_config_a7f6b8e389679cd27bf739e88306ae471} 
+float Game\+Config\+::\+REGEN\+\_\+\+UPGRADE\+\_\+\+AMOUNT = 0.\+1f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Amount of health restored per second per upgrade level. 
+
+\Hypertarget{struct_game_config_a57bd9f88c26ac075b3014eb65cc41966}\index{GameConfig@{GameConfig}!REGEN\_UPGRADE\_COST@{REGEN\_UPGRADE\_COST}}
+\index{REGEN\_UPGRADE\_COST@{REGEN\_UPGRADE\_COST}!GameConfig@{GameConfig}}
+\doxysubsubsection{\texorpdfstring{REGEN\_UPGRADE\_COST}{REGEN\_UPGRADE\_COST}}
+{\footnotesize\ttfamily \label{struct_game_config_a57bd9f88c26ac075b3014eb65cc41966} 
+int Game\+Config\+::\+REGEN\+\_\+\+UPGRADE\+\_\+\+COST = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Cost in points to purchase a regeneration upgrade. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Config/\mbox{\hyperlink{_game_config_8h}{Game\+Config.\+h}}\end{DoxyCompactItemize}

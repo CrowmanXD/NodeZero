@@ -1,0 +1,101 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Game.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Game.h}}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_subject_8h}{Events/Subject.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_8h}{IGame.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_8h}{Node.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_damage_zone_service_8h}{Services/DamageZoneService.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_health_service_8h}{Services/HealthService.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_level_service_8h}{Services/LevelService.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pickup_service_8h}{Services/PickupService.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_save_service_8h}{Services/SaveService.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_spawn_service_8h}{Services/SpawnService.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_upgrade_service_8h}{Services/UpgradeService.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_pickup_8h}{Types/PointPickup.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game}{IGame}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_subject}{Subject}}\ m\_Subject;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Refactor:\ Store\ INode*\ to\ avoid\ unsafe\ reinterpret\_cast\ in\ getter}}
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<INode*>\ m\_Nodes;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ScreenWidth;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ScreenHeight;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ElapsedTime;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_NodesDestroyed;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_HighPoints;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}*\ m\_Boss;\ \textcolor{comment}{//\ Stored\ as\ generic\ interface}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_MouseX;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_MouseY;}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<PointPickup>\ m\_CollectedPickupsThisFrame;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_upgrade_service}{UpgradeService}}\ m\_UpgradeService;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_pickup_service}{PickupService}}\ m\_PickupService;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_health_service}{HealthService}}\ m\_HealthService;}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_spawn_service}{SpawnService}}\ m\_SpawnService;}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_level_service}{LevelService}}\ m\_LevelService;}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_damage_zone_service}{DamageZoneService}}\ m\_DamageZoneService;}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_save_service}{SaveService}}\ m\_SaveService;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Refactor:\ No\ magic\ numbers,\ turned\ into\ constants}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BOSS\_OFFSCREEN\_LIMIT\ =\ -\/200.0f;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ POINTS\_BOSS\ =\ 500;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ POINTS\_NODE\ =\ 100;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_aa378fc5100869802cf5a1cb9af030923}{Initialize}}(\textcolor{keywordtype}{float}\ screenWidth,\ \textcolor{keywordtype}{float}\ screenHeight)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a8bcf6c2af098a041d84581f94f0b9b88}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a1e393478d0cb99e76485c99ed8b3493c}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a9bd75cfec2458153940a5b84b7158a41}{StartNextLevel}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a9d468db34993a0698944d5f823bbd497}{SetMousePosition}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a159ab5de0783c1528c9034e58e0cb2f6}{SpawnNode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_spawn_info}{SpawnInfo}}\&\ info)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_a9bd7ae2df65eb9fe175716fc27a825d6}{GetScreenWidth}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_ac74cdce9fa1cfc91056c6bc74f011d8c}{GetScreenHeight}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<INode*>\&\ \mbox{\hyperlink{class_game_a49f213eb85041920340439f71be3eedf}{GetNodes}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00074\ \ \ \ \ std::vector<PointPickup>\ \mbox{\hyperlink{class_game_a43d607f8c200eb70fd13390318ce33ac}{GetCollectedPickupsThisFrame}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_ae6f7ceb3fc8b0b8e89ef46f50f5dc0f2}{GetNodesDestroyed}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ab683174bba2ffd2e96281bcc3ef39e01}{SaveProgress}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a06d9d1419de9a34ef21f63517e24fc1f}{GetHighPoints}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ Service\ Accessors}}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_i_upgrade_service}{IUpgradeService}}\&\ \mbox{\hyperlink{class_game_a92f476303beeebda728ee99331eb4d0f}{GetUpgradeService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_i_pickup_service}{IPickupService}}\&\ \mbox{\hyperlink{class_game_a8c487daf637cdeabcedebd378c596f34}{GetPickupService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_i_health_service}{IHealthService}}\&\ \mbox{\hyperlink{class_game_a5ede7acbda518919625f5841df5a3cb9}{GetHealthService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_i_level_service}{ILevelService}}\&\ \mbox{\hyperlink{class_game_a9b3ec7a101c5497ee2c38c77e8c1e2f1}{GetLevelService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_i_damage_zone_service}{IDamageZoneService}}\&\ \mbox{\hyperlink{class_game_a1f4074f3f4ab89f60e70e3826baa01e4}{GetDamageZoneService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_i_spawn_service}{ISpawnService}}\&\ \mbox{\hyperlink{class_game_a858f7124feaa3009abd0b9f424b30d6d}{GetSpawnService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_i_save_service}{ISaveService}}\&\ \mbox{\hyperlink{class_game_a0800b3bbc9157e56f7aadcb5ff3fb247}{GetSaveService}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Observer\ Pattern}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a0d7ecabf2a2539039a6a331d85a2b2b1}{Attach}}(std::shared\_ptr<IObserver>\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a6f0a89b26a6b2cb24839e82c136d2668}{Detach}}(std::shared\_ptr<IObserver>\ observer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae94383de4b443daf3bdddcf96c7a2474}{Notify}}(\textcolor{keyword}{const}\ std::shared\_ptr<IEvent>\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_i_node}{INode}}*\ CreateNode(\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ shape,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{float}\ speed);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnBoss();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ Refactor:\ Breaking\ down\ Update\ loop}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleSpawning(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ HandleDamageZones(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateNodes(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00102\ \};}
+
+\end{DoxyCode}

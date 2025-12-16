@@ -1,0 +1,63 @@
+\doxysection{Mock\+Observer Class Reference}
+\hypertarget{class_mock_observer}{}\label{class_mock_observer}\index{MockObserver@{MockObserver}}
+
+
+Simple observer implementation to verify event broadcasting.  
+
+
+Inheritance diagram for Mock\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mock_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mock_observer_aa3ce46859ed1ba0fdd36de4ec06660c7}{Update}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event) override
+\begin{DoxyCompactList}\small\item\em Called by the \doxylink{class_subject}{Subject} when an event occurs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mock_observer_ae2e97dac4063520d9e075793ddd4369f}{Get\+Event\+Count}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_observer}{IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_observer_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple observer implementation to verify event broadcasting. 
+
+\label{doc-func-members}
+\Hypertarget{class_mock_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mock_observer_ae2e97dac4063520d9e075793ddd4369f}\index{MockObserver@{MockObserver}!GetEventCount@{GetEventCount}}
+\index{GetEventCount@{GetEventCount}!MockObserver@{MockObserver}}
+\doxysubsubsection{\texorpdfstring{GetEventCount()}{GetEventCount()}}
+{\footnotesize\ttfamily \label{class_mock_observer_ae2e97dac4063520d9e075793ddd4369f} 
+int Mock\+Observer\+::\+Get\+Event\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_mock_observer_aa3ce46859ed1ba0fdd36de4ec06660c7}\index{MockObserver@{MockObserver}!Update@{Update}}
+\index{Update@{Update}!MockObserver@{MockObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_mock_observer_aa3ce46859ed1ba0fdd36de4ec06660c7} 
+void Mock\+Observer\+::\+Update (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called by the \doxylink{class_subject}{Subject} when an event occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The generic event data. Cast to specific types (e.\+g., \doxylink{class_game_event}{Game\+Event}) to use. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_observer_a258cfc61fcbf3ca8af7bacf8387c3a79}{IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Tests/\mbox{\hyperlink{_game_tests_8cpp}{Game\+Tests.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,128 @@
+\doxysection{IWidget Class Reference}
+\hypertarget{class_i_widget}{}\label{class_i_widget}\index{IWidget@{IWidget}}
+
+
+Base interface for all UI elements (widgets).  
+
+
+
+
+{\ttfamily \#include $<$IWidget.\+h$>$}
+
+Inheritance diagram for IWidget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_widget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_widget_ae524e118f3b69361e5e34be86ac74597}{\texorpdfstring{$\sim$}{\string~}\+IWidget}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_widget_af3f732b4e0f6bab9d0f4e3a2b75d5c5a}{Draw}} ()=0
+\begin{DoxyCompactList}\small\item\em Renders the widget to the screen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_widget_ae485a818816334d6e0c0fa2fc377013a}{Update}} ()=0
+\begin{DoxyCompactList}\small\item\em Handles input or logic updates for the widget. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_widget_a6e291d888681ccc1a979fd8c4e00be63}{Is\+Hovered}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is currently over the widget area. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_widget_a9051b17c95eedaea550b0ce93fddcdbc}{Is\+Active}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the widget is enabled and should be drawn/updated. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_widget_a42ef777f15a4d91973c0d3024f5223f7}{Set\+Active}} (bool active)=0
+\begin{DoxyCompactList}\small\item\em Sets the active/enabled state of the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base interface for all UI elements (widgets). 
+
+Defines the essential contract for drawing, updating state, and managing activation status for any interactive or static UI component. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_widget_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_widget_ae524e118f3b69361e5e34be86ac74597}\index{IWidget@{IWidget}!````~IWidget@{\texorpdfstring{$\sim$}{\string~}IWidget}}
+\index{````~IWidget@{\texorpdfstring{$\sim$}{\string~}IWidget}!IWidget@{IWidget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IWidget()}{\string~IWidget()}}
+{\footnotesize\ttfamily \label{class_i_widget_ae524e118f3b69361e5e34be86ac74597} 
+virtual IWidget\+::\texorpdfstring{$\sim$}{\string~}\+IWidget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_widget_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_widget_af3f732b4e0f6bab9d0f4e3a2b75d5c5a}\index{IWidget@{IWidget}!Draw@{Draw}}
+\index{Draw@{Draw}!IWidget@{IWidget}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_i_widget_af3f732b4e0f6bab9d0f4e3a2b75d5c5a} 
+virtual void IWidget\+::\+Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Renders the widget to the screen. 
+
+
+
+Implemented in \mbox{\hyperlink{class_button_a592226e08baaecbea531fa4539f558ca}{Button}}, \mbox{\hyperlink{class_label_af021691b39b1b4e87d5d1fca3e12b915}{Label}}, and \mbox{\hyperlink{class_menu_a620012b606183501d56667c685c625fe}{Menu}}.
+
+\Hypertarget{class_i_widget_a9051b17c95eedaea550b0ce93fddcdbc}\index{IWidget@{IWidget}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!IWidget@{IWidget}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily \label{class_i_widget_a9051b17c95eedaea550b0ce93fddcdbc} 
+virtual bool IWidget\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the widget is enabled and should be drawn/updated. 
+
+
+
+Implemented in \mbox{\hyperlink{class_button_a9cfbfe39990feb874e8f7f84f43036d0}{Button}}, \mbox{\hyperlink{class_label_a5cef50edc724c74af0c1a4768fadb16a}{Label}}, and \mbox{\hyperlink{class_menu_a7a4ccdc4ec7169a2862b0cef69b69f7c}{Menu}}.
+
+\Hypertarget{class_i_widget_a6e291d888681ccc1a979fd8c4e00be63}\index{IWidget@{IWidget}!IsHovered@{IsHovered}}
+\index{IsHovered@{IsHovered}!IWidget@{IWidget}}
+\doxysubsubsection{\texorpdfstring{IsHovered()}{IsHovered()}}
+{\footnotesize\ttfamily \label{class_i_widget_a6e291d888681ccc1a979fd8c4e00be63} 
+virtual bool IWidget\+::\+Is\+Hovered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the mouse cursor is currently over the widget area. 
+
+
+
+Implemented in \mbox{\hyperlink{class_button_a98d4cfa253ca5ab72c1096163ea1784f}{Button}}, \mbox{\hyperlink{class_label_a82f5a4f97d5cb470855992447ca61445}{Label}}, and \mbox{\hyperlink{class_menu_a592361a9e9e632ca9097bb4934ed6af9}{Menu}}.
+
+\Hypertarget{class_i_widget_a42ef777f15a4d91973c0d3024f5223f7}\index{IWidget@{IWidget}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!IWidget@{IWidget}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily \label{class_i_widget_a42ef777f15a4d91973c0d3024f5223f7} 
+virtual void IWidget\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the active/enabled state of the widget. 
+
+
+
+Implemented in \mbox{\hyperlink{class_button_ab9ac7233eb67a5682d91e80a9bac1931}{Button}}, \mbox{\hyperlink{class_label_a370e40b60ce4d346a4a96175deabd27d}{Label}}, and \mbox{\hyperlink{class_menu_ad541cef71d5bcbf7ab570e48f14bc705}{Menu}}.
+
+\Hypertarget{class_i_widget_ae485a818816334d6e0c0fa2fc377013a}\index{IWidget@{IWidget}!Update@{Update}}
+\index{Update@{Update}!IWidget@{IWidget}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_i_widget_ae485a818816334d6e0c0fa2fc377013a} 
+virtual void IWidget\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handles input or logic updates for the widget. 
+
+
+
+Implemented in \mbox{\hyperlink{class_button_a25bb759f840f630f901d349b9efbcd28}{Button}}, \mbox{\hyperlink{class_label_aeb2c17a43914bd2e22ff9391264a8e92}{Label}}, and \mbox{\hyperlink{class_menu_a2cdc3f4c7656a7b211c20cd8c6504105}{Menu}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\+Widgets/\mbox{\hyperlink{_i_widget_8h}{IWidget.\+h}}\end{DoxyCompactItemize}

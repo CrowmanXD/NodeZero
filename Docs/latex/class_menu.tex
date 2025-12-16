@@ -1,0 +1,163 @@
+\doxysection{Menu Class Reference}
+\hypertarget{class_menu}{}\label{class_menu}\index{Menu@{Menu}}
+
+
+A composite UI widget that acts as a container for other \doxylink{class_i_widget}{IWidget} objects.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+Inheritance diagram for Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_menu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}} ()
+\item 
+void \mbox{\hyperlink{class_menu_a620012b606183501d56667c685c625fe}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Renders the widget to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a2cdc3f4c7656a7b211c20cd8c6504105}{Update}} () override
+\begin{DoxyCompactList}\small\item\em Handles input or logic updates for the widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_a592361a9e9e632ca9097bb4934ed6af9}{Is\+Hovered}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is currently over the widget area. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_a7a4ccdc4ec7169a2862b0cef69b69f7c}{Is\+Active}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the widget is enabled and should be drawn/updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ad541cef71d5bcbf7ab570e48f14bc705}{Set\+Active}} (bool active) override
+\begin{DoxyCompactList}\small\item\em Sets the active/enabled state of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a4846a1e9d2cb92f280c3e367cf6af7ea}{Add\+Widget}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_widget}{IWidget}} $>$ widget)
+\begin{DoxyCompactList}\small\item\em Adds a child widget to the menu container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a6b9d457244162d557849fb0dc4cd0979}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Removes all widgets from the menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_widget}{IWidget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_widget_ae524e118f3b69361e5e34be86ac74597}{\texorpdfstring{$\sim$}{\string~}\+IWidget}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A composite UI widget that acts as a container for other \doxylink{class_i_widget}{IWidget} objects. 
+
+Manages a collection of buttons, labels, or other widgets and forwards Draw and Update calls to its children. 
+
+\label{doc-constructors}
+\Hypertarget{class_menu_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_menu_ad466dd83355124a6ed958430450bfe94}\index{Menu@{Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily \label{class_menu_ad466dd83355124a6ed958430450bfe94} 
+Menu\+::\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_menu_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_a4846a1e9d2cb92f280c3e367cf6af7ea}\index{Menu@{Menu}!AddWidget@{AddWidget}}
+\index{AddWidget@{AddWidget}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{AddWidget()}{AddWidget()}}
+{\footnotesize\ttfamily \label{class_menu_a4846a1e9d2cb92f280c3e367cf6af7ea} 
+void Menu\+::\+Add\+Widget (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_widget}{IWidget}} $>$}]{widget}{}\end{DoxyParamCaption})}
+
+
+
+Adds a child widget to the menu container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em widget} & A unique pointer to the widget (\doxylink{class_menu}{Menu} takes ownership). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_a6b9d457244162d557849fb0dc4cd0979}\index{Menu@{Menu}!Clear@{Clear}}
+\index{Clear@{Clear}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_menu_a6b9d457244162d557849fb0dc4cd0979} 
+void Menu\+::\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes all widgets from the menu. 
+
+\Hypertarget{class_menu_a620012b606183501d56667c685c625fe}\index{Menu@{Menu}!Draw@{Draw}}
+\index{Draw@{Draw}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_menu_a620012b606183501d56667c685c625fe} 
+void Menu\+::\+Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the widget to the screen. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_af3f732b4e0f6bab9d0f4e3a2b75d5c5a}{IWidget}}.
+
+\Hypertarget{class_menu_a7a4ccdc4ec7169a2862b0cef69b69f7c}\index{Menu@{Menu}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily \label{class_menu_a7a4ccdc4ec7169a2862b0cef69b69f7c} 
+bool Menu\+::\+Is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the widget is enabled and should be drawn/updated. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a9051b17c95eedaea550b0ce93fddcdbc}{IWidget}}.
+
+\Hypertarget{class_menu_a592361a9e9e632ca9097bb4934ed6af9}\index{Menu@{Menu}!IsHovered@{IsHovered}}
+\index{IsHovered@{IsHovered}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{IsHovered()}{IsHovered()}}
+{\footnotesize\ttfamily \label{class_menu_a592361a9e9e632ca9097bb4934ed6af9} 
+bool Menu\+::\+Is\+Hovered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the mouse cursor is currently over the widget area. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a6e291d888681ccc1a979fd8c4e00be63}{IWidget}}.
+
+\Hypertarget{class_menu_ad541cef71d5bcbf7ab570e48f14bc705}\index{Menu@{Menu}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily \label{class_menu_ad541cef71d5bcbf7ab570e48f14bc705} 
+void Menu\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the active/enabled state of the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_a42ef777f15a4d91973c0d3024f5223f7}{IWidget}}.
+
+\Hypertarget{class_menu_a2cdc3f4c7656a7b211c20cd8c6504105}\index{Menu@{Menu}!Update@{Update}}
+\index{Update@{Update}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_menu_a2cdc3f4c7656a7b211c20cd8c6504105} 
+void Menu\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles input or logic updates for the widget. 
+
+
+
+Implements \mbox{\hyperlink{class_i_widget_ae485a818816334d6e0c0fa2fc377013a}{IWidget}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\+Widgets/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/src/\+Widgets/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}

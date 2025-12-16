@@ -1,0 +1,64 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Tests/\+Pickup\+And\+Damage\+Tests.cpp File Reference}
+\hypertarget{_pickup_and_damage_tests_8cpp}{}\label{_pickup_and_damage_tests_8cpp}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/PickupAndDamageTests.cpp@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/PickupAndDamageTests.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Pickup\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Damage\+Zone\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Node.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Config/\+Game\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Enums/\+Node\+Shape.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Enums/\+Node\+State.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Types/\+Point\+Pickup.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Types/\+Position.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pickup_service_test}{Pickup\+Service\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for the loot/score system. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_damage_zone_service_test}{Damage\+Zone\+Service\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for the player\textquotesingle{}s primary attack mechanic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pickup_and_damage_tests_8cpp_a0fd21518ba283a4c734897d8d178f0b8}{TEST\+\_\+F}} (\mbox{\hyperlink{class_pickup_service_test}{Pickup\+Service\+Test}}, Collect\+Pickup\+Works)
+\begin{DoxyCompactList}\small\item\em Verifies successful collection of items after the spawn delay. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_pickup_and_damage_tests_8cpp_a17e64443537c84dc7ab4ed69cb179249}{TEST\+\_\+F}} (\mbox{\hyperlink{class_pickup_service_test}{Pickup\+Service\+Test}}, Collect\+Pickup\+Fails\+Before\+Delay)
+\begin{DoxyCompactList}\small\item\em Verifies that items cannot be collected immediately after spawning. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_pickup_and_damage_tests_8cpp_a04068cedf0c75badc947b0dba94d069e}{TEST\+\_\+F}} (\mbox{\hyperlink{class_damage_zone_service_test}{Damage\+Zone\+Service\+Test}}, Node\+In\+Zone\+Takes\+Damage)
+\begin{DoxyCompactList}\small\item\em Verifies that damage is applied to nodes intersecting the zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_pickup_and_damage_tests_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_pickup_and_damage_tests_8cpp_a04068cedf0c75badc947b0dba94d069e}\index{PickupAndDamageTests.cpp@{PickupAndDamageTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!PickupAndDamageTests.cpp@{PickupAndDamageTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{_pickup_and_damage_tests_8cpp_a04068cedf0c75badc947b0dba94d069e} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_damage_zone_service_test}{Damage\+Zone\+Service\+Test}}}]{}{, }\item[{Node\+In\+Zone\+Takes\+Damage}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that damage is applied to nodes intersecting the zone. 
+
+\Hypertarget{_pickup_and_damage_tests_8cpp_a17e64443537c84dc7ab4ed69cb179249}\index{PickupAndDamageTests.cpp@{PickupAndDamageTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!PickupAndDamageTests.cpp@{PickupAndDamageTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{_pickup_and_damage_tests_8cpp_a17e64443537c84dc7ab4ed69cb179249} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pickup_service_test}{Pickup\+Service\+Test}}}]{}{, }\item[{Collect\+Pickup\+Fails\+Before\+Delay}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that items cannot be collected immediately after spawning. 
+
+\Hypertarget{_pickup_and_damage_tests_8cpp_a0fd21518ba283a4c734897d8d178f0b8}\index{PickupAndDamageTests.cpp@{PickupAndDamageTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!PickupAndDamageTests.cpp@{PickupAndDamageTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{_pickup_and_damage_tests_8cpp_a0fd21518ba283a4c734897d8d178f0b8} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pickup_service_test}{Pickup\+Service\+Test}}}]{}{, }\item[{Collect\+Pickup\+Works}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies successful collection of items after the spawn delay. 
+

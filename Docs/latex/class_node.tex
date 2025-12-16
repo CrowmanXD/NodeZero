@@ -1,0 +1,271 @@
+\doxysection{Node Class Reference}
+\hypertarget{class_node}{}\label{class_node}\index{Node@{Node}}
+
+
+Concrete implementation of a game entity.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+Inheritance diagram for Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_node}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_node_a87597d861774951e4a4032c6ddf221c2}{Node}} (\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} shape, float size, float speed)
+\item 
+\mbox{\hyperlink{class_node_a24339ba7da6ab5785edda7664f645bd7}{\texorpdfstring{$\sim$}{\string~}\+Node}} () override=default
+\item 
+\mbox{\hyperlink{struct_position}{Position}} \& \mbox{\hyperlink{class_node_af214b2b0c6bd06db92fa14f7d4b04633}{Get\+Position}} () override
+\item 
+const \mbox{\hyperlink{struct_position}{Position}} \& \mbox{\hyperlink{class_node_aa9a31bf1d57917522c3241730f65dd96}{Get\+Position}} () const override
+\item 
+\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} \mbox{\hyperlink{class_node_a4c4a8c09c3a296bb23f1bda84a98211c}{Get\+Shape}} () const override
+\item 
+\mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{Node\+State}} \mbox{\hyperlink{class_node_aed5536d86027ec1860b9d2ee6e81a6e2}{Get\+State}} () const override
+\item 
+float \mbox{\hyperlink{class_node_a03b38566850b6ccc0e92bb1522ac2e84}{Get\+Size}} () const override
+\item 
+float \mbox{\hyperlink{class_node_a54439c91a400ff934f51c39c39989c0f}{Get\+Speed}} () const override
+\item 
+float \mbox{\hyperlink{class_node_a308d9102362c961fd4e0eb50c03deeeb}{Get\+Rotation}} () const override
+\item 
+float \mbox{\hyperlink{class_node_aa4ef2137a47b95458a0a144d42dfa4b1}{Get\+HP}} () const override
+\item 
+float \mbox{\hyperlink{class_node_ac999e07eb947a05f6a96635a1f740006}{Get\+Max\+HP}} () const override
+\item 
+void \mbox{\hyperlink{class_node_a31606488465508a603205211b93c716b}{Set\+HP}} (float hp) override
+\begin{DoxyCompactList}\small\item\em Sets the exact health value (used for initialization or scaling). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_aa9595a62426cf9a2fc816194b72205a4}{Spawn}} (float x, float y) override
+\begin{DoxyCompactList}\small\item\em Activates the node at a specific world coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_ac41de145952ab53d2ba44ca13cd0a54e}{Set\+Direction}} (float dirX, float dirY) override
+\begin{DoxyCompactList}\small\item\em Sets the movement vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_a160d1ad8634fdda5229594d00e85f860}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates position and rotation based on time delta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_ac46d4d9b7aef6d8fa7f757fed7bac864}{Kill}} () override
+\begin{DoxyCompactList}\small\item\em Instantly marks the node as Dead. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_a86751403d53ac4b162462b74a3e56249}{Take\+Damage}} (float damage) override
+\begin{DoxyCompactList}\small\item\em Applies damage to the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_node}{INode}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_node_afe66f59fcd91f356300a251f6d21ff95}{\texorpdfstring{$\sim$}{\string~}\+INode}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of a game entity. 
+
+Handles simple physics (velocity-\/based movement) and visual rotation. 
+
+\label{doc-constructors}
+\Hypertarget{class_node_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_node_a87597d861774951e4a4032c6ddf221c2}\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily \label{class_node_a87597d861774951e4a4032c6ddf221c2} 
+Node\+::\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}}}]{shape}{, }\item[{float}]{size}{, }\item[{float}]{speed}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_node_a24339ba7da6ab5785edda7664f645bd7}\index{Node@{Node}!````~Node@{\texorpdfstring{$\sim$}{\string~}Node}}
+\index{````~Node@{\texorpdfstring{$\sim$}{\string~}Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Node()}{\string~Node()}}
+{\footnotesize\ttfamily \label{class_node_a24339ba7da6ab5785edda7664f645bd7} 
+Node\+::\texorpdfstring{$\sim$}{\string~}\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_node_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_node_aa4ef2137a47b95458a0a144d42dfa4b1}\index{Node@{Node}!GetHP@{GetHP}}
+\index{GetHP@{GetHP}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetHP()}{GetHP()}}
+{\footnotesize\ttfamily \label{class_node_aa4ef2137a47b95458a0a144d42dfa4b1} 
+float Node\+::\+Get\+HP (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a551566babd138ef48d81d4cb5769e6e6}{INode}}.
+
+\Hypertarget{class_node_ac999e07eb947a05f6a96635a1f740006}\index{Node@{Node}!GetMaxHP@{GetMaxHP}}
+\index{GetMaxHP@{GetMaxHP}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetMaxHP()}{GetMaxHP()}}
+{\footnotesize\ttfamily \label{class_node_ac999e07eb947a05f6a96635a1f740006} 
+float Node\+::\+Get\+Max\+HP (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a27c12c206958acf0a33dacf73568e6ab}{INode}}.
+
+\Hypertarget{class_node_aa9a31bf1d57917522c3241730f65dd96}\index{Node@{Node}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_node_aa9a31bf1d57917522c3241730f65dd96} 
+const \mbox{\hyperlink{struct_position}{Position}} \& Node\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_afae30a20b44a7f09419a3a15a19efc62}{INode}}.
+
+\Hypertarget{class_node_af214b2b0c6bd06db92fa14f7d4b04633}\index{Node@{Node}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_node_af214b2b0c6bd06db92fa14f7d4b04633} 
+\mbox{\hyperlink{struct_position}{Position}} \& Node\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a1c104572699c0693d0b9bff5b80af497}{INode}}.
+
+\Hypertarget{class_node_a308d9102362c961fd4e0eb50c03deeeb}\index{Node@{Node}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily \label{class_node_a308d9102362c961fd4e0eb50c03deeeb} 
+float Node\+::\+Get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a051d06d4d5e12c091774279aa16ebb43}{INode}}.
+
+\Hypertarget{class_node_a4c4a8c09c3a296bb23f1bda84a98211c}\index{Node@{Node}!GetShape@{GetShape}}
+\index{GetShape@{GetShape}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetShape()}{GetShape()}}
+{\footnotesize\ttfamily \label{class_node_a4c4a8c09c3a296bb23f1bda84a98211c} 
+\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} Node\+::\+Get\+Shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_adfbf60f300eb71d0cdee9fc2aff18ee4}{INode}}.
+
+\Hypertarget{class_node_a03b38566850b6ccc0e92bb1522ac2e84}\index{Node@{Node}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily \label{class_node_a03b38566850b6ccc0e92bb1522ac2e84} 
+float Node\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_ae1aa08545006f33e3e797aec19a1f404}{INode}}.
+
+\Hypertarget{class_node_a54439c91a400ff934f51c39c39989c0f}\index{Node@{Node}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily \label{class_node_a54439c91a400ff934f51c39c39989c0f} 
+float Node\+::\+Get\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a7608f2cf61cf3f17bfc681e28d527ddc}{INode}}.
+
+\Hypertarget{class_node_aed5536d86027ec1860b9d2ee6e81a6e2}\index{Node@{Node}!GetState@{GetState}}
+\index{GetState@{GetState}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily \label{class_node_aed5536d86027ec1860b9d2ee6e81a6e2} 
+\mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{Node\+State}} Node\+::\+Get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a608cf99df5a4ed76f71bebb0cbb29cd6}{INode}}.
+
+\Hypertarget{class_node_ac46d4d9b7aef6d8fa7f757fed7bac864}\index{Node@{Node}!Kill@{Kill}}
+\index{Kill@{Kill}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily \label{class_node_ac46d4d9b7aef6d8fa7f757fed7bac864} 
+void Node\+::\+Kill (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Instantly marks the node as Dead. 
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a7eacc9a4678062c2035c4292c37ed25e}{INode}}.
+
+\Hypertarget{class_node_ac41de145952ab53d2ba44ca13cd0a54e}\index{Node@{Node}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily \label{class_node_ac41de145952ab53d2ba44ca13cd0a54e} 
+void Node\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{float}]{dirX}{, }\item[{float}]{dirY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the movement vector. 
+
+
+
+Implements \mbox{\hyperlink{class_i_node_ab953205b8667d600db70897d2936d1a3}{INode}}.
+
+\Hypertarget{class_node_a31606488465508a603205211b93c716b}\index{Node@{Node}!SetHP@{SetHP}}
+\index{SetHP@{SetHP}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{SetHP()}{SetHP()}}
+{\footnotesize\ttfamily \label{class_node_a31606488465508a603205211b93c716b} 
+void Node\+::\+Set\+HP (\begin{DoxyParamCaption}\item[{float}]{hp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the exact health value (used for initialization or scaling). 
+
+
+
+Implements \mbox{\hyperlink{class_i_node_ae23221df37b237971d2f26510e82e2fc}{INode}}.
+
+\Hypertarget{class_node_aa9595a62426cf9a2fc816194b72205a4}\index{Node@{Node}!Spawn@{Spawn}}
+\index{Spawn@{Spawn}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Spawn()}{Spawn()}}
+{\footnotesize\ttfamily \label{class_node_aa9595a62426cf9a2fc816194b72205a4} 
+void Node\+::\+Spawn (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Activates the node at a specific world coordinate. 
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a0b19053567d4be5d65f13e90bffd4604}{INode}}.
+
+\Hypertarget{class_node_a86751403d53ac4b162462b74a3e56249}\index{Node@{Node}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_node_a86751403d53ac4b162462b74a3e56249} 
+void Node\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{float}]{damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies damage to the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Amount of health to subtract. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_node_a7dfeefb540a74edbc0b032c8197a06b0}{INode}}.
+
+\Hypertarget{class_node_a160d1ad8634fdda5229594d00e85f860}\index{Node@{Node}!Update@{Update}}
+\index{Update@{Update}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_node_a160d1ad8634fdda5229594d00e85f860} 
+void Node\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates position and rotation based on time delta. 
+
+
+
+Implements \mbox{\hyperlink{class_i_node_a0f8914c5813a647901b02ef70a50c76d}{INode}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\mbox{\hyperlink{_node_8h}{Node.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\mbox{\hyperlink{_node_8cpp}{Node.\+cpp}}\end{DoxyCompactItemize}

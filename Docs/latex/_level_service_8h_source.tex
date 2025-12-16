@@ -1,0 +1,47 @@
+\doxysection{Level\+Service.\+h}
+\hypertarget{_level_service_8h_source}{}\label{_level_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/LevelService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/LevelService.h}}
+\mbox{\hyperlink{_level_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_level_service_8h}{Services/ILevelService.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level_service_a53c214ed3ac3c01312504e4aac180195}{LevelService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_level_service}{ILevelService}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_CurrentLevel;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_NodesDestroyedThisLevel;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_BossActive;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_LevelCompleted;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_LevelTimer;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_LevelDuration;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Refactor:\ No\ magic\ numbers,\ turned\ into\ constants}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ MAX\_PROGRESS\_PERCENTAGE\ =\ 100.0f;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ MIN\_LEVEL\_INDEX\ =\ 1;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_level_service_a53c214ed3ac3c01312504e4aac180195}{LevelService}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_level_service_a5dcdaca879ed74938e16c97f93c0d766}{\string~LevelService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_aaa61a6d1527b3d02c611e88547285b19}{Initialize}}(\textcolor{keywordtype}{int}\ startLevel)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_abd1da0feafd6cb91b6ef4b2a1e7acdfa}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_abd1da0feafd6cb91b6ef4b2a1e7acdfa}{Update}}(\textcolor{keywordtype}{float}\ deltaTime,\ \textcolor{keywordtype}{bool}\ bossActive);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_a120bf8c6a7fe957ef5d40e10584649f4}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_a120bf8c6a7fe957ef5d40e10584649f4}{Reset}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_aace2f364ee217014059c40d8825bb8b6}{IncrementNodesDestroyed}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_a789b181536ea471f39f371141dcb0166}{SetBossActive}}(\textcolor{keywordtype}{bool}\ active);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_afef41ca658b27be496225910b1a4fc95}{SetLevelCompleted}}(\textcolor{keywordtype}{bool}\ completed);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_service_a6782dc65894b28abcab6134e5c150c47}{StartNextLevel}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_service_ac9d6120da0a6ca1264744f8d0cb07946}{GetCurrentLevel}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_service_a421af1c5c25487f975cca6ceecc3b69f}{GetNodesDestroyedThisLevel}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_service_ab686ef474fe10432da2ee4f6e2fe225a}{IsBossActive}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_service_a03a66aa8764e5bfb66085c0a445c98f6}{IsLevelCompleted}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_service_ab1fa1525ec85c85a4018579263294ee3}{ShouldSpawnBoss}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_level_service_af7f70c5e160f8702b71a0063d1551213}{GetProgressBarPercentage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

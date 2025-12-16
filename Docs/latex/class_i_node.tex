@@ -1,0 +1,257 @@
+\doxysection{INode Class Reference}
+\hypertarget{class_i_node}{}\label{class_i_node}\index{INode@{INode}}
+
+
+Interface for all dynamic entities (enemies) in the game world.  
+
+
+
+
+{\ttfamily \#include $<$INode.\+h$>$}
+
+Inheritance diagram for INode\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_node}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_node_afe66f59fcd91f356300a251f6d21ff95}{\texorpdfstring{$\sim$}{\string~}\+INode}} ()=default
+\item 
+virtual \mbox{\hyperlink{struct_position}{Position}} \& \mbox{\hyperlink{class_i_node_a1c104572699c0693d0b9bff5b80af497}{Get\+Position}} ()=0
+\item 
+virtual const \mbox{\hyperlink{struct_position}{Position}} \& \mbox{\hyperlink{class_i_node_afae30a20b44a7f09419a3a15a19efc62}{Get\+Position}} () const =0
+\item 
+virtual \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} \mbox{\hyperlink{class_i_node_adfbf60f300eb71d0cdee9fc2aff18ee4}{Get\+Shape}} () const =0
+\item 
+virtual \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{Node\+State}} \mbox{\hyperlink{class_i_node_a608cf99df5a4ed76f71bebb0cbb29cd6}{Get\+State}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_node_ae1aa08545006f33e3e797aec19a1f404}{Get\+Size}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_node_a7608f2cf61cf3f17bfc681e28d527ddc}{Get\+Speed}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_node_a051d06d4d5e12c091774279aa16ebb43}{Get\+Rotation}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_node_a551566babd138ef48d81d4cb5769e6e6}{Get\+HP}} () const =0
+\item 
+virtual float \mbox{\hyperlink{class_i_node_a27c12c206958acf0a33dacf73568e6ab}{Get\+Max\+HP}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_node_ae23221df37b237971d2f26510e82e2fc}{Set\+HP}} (float hp)=0
+\begin{DoxyCompactList}\small\item\em Sets the exact health value (used for initialization or scaling). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_node_a7dfeefb540a74edbc0b032c8197a06b0}{Take\+Damage}} (float damage)=0
+\begin{DoxyCompactList}\small\item\em Applies damage to the node. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_node_a7eacc9a4678062c2035c4292c37ed25e}{Kill}} ()=0
+\begin{DoxyCompactList}\small\item\em Instantly marks the node as Dead. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_node_a0b19053567d4be5d65f13e90bffd4604}{Spawn}} (float x, float y)=0
+\begin{DoxyCompactList}\small\item\em Activates the node at a specific world coordinate. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_node_ab953205b8667d600db70897d2936d1a3}{Set\+Direction}} (float dirX, float dirY)=0
+\begin{DoxyCompactList}\small\item\em Sets the movement vector. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_node_a0f8914c5813a647901b02ef70a50c76d}{Update}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates position and rotation based on time delta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for all dynamic entities (enemies) in the game world. 
+
+Defines the contract for movement, rendering properties (shape, size), and health management. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_node_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_node_afe66f59fcd91f356300a251f6d21ff95}\index{INode@{INode}!````~INode@{\texorpdfstring{$\sim$}{\string~}INode}}
+\index{````~INode@{\texorpdfstring{$\sim$}{\string~}INode}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}INode()}{\string~INode()}}
+{\footnotesize\ttfamily \label{class_i_node_afe66f59fcd91f356300a251f6d21ff95} 
+virtual INode\+::\texorpdfstring{$\sim$}{\string~}\+INode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_node_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_node_a551566babd138ef48d81d4cb5769e6e6}\index{INode@{INode}!GetHP@{GetHP}}
+\index{GetHP@{GetHP}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetHP()}{GetHP()}}
+{\footnotesize\ttfamily \label{class_i_node_a551566babd138ef48d81d4cb5769e6e6} 
+virtual float INode\+::\+Get\+HP (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_aa4ef2137a47b95458a0a144d42dfa4b1}{Node}}.
+
+\Hypertarget{class_i_node_a27c12c206958acf0a33dacf73568e6ab}\index{INode@{INode}!GetMaxHP@{GetMaxHP}}
+\index{GetMaxHP@{GetMaxHP}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetMaxHP()}{GetMaxHP()}}
+{\footnotesize\ttfamily \label{class_i_node_a27c12c206958acf0a33dacf73568e6ab} 
+virtual float INode\+::\+Get\+Max\+HP (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_ac999e07eb947a05f6a96635a1f740006}{Node}}.
+
+\Hypertarget{class_i_node_afae30a20b44a7f09419a3a15a19efc62}\index{INode@{INode}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_i_node_afae30a20b44a7f09419a3a15a19efc62} 
+virtual const \mbox{\hyperlink{struct_position}{Position}} \& INode\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_aa9a31bf1d57917522c3241730f65dd96}{Node}}.
+
+\Hypertarget{class_i_node_a1c104572699c0693d0b9bff5b80af497}\index{INode@{INode}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_i_node_a1c104572699c0693d0b9bff5b80af497} 
+virtual \mbox{\hyperlink{struct_position}{Position}} \& INode\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_af214b2b0c6bd06db92fa14f7d4b04633}{Node}}.
+
+\Hypertarget{class_i_node_a051d06d4d5e12c091774279aa16ebb43}\index{INode@{INode}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily \label{class_i_node_a051d06d4d5e12c091774279aa16ebb43} 
+virtual float INode\+::\+Get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_a308d9102362c961fd4e0eb50c03deeeb}{Node}}.
+
+\Hypertarget{class_i_node_adfbf60f300eb71d0cdee9fc2aff18ee4}\index{INode@{INode}!GetShape@{GetShape}}
+\index{GetShape@{GetShape}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetShape()}{GetShape()}}
+{\footnotesize\ttfamily \label{class_i_node_adfbf60f300eb71d0cdee9fc2aff18ee4} 
+virtual \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} INode\+::\+Get\+Shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_a4c4a8c09c3a296bb23f1bda84a98211c}{Node}}.
+
+\Hypertarget{class_i_node_ae1aa08545006f33e3e797aec19a1f404}\index{INode@{INode}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily \label{class_i_node_ae1aa08545006f33e3e797aec19a1f404} 
+virtual float INode\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_a03b38566850b6ccc0e92bb1522ac2e84}{Node}}.
+
+\Hypertarget{class_i_node_a7608f2cf61cf3f17bfc681e28d527ddc}\index{INode@{INode}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily \label{class_i_node_a7608f2cf61cf3f17bfc681e28d527ddc} 
+virtual float INode\+::\+Get\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_a54439c91a400ff934f51c39c39989c0f}{Node}}.
+
+\Hypertarget{class_i_node_a608cf99df5a4ed76f71bebb0cbb29cd6}\index{INode@{INode}!GetState@{GetState}}
+\index{GetState@{GetState}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily \label{class_i_node_a608cf99df5a4ed76f71bebb0cbb29cd6} 
+virtual \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{Node\+State}} INode\+::\+Get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_node_aed5536d86027ec1860b9d2ee6e81a6e2}{Node}}.
+
+\Hypertarget{class_i_node_a7eacc9a4678062c2035c4292c37ed25e}\index{INode@{INode}!Kill@{Kill}}
+\index{Kill@{Kill}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily \label{class_i_node_a7eacc9a4678062c2035c4292c37ed25e} 
+virtual void INode\+::\+Kill (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Instantly marks the node as Dead. 
+
+
+
+Implemented in \mbox{\hyperlink{class_node_ac46d4d9b7aef6d8fa7f757fed7bac864}{Node}}.
+
+\Hypertarget{class_i_node_ab953205b8667d600db70897d2936d1a3}\index{INode@{INode}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily \label{class_i_node_ab953205b8667d600db70897d2936d1a3} 
+virtual void INode\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{float}]{dirX}{, }\item[{float}]{dirY}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the movement vector. 
+
+
+
+Implemented in \mbox{\hyperlink{class_node_ac41de145952ab53d2ba44ca13cd0a54e}{Node}}.
+
+\Hypertarget{class_i_node_ae23221df37b237971d2f26510e82e2fc}\index{INode@{INode}!SetHP@{SetHP}}
+\index{SetHP@{SetHP}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{SetHP()}{SetHP()}}
+{\footnotesize\ttfamily \label{class_i_node_ae23221df37b237971d2f26510e82e2fc} 
+virtual void INode\+::\+Set\+HP (\begin{DoxyParamCaption}\item[{float}]{hp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the exact health value (used for initialization or scaling). 
+
+
+
+Implemented in \mbox{\hyperlink{class_node_a31606488465508a603205211b93c716b}{Node}}.
+
+\Hypertarget{class_i_node_a0b19053567d4be5d65f13e90bffd4604}\index{INode@{INode}!Spawn@{Spawn}}
+\index{Spawn@{Spawn}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{Spawn()}{Spawn()}}
+{\footnotesize\ttfamily \label{class_i_node_a0b19053567d4be5d65f13e90bffd4604} 
+virtual void INode\+::\+Spawn (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Activates the node at a specific world coordinate. 
+
+
+
+Implemented in \mbox{\hyperlink{class_node_aa9595a62426cf9a2fc816194b72205a4}{Node}}.
+
+\Hypertarget{class_i_node_a7dfeefb540a74edbc0b032c8197a06b0}\index{INode@{INode}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_i_node_a7dfeefb540a74edbc0b032c8197a06b0} 
+virtual void INode\+::\+Take\+Damage (\begin{DoxyParamCaption}\item[{float}]{damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies damage to the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Amount of health to subtract. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_node_a86751403d53ac4b162462b74a3e56249}{Node}}.
+
+\Hypertarget{class_i_node_a0f8914c5813a647901b02ef70a50c76d}\index{INode@{INode}!Update@{Update}}
+\index{Update@{Update}!INode@{INode}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_i_node_a0f8914c5813a647901b02ef70a50c76d} 
+virtual void INode\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates position and rotation based on time delta. 
+
+
+
+Implemented in \mbox{\hyperlink{class_node_a160d1ad8634fdda5229594d00e85f860}{Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\mbox{\hyperlink{_i_node_8h}{INode.\+h}}\end{DoxyCompactItemize}

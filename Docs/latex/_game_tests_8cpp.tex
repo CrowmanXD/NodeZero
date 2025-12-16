@@ -1,0 +1,97 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Tests/\+Game\+Tests.cpp File Reference}
+\hypertarget{_game_tests_8cpp}{}\label{_game_tests_8cpp}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/GameTests.cpp@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/GameTests.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Game.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+IGame.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+INode.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Events/\+IObserver.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Events/\+IEvent.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Types/\+Spawn\+Info.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_mock_observer}{Mock\+Observer}}
+\begin{DoxyCompactList}\small\item\em Simple observer implementation to verify event broadcasting. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_game_test}{Game\+Test}}
+\begin{DoxyCompactList}\small\item\em Integration tests for the main \doxylink{class_game}{Game} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_tests_8cpp_ac9c231ceee75711da6894f704eef99b8}{TEST\+\_\+F}} (\mbox{\hyperlink{class_game_test}{Game\+Test}}, Initialize\+Works)
+\begin{DoxyCompactList}\small\item\em Verifies the game starts in a valid default state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_tests_8cpp_a0b734ebc5839f181967eaefdf7facd74}{TEST\+\_\+F}} (\mbox{\hyperlink{class_game_test}{Game\+Test}}, Update\+Does\+Not\+Crash)
+\begin{DoxyCompactList}\small\item\em Verifies the game loop advances time and systems without crashing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_tests_8cpp_a32b4f79cc2145fd37f3e59431ccc92be}{TEST\+\_\+F}} (\mbox{\hyperlink{class_game_test}{Game\+Test}}, Update\+Spawns\+Nodes\+Over\+Time)
+\begin{DoxyCompactList}\small\item\em Verifies that Update() eventually causes enemies to spawn via the \doxylink{class_spawn_service}{Spawn\+Service}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_tests_8cpp_a6cf7b9bd6ec53cdc2255b31a59873102}{TEST\+\_\+F}} (\mbox{\hyperlink{class_game_test}{Game\+Test}}, Reset\+Clears\+Nodes)
+\begin{DoxyCompactList}\small\item\em Verifies that Reset() removes all active entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_tests_8cpp_a82155a7d79724833b74503839bdca38c}{TEST\+\_\+F}} (\mbox{\hyperlink{class_game_test}{Game\+Test}}, Observer\+Pattern\+Works)
+\begin{DoxyCompactList}\small\item\em Verifies that the Observer pattern is wired up correctly. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_tests_8cpp_a39f212711641ca615d5a5dcd624a5402}{TEST\+\_\+F}} (\mbox{\hyperlink{class_game_test}{Game\+Test}}, Many\+Nodes\+Do\+Not\+Crash)
+\begin{DoxyCompactList}\small\item\em Stress test\+: Ensure spawning many nodes doesn\textquotesingle{}t segfault. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_game_tests_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_game_tests_8cpp_ac9c231ceee75711da6894f704eef99b8}\index{GameTests.cpp@{GameTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!GameTests.cpp@{GameTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{_game_tests_8cpp_ac9c231ceee75711da6894f704eef99b8} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_test}{Game\+Test}}}]{}{, }\item[{Initialize\+Works}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies the game starts in a valid default state. 
+
+\Hypertarget{_game_tests_8cpp_a39f212711641ca615d5a5dcd624a5402}\index{GameTests.cpp@{GameTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!GameTests.cpp@{GameTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{_game_tests_8cpp_a39f212711641ca615d5a5dcd624a5402} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_test}{Game\+Test}}}]{}{, }\item[{Many\+Nodes\+Do\+Not\+Crash}]{}{}\end{DoxyParamCaption})}
+
+
+
+Stress test\+: Ensure spawning many nodes doesn\textquotesingle{}t segfault. 
+
+\Hypertarget{_game_tests_8cpp_a82155a7d79724833b74503839bdca38c}\index{GameTests.cpp@{GameTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!GameTests.cpp@{GameTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{_game_tests_8cpp_a82155a7d79724833b74503839bdca38c} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_test}{Game\+Test}}}]{}{, }\item[{Observer\+Pattern\+Works}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that the Observer pattern is wired up correctly. 
+
+\Hypertarget{_game_tests_8cpp_a6cf7b9bd6ec53cdc2255b31a59873102}\index{GameTests.cpp@{GameTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!GameTests.cpp@{GameTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{_game_tests_8cpp_a6cf7b9bd6ec53cdc2255b31a59873102} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_test}{Game\+Test}}}]{}{, }\item[{Reset\+Clears\+Nodes}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that Reset() removes all active entities. 
+
+\Hypertarget{_game_tests_8cpp_a0b734ebc5839f181967eaefdf7facd74}\index{GameTests.cpp@{GameTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!GameTests.cpp@{GameTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{_game_tests_8cpp_a0b734ebc5839f181967eaefdf7facd74} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_test}{Game\+Test}}}]{}{, }\item[{Update\+Does\+Not\+Crash}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies the game loop advances time and systems without crashing. 
+
+\Hypertarget{_game_tests_8cpp_a32b4f79cc2145fd37f3e59431ccc92be}\index{GameTests.cpp@{GameTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!GameTests.cpp@{GameTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{_game_tests_8cpp_a32b4f79cc2145fd37f3e59431ccc92be} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_test}{Game\+Test}}}]{}{, }\item[{Update\+Spawns\+Nodes\+Over\+Time}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that Update() eventually causes enemies to spawn via the \doxylink{class_spawn_service}{Spawn\+Service}. 
+

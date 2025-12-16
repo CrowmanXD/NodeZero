@@ -1,0 +1,154 @@
+\doxysection{Damage\+Zone\+Service Class Reference}
+\hypertarget{class_damage_zone_service}{}\label{class_damage_zone_service}\index{DamageZoneService@{DamageZoneService}}
+
+
+Concrete implementation of the damage zone logic.  
+
+
+
+
+{\ttfamily \#include $<$Damage\+Zone\+Service.\+h$>$}
+
+Inheritance diagram for Damage\+Zone\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_damage_zone_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_damage_zone_service_ad01f61896ef7db083a684a8958c4b7a3}{Damage\+Zone\+Service}} ()
+\item 
+\mbox{\hyperlink{class_damage_zone_service_a3ccffd8a96da04781b86f734960833ce}{\texorpdfstring{$\sim$}{\string~}\+Damage\+Zone\+Service}} () override=default
+\item 
+void \mbox{\hyperlink{class_damage_zone_service_a767fb59cebe530d6c4ad4476d2dd5483}{Update\+Timer}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates the internal cooldown timer for damage ticks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_zone_service_ac96a63f7eda79b21d744eb6d78888b8b}{Reset\+Timer}} () override
+\begin{DoxyCompactList}\small\item\em Resets the damage cooldown timer to zero. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_damage_zone_service_ab84d0ad683d50bd0000ca13b72ffc0fe}{Should\+Deal\+Damage}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if enough time has passed to deal damage again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_zone_service_a386a171d3b643e31a3db53775c6c3ee1}{Process\+Damage\+Zone}} (float centerX, float centerY, float zone\+Size, float damage, int current\+Level, const std\+::vector$<$ \mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ \&nodes, std\+::function$<$ void(\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}, float)$>$ on\+Node\+Damaged) override
+\begin{DoxyCompactList}\small\item\em Processes a damage zone, applying damage to all nodes within it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_damage_zone_service}{IDamage\+Zone\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_damage_zone_service_a4d078111f6e9f5a78892d18cc2fd4936}{\texorpdfstring{$\sim$}{\string~}\+IDamage\+Zone\+Service}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the damage zone logic. 
+
+
+\begin{DoxyItemize}
+\item Handles the logic for Rectangle-\/vs-\/\+Circle collision detection and damage scaling calculations. 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_damage_zone_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_damage_zone_service_ad01f61896ef7db083a684a8958c4b7a3}\index{DamageZoneService@{DamageZoneService}!DamageZoneService@{DamageZoneService}}
+\index{DamageZoneService@{DamageZoneService}!DamageZoneService@{DamageZoneService}}
+\doxysubsubsection{\texorpdfstring{DamageZoneService()}{DamageZoneService()}}
+{\footnotesize\ttfamily \label{class_damage_zone_service_ad01f61896ef7db083a684a8958c4b7a3} 
+Damage\+Zone\+Service\+::\+Damage\+Zone\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_damage_zone_service_a3ccffd8a96da04781b86f734960833ce}\index{DamageZoneService@{DamageZoneService}!````~DamageZoneService@{\texorpdfstring{$\sim$}{\string~}DamageZoneService}}
+\index{````~DamageZoneService@{\texorpdfstring{$\sim$}{\string~}DamageZoneService}!DamageZoneService@{DamageZoneService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DamageZoneService()}{\string~DamageZoneService()}}
+{\footnotesize\ttfamily \label{class_damage_zone_service_a3ccffd8a96da04781b86f734960833ce} 
+Damage\+Zone\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Damage\+Zone\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_damage_zone_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_damage_zone_service_a386a171d3b643e31a3db53775c6c3ee1}\index{DamageZoneService@{DamageZoneService}!ProcessDamageZone@{ProcessDamageZone}}
+\index{ProcessDamageZone@{ProcessDamageZone}!DamageZoneService@{DamageZoneService}}
+\doxysubsubsection{\texorpdfstring{ProcessDamageZone()}{ProcessDamageZone()}}
+{\footnotesize\ttfamily \label{class_damage_zone_service_a386a171d3b643e31a3db53775c6c3ee1} 
+void Damage\+Zone\+Service\+::\+Process\+Damage\+Zone (\begin{DoxyParamCaption}\item[{float}]{centerX}{, }\item[{float}]{centerY}{, }\item[{float}]{zone\+Size}{, }\item[{float}]{damage}{, }\item[{int}]{current\+Level}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ \&}]{nodes}{, }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}, float)$>$}]{on\+Node\+Damaged}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes a damage zone, applying damage to all nodes within it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em centerX} & The X coordinate of the zone\textquotesingle{}s center. \\
+\hline
+{\em centerY} & The Y coordinate of the zone\textquotesingle{}s center. \\
+\hline
+{\em zone\+Size} & The width/height of the square damage zone. \\
+\hline
+{\em damage} & The amount of damage to apply to affected nodes. \\
+\hline
+{\em current\+Level} & The current game level (affects scaling costs). \\
+\hline
+{\em nodes} & A vector of pointers to the nodes to check. \\
+\hline
+{\em on\+Node\+Damaged} & A callback function invoked when a node takes damage. Provides the damaged node and the calculated health cost. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_damage_zone_service_a325e1eaa90c04c51b31d63acc77707d4}{IDamage\+Zone\+Service}}.
+
+\Hypertarget{class_damage_zone_service_ac96a63f7eda79b21d744eb6d78888b8b}\index{DamageZoneService@{DamageZoneService}!ResetTimer@{ResetTimer}}
+\index{ResetTimer@{ResetTimer}!DamageZoneService@{DamageZoneService}}
+\doxysubsubsection{\texorpdfstring{ResetTimer()}{ResetTimer()}}
+{\footnotesize\ttfamily \label{class_damage_zone_service_ac96a63f7eda79b21d744eb6d78888b8b} 
+void Damage\+Zone\+Service\+::\+Reset\+Timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resets the damage cooldown timer to zero. 
+
+
+
+Implements \mbox{\hyperlink{class_i_damage_zone_service_a4183a3d07d3a87313b3e5e04e05e39f3}{IDamage\+Zone\+Service}}.
+
+\Hypertarget{class_damage_zone_service_ab84d0ad683d50bd0000ca13b72ffc0fe}\index{DamageZoneService@{DamageZoneService}!ShouldDealDamage@{ShouldDealDamage}}
+\index{ShouldDealDamage@{ShouldDealDamage}!DamageZoneService@{DamageZoneService}}
+\doxysubsubsection{\texorpdfstring{ShouldDealDamage()}{ShouldDealDamage()}}
+{\footnotesize\ttfamily \label{class_damage_zone_service_ab84d0ad683d50bd0000ca13b72ffc0fe} 
+bool Damage\+Zone\+Service\+::\+Should\+Deal\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if enough time has passed to deal damage again. 
+
+\begin{DoxyReturn}{Returns}
+True if the timer exceeds the damage interval, False otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_damage_zone_service_ac515d87cf44aa95de72453a30a22988a}{IDamage\+Zone\+Service}}.
+
+\Hypertarget{class_damage_zone_service_a767fb59cebe530d6c4ad4476d2dd5483}\index{DamageZoneService@{DamageZoneService}!UpdateTimer@{UpdateTimer}}
+\index{UpdateTimer@{UpdateTimer}!DamageZoneService@{DamageZoneService}}
+\doxysubsubsection{\texorpdfstring{UpdateTimer()}{UpdateTimer()}}
+{\footnotesize\ttfamily \label{class_damage_zone_service_a767fb59cebe530d6c4ad4476d2dd5483} 
+void Damage\+Zone\+Service\+::\+Update\+Timer (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the internal cooldown timer for damage ticks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last frame (in seconds). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_damage_zone_service_a85eb6e027100c002a781ab84158b5ea1}{IDamage\+Zone\+Service}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_damage_zone_service_8h}{Damage\+Zone\+Service.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_damage_zone_service_8cpp}{Damage\+Zone\+Service.\+cpp}}\end{DoxyCompactItemize}

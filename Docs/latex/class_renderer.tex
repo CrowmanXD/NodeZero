@@ -1,0 +1,141 @@
+\doxysection{Renderer Class Reference}
+\hypertarget{class_renderer}{}\label{class_renderer}\index{Renderer@{Renderer}}
+
+
+Static utility class for all game rendering operations.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_renderer_afa66658423f301d9073f99ecc65a3e51}{Draw\+Circle\+Node}} (float x, float y, float size, float hp\+Percentage, Color color, float rotation=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Draws a circular node with a health-\/fill effect. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_a816ea8a1861e00c16719cec793ce6cd8}{Draw\+Square\+Node}} (float x, float y, float size, float hp\+Percentage, Color color, float rotation=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Draws a square node with health-\/fill effect. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_a1402d60c7eb73ba53a8fc9196207abba}{Draw\+Hexagon\+Node}} (float x, float y, float size, float hp\+Percentage, Color color, float rotation=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Draws a hexagonal node with health-\/fill effect. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_a700f61637d8923fe803df785dd73a90d}{Draw\+Pickup}} (float x, float y, float size, Color color)
+\begin{DoxyCompactList}\small\item\em Draws a simple cross/plus shape for pickups. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_a0a9d2af7f660b68fddf2d605a1d93bb7}{Draw\+Debug\+Info}} (int posX, int posY, Font font)
+\begin{DoxyCompactList}\small\item\em Draws FPS and debug counters. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_abf3f1082c27c037ed3cf21f50fbb6706}{Draw\+Points}} (int points, int posX, int posY, int font\+Size, Color color, Font font)
+\begin{DoxyCompactList}\small\item\em Draws the player\textquotesingle{}s score counter. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_afab370588327060033faf11dbb9c92c9}{Draw\+Health\+Bar}} (float health, float max\+Health, int posX, int posY, int width, int height, Font font)
+\begin{DoxyCompactList}\small\item\em Draws a standard health bar with text overlay. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_renderer_a18fca0f0944b8aad99e9aed171f38fae}{Draw\+Progress\+Bar}} (float percentage, int current\+Level, Font font)
+\begin{DoxyCompactList}\small\item\em Draws the level progress bar at the bottom of the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static utility class for all game rendering operations. 
+
+Encapsulates the logic for drawing geometric shapes, UI elements, and complex entity visuals (like the health-\/fill effect on nodes). Relies on Raylib for low-\/level drawing calls. 
+
+\label{doc-func-members}
+\Hypertarget{class_renderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_renderer_afa66658423f301d9073f99ecc65a3e51}\index{Renderer@{Renderer}!DrawCircleNode@{DrawCircleNode}}
+\index{DrawCircleNode@{DrawCircleNode}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawCircleNode()}{DrawCircleNode()}}
+{\footnotesize\ttfamily \label{class_renderer_afa66658423f301d9073f99ecc65a3e51} 
+void Renderer\+::\+Draw\+Circle\+Node (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{size}{, }\item[{float}]{hp\+Percentage}{, }\item[{Color}]{color}{, }\item[{float}]{rotation}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a circular node with a health-\/fill effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Center X coordinate. \\
+\hline
+{\em y} & Center Y coordinate. \\
+\hline
+{\em size} & Radius of the circle. \\
+\hline
+{\em hp\+Percentage} & Fill amount (0.\+0 to 1.\+0). \\
+\hline
+{\em color} & Base color of the entity. \\
+\hline
+{\em rotation} & Rotation in degrees. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_renderer_a0a9d2af7f660b68fddf2d605a1d93bb7}\index{Renderer@{Renderer}!DrawDebugInfo@{DrawDebugInfo}}
+\index{DrawDebugInfo@{DrawDebugInfo}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawDebugInfo()}{DrawDebugInfo()}}
+{\footnotesize\ttfamily \label{class_renderer_a0a9d2af7f660b68fddf2d605a1d93bb7} 
+void Renderer\+::\+Draw\+Debug\+Info (\begin{DoxyParamCaption}\item[{int}]{posX}{, }\item[{int}]{posY}{, }\item[{Font}]{font}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws FPS and debug counters. 
+
+\Hypertarget{class_renderer_afab370588327060033faf11dbb9c92c9}\index{Renderer@{Renderer}!DrawHealthBar@{DrawHealthBar}}
+\index{DrawHealthBar@{DrawHealthBar}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawHealthBar()}{DrawHealthBar()}}
+{\footnotesize\ttfamily \label{class_renderer_afab370588327060033faf11dbb9c92c9} 
+void Renderer\+::\+Draw\+Health\+Bar (\begin{DoxyParamCaption}\item[{float}]{health}{, }\item[{float}]{max\+Health}{, }\item[{int}]{posX}{, }\item[{int}]{posY}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{Font}]{font}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a standard health bar with text overlay. 
+
+\Hypertarget{class_renderer_a1402d60c7eb73ba53a8fc9196207abba}\index{Renderer@{Renderer}!DrawHexagonNode@{DrawHexagonNode}}
+\index{DrawHexagonNode@{DrawHexagonNode}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawHexagonNode()}{DrawHexagonNode()}}
+{\footnotesize\ttfamily \label{class_renderer_a1402d60c7eb73ba53a8fc9196207abba} 
+void Renderer\+::\+Draw\+Hexagon\+Node (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{size}{, }\item[{float}]{hp\+Percentage}{, }\item[{Color}]{color}{, }\item[{float}]{rotation}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a hexagonal node with health-\/fill effect. 
+
+\Hypertarget{class_renderer_a700f61637d8923fe803df785dd73a90d}\index{Renderer@{Renderer}!DrawPickup@{DrawPickup}}
+\index{DrawPickup@{DrawPickup}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawPickup()}{DrawPickup()}}
+{\footnotesize\ttfamily \label{class_renderer_a700f61637d8923fe803df785dd73a90d} 
+void Renderer\+::\+Draw\+Pickup (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{size}{, }\item[{Color}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a simple cross/plus shape for pickups. 
+
+\Hypertarget{class_renderer_abf3f1082c27c037ed3cf21f50fbb6706}\index{Renderer@{Renderer}!DrawPoints@{DrawPoints}}
+\index{DrawPoints@{DrawPoints}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawPoints()}{DrawPoints()}}
+{\footnotesize\ttfamily \label{class_renderer_abf3f1082c27c037ed3cf21f50fbb6706} 
+void Renderer\+::\+Draw\+Points (\begin{DoxyParamCaption}\item[{int}]{points}{, }\item[{int}]{posX}{, }\item[{int}]{posY}{, }\item[{int}]{font\+Size}{, }\item[{Color}]{color}{, }\item[{Font}]{font}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws the player\textquotesingle{}s score counter. 
+
+\Hypertarget{class_renderer_a18fca0f0944b8aad99e9aed171f38fae}\index{Renderer@{Renderer}!DrawProgressBar@{DrawProgressBar}}
+\index{DrawProgressBar@{DrawProgressBar}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawProgressBar()}{DrawProgressBar()}}
+{\footnotesize\ttfamily \label{class_renderer_a18fca0f0944b8aad99e9aed171f38fae} 
+void Renderer\+::\+Draw\+Progress\+Bar (\begin{DoxyParamCaption}\item[{float}]{percentage}{, }\item[{int}]{current\+Level}{, }\item[{Font}]{font}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws the level progress bar at the bottom of the screen. 
+
+\Hypertarget{class_renderer_a816ea8a1861e00c16719cec793ce6cd8}\index{Renderer@{Renderer}!DrawSquareNode@{DrawSquareNode}}
+\index{DrawSquareNode@{DrawSquareNode}!Renderer@{Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawSquareNode()}{DrawSquareNode()}}
+{\footnotesize\ttfamily \label{class_renderer_a816ea8a1861e00c16719cec793ce6cd8} 
+void Renderer\+::\+Draw\+Square\+Node (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{size}{, }\item[{float}]{hp\+Percentage}{, }\item[{Color}]{color}{, }\item[{float}]{rotation}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a square node with health-\/fill effect. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\mbox{\hyperlink{_renderer_8h}{Renderer.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/src/\mbox{\hyperlink{_renderer_8cpp}{Renderer.\+cpp}}\end{DoxyCompactItemize}

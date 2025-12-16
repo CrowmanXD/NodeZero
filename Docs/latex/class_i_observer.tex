@@ -1,0 +1,69 @@
+\doxysection{IObserver Class Reference}
+\hypertarget{class_i_observer}{}\label{class_i_observer}\index{IObserver@{IObserver}}
+
+
+Interface for objects that listen for events (Subscriber).  
+
+
+
+
+{\ttfamily \#include $<$IObserver.\+h$>$}
+
+Inheritance diagram for IObserver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_observer_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_observer_a258cfc61fcbf3ca8af7bacf8387c3a79}{Update}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event)=0
+\begin{DoxyCompactList}\small\item\em Called by the \doxylink{class_subject}{Subject} when an event occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for objects that listen for events (Subscriber). 
+
+Implement this interface and attach the object to a \doxylink{class_subject}{Subject} to receive updates. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_observer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_observer_a1306da2dbaf55620130af5586e3a0373}\index{IObserver@{IObserver}!````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}}
+\index{````~IObserver@{\texorpdfstring{$\sim$}{\string~}IObserver}!IObserver@{IObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IObserver()}{\string~IObserver()}}
+{\footnotesize\ttfamily \label{class_i_observer_a1306da2dbaf55620130af5586e3a0373} 
+virtual IObserver\+::\texorpdfstring{$\sim$}{\string~}\+IObserver (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_observer_a258cfc61fcbf3ca8af7bacf8387c3a79}\index{IObserver@{IObserver}!Update@{Update}}
+\index{Update@{Update}!IObserver@{IObserver}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_i_observer_a258cfc61fcbf3ca8af7bacf8387c3a79} 
+virtual void IObserver\+::\+Update (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called by the \doxylink{class_subject}{Subject} when an event occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The generic event data. Cast to specific types (e.\+g., \doxylink{class_game_event}{Game\+Event}) to use. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_event_logger_a2c940a1810714256735495415e238faa}{Event\+Logger}}, \mbox{\hyperlink{class_gameplay_screen_ad8aac8074d3413ab37283285caeba780}{Gameplay\+Screen}}, and \mbox{\hyperlink{class_mock_observer_aa3ce46859ed1ba0fdd36de4ec06660c7}{Mock\+Observer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Events/\mbox{\hyperlink{_i_observer_8h}{IObserver.\+h}}\end{DoxyCompactItemize}

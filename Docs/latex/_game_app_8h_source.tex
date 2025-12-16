@@ -1,0 +1,66 @@
+\doxysection{Game\+App.\+h}
+\hypertarget{_game_app_8h_source}{}\label{_game_app_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/GameApp.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/GameApp.h}}
+\mbox{\hyperlink{_game_app_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_screen_8h}{Enums/GameScreen.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Forward\ Declarations}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game}{IGame}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gameplay_screen}{GameplayScreen}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_screen}{MainScreen}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pause_screen}{PauseScreen}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_upgrades_screen}{UpgradesScreen}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level_completed_screen}{LevelCompletedScreen}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gameover_screen}{GameoverScreen}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_app_a60fa14c5e72ac86d85257732494210ce}{GameApp}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_game_app_a60fa14c5e72ac86d85257732494210ce}{GameApp}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_game_app_ae23ced12f4a79184b3719b3905c58170}{\string~GameApp}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_app_a43f0664cd759e32401a990d7e87d9380}{Run}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ Update();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ Draw();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ Cleanup();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ ChangeState(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}}\ newState);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ State\ Management}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}}\ m\_CurrentState;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}}\ m\_PreviousState;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_ShouldClose;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Core\ Systems}}
+\DoxyCodeLine{00047\ \ \ \ \ std::unique\_ptr<IGame>\ m\_Game;\ \textcolor{comment}{//\ The\ Logic\ Engine}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ Screens\ (View\ Controllers)}}
+\DoxyCodeLine{00050\ \ \ \ \ std::shared\_ptr<GameplayScreen>\ m\_GameplayScreen;}
+\DoxyCodeLine{00051\ \ \ \ \ std::unique\_ptr<MainScreen>\ m\_MainScreen;}
+\DoxyCodeLine{00052\ \ \ \ \ std::unique\_ptr<PauseScreen>\ m\_PauseScreen;}
+\DoxyCodeLine{00053\ \ \ \ \ std::unique\_ptr<UpgradesScreen>\ m\_UpgradesScreen;}
+\DoxyCodeLine{00054\ \ \ \ \ std::unique\_ptr<LevelCompletedScreen>\ m\_LevelCompletedScreen;}
+\DoxyCodeLine{00055\ \ \ \ \ std::unique\_ptr<GameoverScreen>\ m\_GameoverScreen;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Global\ Rendering\ Resources}}
+\DoxyCodeLine{00058\ \ \ \ \ RenderTexture2D\ m\_RenderTarget;\ \textcolor{comment}{//\ Used\ for\ Post-\/Processing\ (CRT\ Effect)}}
+\DoxyCodeLine{00059\ \ \ \ \ Shader\ m\_CrtShader;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_ResolutionLoc;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_TimeLoc;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ElapsedTime;}
+\DoxyCodeLine{00063\ \ \ \ \ Font\ m\_Font;}
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Constants}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ TARGET\_FPS\ =\ 240;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ WINDOW\_TITLE\ =\ \textcolor{stringliteral}{"{}NodeZero"{}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ FONT\_PATH\ =\ \textcolor{stringliteral}{"{}assets/fonts/ari-\/w9500-\/display.ttf"{}};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ SHADER\_PATH\ =\ \textcolor{stringliteral}{"{}assets/shaders/crt.fs"{}};}
+\DoxyCodeLine{00070\ \};}
+
+\end{DoxyCode}

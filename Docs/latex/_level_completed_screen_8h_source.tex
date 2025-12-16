@@ -1,0 +1,37 @@
+\doxysection{Level\+Completed\+Screen.\+h}
+\hypertarget{_level_completed_screen_8h_source}{}\label{_level_completed_screen_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/Screens/LevelCompletedScreen.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/Screens/LevelCompletedScreen.h}}
+\mbox{\hyperlink{_level_completed_screen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_screen_8h}{Enums/GameScreen.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_8h}{IGame.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_menu_8h}{Widgets/Menu.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level_completed_screen_ae28a6a79e876de12da976286a3dd01c5}{LevelCompletedScreen}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_level_completed_screen_ae28a6a79e876de12da976286a3dd01c5}{LevelCompletedScreen}}(\mbox{\hyperlink{class_i_game}{IGame}}\&\ game,\ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}})>\ stateChangeCallback,\ Font\ font);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_completed_screen_a250da39f67d0f7eea29e89515b170ff9}{Update}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_completed_screen_addcbac458f108682f743d70f3f61fae6}{Draw}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_i_game}{IGame}}\&\ m\_Game;}
+\DoxyCodeLine{00026\ \ \ \ \ std::function<void(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}})>\ m\_StateChangeCallback;}
+\DoxyCodeLine{00027\ \ \ \ \ std::unique\_ptr<Menu>\ m\_Menu;}
+\DoxyCodeLine{00028\ \ \ \ \ Font\ m\_Font;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Constants\ (UI\ Layout)}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ TITLE\_TEXT\_HEIGHT\_RATIO\ =\ 0.06f;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ TITLE\_Y\_RATIO\ =\ 0.3f;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ POINTS\_FONT\_RATIO\ =\ 0.04f;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ POINTS\_Y\_RATIO\ =\ 0.42f;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BUTTON\_WIDTH\_RATIO\ =\ 0.25f;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BUTTON\_HEIGHT\_RATIO\ =\ 0.08f;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BUTTON\_SPACING\_RATIO\ =\ 0.02f;}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}

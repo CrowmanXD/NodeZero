@@ -1,0 +1,78 @@
+\doxysection{Input\+Handler Class Reference}
+\hypertarget{class_input_handler}{}\label{class_input_handler}\index{InputHandler@{InputHandler}}
+
+
+Static wrapper around Raylib\textquotesingle{}s input system.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Handler.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Vector2 \mbox{\hyperlink{class_input_handler_a81e3526c61d4491bc023a0a3782e914b}{Get\+Mouse\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current mouse cursor position in screen coordinates. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_handler_a65bedbfaf1a3876f8209885bf0ac182f}{Is\+Mouse\+Button\+Pressed}} (int button)
+\begin{DoxyCompactList}\small\item\em Checks if a mouse button was pressed in this frame. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_handler_ad3cab385b3c27bdf1a2697dfd28167d7}{Is\+Key\+Pressed}} (int key)
+\begin{DoxyCompactList}\small\item\em Checks if a keyboard key was pressed in this frame (single trigger). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_handler_a5c983f7e91a2e7f93d71f50d90ac2ad6}{Is\+Key\+Down}} (int key)
+\begin{DoxyCompactList}\small\item\em Checks if a keyboard key is currently held down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Static wrapper around Raylib\textquotesingle{}s input system. 
+
+Provides a unified interface for polling mouse and keyboard state. This abstraction allows for easier mocking during unit testing (if needed) or swapping the underlying input engine later. 
+
+\label{doc-func-members}
+\Hypertarget{class_input_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_handler_a81e3526c61d4491bc023a0a3782e914b}\index{InputHandler@{InputHandler}!GetMousePosition@{GetMousePosition}}
+\index{GetMousePosition@{GetMousePosition}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{GetMousePosition()}{GetMousePosition()}}
+{\footnotesize\ttfamily \label{class_input_handler_a81e3526c61d4491bc023a0a3782e914b} 
+Vector2 Input\+Handler\+::\+Get\+Mouse\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the current mouse cursor position in screen coordinates. 
+
+\Hypertarget{class_input_handler_a5c983f7e91a2e7f93d71f50d90ac2ad6}\index{InputHandler@{InputHandler}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsKeyDown()}{IsKeyDown()}}
+{\footnotesize\ttfamily \label{class_input_handler_a5c983f7e91a2e7f93d71f50d90ac2ad6} 
+bool Input\+Handler\+::\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{int}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a keyboard key is currently held down. 
+
+\Hypertarget{class_input_handler_ad3cab385b3c27bdf1a2697dfd28167d7}\index{InputHandler@{InputHandler}!IsKeyPressed@{IsKeyPressed}}
+\index{IsKeyPressed@{IsKeyPressed}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsKeyPressed()}{IsKeyPressed()}}
+{\footnotesize\ttfamily \label{class_input_handler_ad3cab385b3c27bdf1a2697dfd28167d7} 
+bool Input\+Handler\+::\+Is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{int}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a keyboard key was pressed in this frame (single trigger). 
+
+\Hypertarget{class_input_handler_a65bedbfaf1a3876f8209885bf0ac182f}\index{InputHandler@{InputHandler}!IsMouseButtonPressed@{IsMouseButtonPressed}}
+\index{IsMouseButtonPressed@{IsMouseButtonPressed}!InputHandler@{InputHandler}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonPressed()}{IsMouseButtonPressed()}}
+{\footnotesize\ttfamily \label{class_input_handler_a65bedbfaf1a3876f8209885bf0ac182f} 
+bool Input\+Handler\+::\+Is\+Mouse\+Button\+Pressed (\begin{DoxyParamCaption}\item[{int}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if a mouse button was pressed in this frame. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\mbox{\hyperlink{_input_handler_8h}{Input\+Handler.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/src/\mbox{\hyperlink{_input_handler_8cpp}{Input\+Handler.\+cpp}}\end{DoxyCompactItemize}

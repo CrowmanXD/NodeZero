@@ -1,0 +1,97 @@
+\doxysection{Gameplay\+Screen.\+h}
+\hypertarget{_gameplay_screen_8h_source}{}\label{_gameplay_screen_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/Screens/GameplayScreen.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/Screens/GameplayScreen.h}}
+\mbox{\hyperlink{_gameplay_screen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_screen_8h}{Enums/GameScreen.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_observer_8h}{Events/IObserver.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_game_8h}{IGame.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_node}{INode}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pickup_collect_effect}{PickupCollectEffect}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct_pickup_collect_effect_ae1f70b0a93e4a189d215c697da4405bc}{startPosition}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_pickup_collect_effect_abec6cf38b25dfc4391e6087077091375}{elapsed}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_pickup_collect_effect_a8ddf47aeda3b9e297f8f11d9ef7a5a1c}{duration}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_pickup_collect_effect_a305bff75602294c1089ee6fde3e38572}{size}};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_damage_particle}{DamageParticle}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct_damage_particle_a0dbc0809f38bdfb3a3494b8706de84ec}{position}};}
+\DoxyCodeLine{00032\ \ \ \ \ Vector2\ \mbox{\hyperlink{struct_damage_particle_a283b59531ab768303d65f118f63edb4b}{velocity}};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_damage_particle_aea1bcd045297287b8a10bb6e5f823740}{lifetime}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_damage_particle_a78fd5bb15c0cc27f1904afc3396c97fa}{maxLifetime}};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_damage_particle_ad47c0d83f9d30104383ee6d74c2a2e98}{size}};}
+\DoxyCodeLine{00036\ \ \ \ \ Color\ \mbox{\hyperlink{struct_damage_particle_a33ba7b1ad6bd189ebaeb7974ece3c8c5}{color}};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gameplay_screen_aa86a8074db4e67bb278cbbc78dcbef29}{GameplayScreen}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_observer}{IObserver}},\ \textcolor{keyword}{public}\ std::enable\_shared\_from\_this<GameplayScreen>\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_gameplay_screen_aa86a8074db4e67bb278cbbc78dcbef29}{GameplayScreen}}(\mbox{\hyperlink{class_i_game}{IGame}}\&\ game,\ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}})>\ stateChangeCallback,\ Font\ font);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_screen_a367bc6ad453569064528c7501825d883}{Update}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_screen_a5605ce37f5e586b2c09d75ff88ca2062}{Draw}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_screen_a77e0f966dbc61804ab05071e949eb2ba}{ClearEffects}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gameplay_screen_a367bc6ad453569064528c7501825d883}{Update}}(\textcolor{keyword}{const}\ std::shared\_ptr<IEvent>\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_i_game}{IGame}}\&\ m\_Game;}
+\DoxyCodeLine{00060\ \ \ \ \ std::function<void(\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{GameScreen}})>\ m\_StateChangeCallback;}
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<PickupCollectEffect>\ m\_PickupEffects;}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<DamageParticle>\ m\_DamageParticles;}
+\DoxyCodeLine{00063\ \ \ \ \ Font\ m\_Font;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Constants\ (Refactor:\ Visual/Physics\ Tuning)}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Limits}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ MAX\_PARTICLES\ =\ 500;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ MAX\_PICKUP\_EFFECTS\ =\ 100;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ Timings}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PICKUP\_COLLECT\_EFFECT\_DURATION\ =\ 1.0f;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PICKUP\_SPAWN\_ANIM\_DURATION\ =\ 0.45f;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PARTICLE\_LIFETIME\ =\ 0.6f;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ SHAKE\_DURATION\ =\ 0.15f;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Screen\ Shake}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ SHAKE\_INTENSITY\ =\ 8.0f;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ Particles}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ PARTICLE\_COUNT\ =\ 8;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PARTICLE\_SPEED\_MIN\ =\ 50.0f;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PARTICLE\_SPEED\_MAX\ =\ 150.0f;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PARTICLE\_GRAVITY\ =\ 200.0f;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PARTICLE\_BASE\_SIZE\_SCALING\ =\ 3.0f;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ PARTICLE\_COLOR\_VARIANCE\ =\ 20;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Drawing/UI}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ REFLECTION\_OFFSET\_RATIO\ =\ 0.02f;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ CORNER\_LENGTH\_RATIO\ =\ 0.02f;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ CORNER\_THICKNESS\_RATIO\ =\ 0.003f;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ CENTER\_SQUARE\_SIZE\_RATIO\ =\ 0.008f;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ShakeIntensity\{\ 0.0f\ \};}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ShakeDuration\{\ 0.0f\ \};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ShakeTimer\{\ 0.0f\ \};}
+\DoxyCodeLine{00097\ \ \ \ \ Vector2\ m\_ShakeOffset\{\ 0.0f,\ 0.0f\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ TriggerShake(\textcolor{keywordtype}{float}\ intensity,\ \textcolor{keywordtype}{float}\ duration);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateShake(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ SpawnDamageParticles(Vector2\ position,\ Color\ baseColor,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateParticles(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ DrawReflections(\textcolor{keyword}{const}\ std::vector<INode*>\&\ nodes,\ Vector2\ mousePos,\ \textcolor{keywordtype}{float}\ damageZoneSize,\ \textcolor{keywordtype}{float}\ reflectionOffset);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ DrawBloom(\textcolor{keyword}{const}\ std::vector<INode*>\&\ nodes,\ Vector2\ mousePos,\ \textcolor{keywordtype}{float}\ damageZoneSize);}
+\DoxyCodeLine{00109\ \};}
+
+\end{DoxyCode}

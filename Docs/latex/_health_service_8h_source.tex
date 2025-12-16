@@ -1,0 +1,50 @@
+\doxysection{Health\+Service.\+h}
+\hypertarget{_health_service_8h_source}{}\label{_health_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/HealthService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/HealthService.h}}
+\mbox{\hyperlink{_health_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_health_service_8h}{Services/IHealthService.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_health_service_a748ed28a65c15542a7e7aabca4ea1893}{HealthService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_health_service}{IHealthService}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_MaxHealth;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_CurrentHealth;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_RegenRate;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_HealthDepletionRate;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_HealthDepletionInterval;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_HealthTimer;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_CurrentLevel;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//Refactor:\ No\ magic\ numbers,\ turned\ into\ constants}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ BASE\_DEPLETION\_RATE\ =\ 0.1f;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ DEPLETION\_INTERVAL\ =\ 0.3f;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ LEVEL\_SCALING\_FACTOR\ =\ 0.20f;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_health_service_a748ed28a65c15542a7e7aabca4ea1893}{HealthService}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_health_service_a3a024bd156060edc9858c029811f7b78}{\string~HealthService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_a3404e277504a88a3cac6669c5e479f0e}{Initialize}}(\textcolor{keywordtype}{float}\ maxHealth,\ \textcolor{keywordtype}{float}\ regenRate)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_a68354cef59249a66e06c25f2e2fd73f4}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_a19a063d12ec8eb38954af834d4b07e17}{Reset}}(\textcolor{keywordtype}{float}\ maxHealth);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_a7f929fa174688e9c7031167754029b83}{Reduce}}(\textcolor{keywordtype}{float}\ amount)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_aba78a610ebf630d9aff29e778a2142ff}{SetMaxHealth}}(\textcolor{keywordtype}{float}\ maxHealth);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_adb4b1d280904c465118c851985373786}{SetRegenRate}}(\textcolor{keywordtype}{float}\ regenRate);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_ac02636fa7f7493425db8029717c51697}{SetCurrentLevel}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_service_aec5a10d51eda760e521171258109bb94}{RestoreToMax}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_health_service_a97ad0e864272c39561a69969835c6450}{GetCurrent}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_health_service_a50226581b53ed61d023e13c5aef37c26}{GetMax}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_health_service_a099905df1f1df8a71792d34b017a58cd}{IsZero}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyRegeneration(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyDepletion(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

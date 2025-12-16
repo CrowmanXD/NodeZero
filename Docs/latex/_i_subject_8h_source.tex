@@ -1,0 +1,23 @@
+\doxysection{ISubject.\+h}
+\hypertarget{_i_subject_8h_source}{}\label{_i_subject_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Events/ISubject.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Events/ISubject.h}}
+\mbox{\hyperlink{_i_subject_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_observer}{IObserver}};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_event}{IEvent}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_subject}{ISubject}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\string~ISubject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_subject_a49b5debdf1d06d9f9911d2369aa032b1}{Attach}}(std::shared\_ptr<IObserver>\ observer)\ =\ 0;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_subject_a790eabbfafd693f9ac55173cc774c314}{Detach}}(std::shared\_ptr<IObserver>\ observer)\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_subject_a7b4f818be6b31354f24e7c6025da0263}{Notify}}(\textcolor{keyword}{const}\ std::shared\_ptr<IEvent>\&\ event)\ =\ 0;}
+\DoxyCodeLine{00032\ \};}
+
+\end{DoxyCode}

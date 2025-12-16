@@ -1,0 +1,73 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Tests/\+Service\+Tests.cpp File Reference}
+\hypertarget{_service_tests_8cpp}{}\label{_service_tests_8cpp}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/ServiceTests.cpp@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/ServiceTests.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Health\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Upgrade\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Save\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Config/\+Game\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Types/\+Save\+Data.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_health_service_test}{Health\+Service\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for player health, regeneration, and depletion. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_mock_save_service}{Mock\+Save\+Service}}
+\begin{DoxyCompactList}\small\item\em Mock implementation to isolate \doxylink{class_upgrade_service}{Upgrade\+Service} tests from disk I/O. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_upgrade_service_test}{Upgrade\+Service\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for the shop/purchase logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_service_tests_8cpp_af5d3bfc9428eb9b8cb6a13a875b3a692}{TEST\+\_\+F}} (\mbox{\hyperlink{class_health_service_test}{Health\+Service\+Test}}, Regeneration\+Works)
+\begin{DoxyCompactList}\small\item\em Verifies passive regeneration logic over time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_service_tests_8cpp_aa26ef2cee7375701472e948a881d5f69}{TEST\+\_\+F}} (\mbox{\hyperlink{class_health_service_test}{Health\+Service\+Test}}, Depletion\+Scales\+With\+Level)
+\begin{DoxyCompactList}\small\item\em Verifies that health decays faster at higher levels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_service_tests_8cpp_a9810fe31be11f086fee1c0850df638b1}{TEST\+\_\+F}} (\mbox{\hyperlink{class_upgrade_service_test}{Upgrade\+Service\+Test}}, Buy\+Health\+Upgrade\+Works)
+\begin{DoxyCompactList}\small\item\em Verifies that purchasing an upgrade deducts points and applies stats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_service_tests_8cpp_acae41f0e2c8da2f73ef81a310fe20746}{TEST\+\_\+F}} (\mbox{\hyperlink{class_upgrade_service_test}{Upgrade\+Service\+Test}}, Upgrades\+Fail\+With\+Insufficient\+Points)
+\begin{DoxyCompactList}\small\item\em Verifies that upgrades fail gracefully when the player is poor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_service_tests_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_service_tests_8cpp_aa26ef2cee7375701472e948a881d5f69}\index{ServiceTests.cpp@{ServiceTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!ServiceTests.cpp@{ServiceTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{_service_tests_8cpp_aa26ef2cee7375701472e948a881d5f69} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_health_service_test}{Health\+Service\+Test}}}]{}{, }\item[{Depletion\+Scales\+With\+Level}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that health decays faster at higher levels. 
+
+\Hypertarget{_service_tests_8cpp_af5d3bfc9428eb9b8cb6a13a875b3a692}\index{ServiceTests.cpp@{ServiceTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!ServiceTests.cpp@{ServiceTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{_service_tests_8cpp_af5d3bfc9428eb9b8cb6a13a875b3a692} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_health_service_test}{Health\+Service\+Test}}}]{}{, }\item[{Regeneration\+Works}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies passive regeneration logic over time. 
+
+\Hypertarget{_service_tests_8cpp_a9810fe31be11f086fee1c0850df638b1}\index{ServiceTests.cpp@{ServiceTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!ServiceTests.cpp@{ServiceTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{_service_tests_8cpp_a9810fe31be11f086fee1c0850df638b1} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_upgrade_service_test}{Upgrade\+Service\+Test}}}]{}{, }\item[{Buy\+Health\+Upgrade\+Works}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that purchasing an upgrade deducts points and applies stats. 
+
+\Hypertarget{_service_tests_8cpp_acae41f0e2c8da2f73ef81a310fe20746}\index{ServiceTests.cpp@{ServiceTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!ServiceTests.cpp@{ServiceTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{_service_tests_8cpp_acae41f0e2c8da2f73ef81a310fe20746} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_upgrade_service_test}{Upgrade\+Service\+Test}}}]{}{, }\item[{Upgrades\+Fail\+With\+Insufficient\+Points}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that upgrades fail gracefully when the player is poor. 
+

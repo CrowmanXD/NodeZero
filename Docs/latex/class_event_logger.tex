@@ -1,0 +1,82 @@
+\doxysection{Event\+Logger Class Reference}
+\hypertarget{class_event_logger}{}\label{class_event_logger}\index{EventLogger@{EventLogger}}
+
+
+Observer that listens to game events and logs them to the console.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Logger.\+h$>$}
+
+Inheritance diagram for Event\+Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_event_logger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_logger_a52ad4341307b8e67544a32bfa0539aeb}{Event\+Logger}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_event_logger_a5a4c73901330d9d9349a9847eff1d01a}{\texorpdfstring{$\sim$}{\string~}\+Event\+Logger}} ()=default
+\item 
+void \mbox{\hyperlink{class_event_logger_a2c940a1810714256735495415e238faa}{Update}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event) override
+\begin{DoxyCompactList}\small\item\em Called by the \doxylink{class_subject}{Subject} when an event occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_observer}{IObserver}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_observer_a1306da2dbaf55620130af5586e3a0373}{\texorpdfstring{$\sim$}{\string~}\+IObserver}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Observer that listens to game events and logs them to the console. 
+
+Useful for debugging logic flows or tracking player actions without setting breakpoints. 
+
+\label{doc-constructors}
+\Hypertarget{class_event_logger_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_logger_a52ad4341307b8e67544a32bfa0539aeb}\index{EventLogger@{EventLogger}!EventLogger@{EventLogger}}
+\index{EventLogger@{EventLogger}!EventLogger@{EventLogger}}
+\doxysubsubsection{\texorpdfstring{EventLogger()}{EventLogger()}}
+{\footnotesize\ttfamily \label{class_event_logger_a52ad4341307b8e67544a32bfa0539aeb} 
+Event\+Logger\+::\+Event\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_event_logger_a5a4c73901330d9d9349a9847eff1d01a}\index{EventLogger@{EventLogger}!````~EventLogger@{\texorpdfstring{$\sim$}{\string~}EventLogger}}
+\index{````~EventLogger@{\texorpdfstring{$\sim$}{\string~}EventLogger}!EventLogger@{EventLogger}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EventLogger()}{\string~EventLogger()}}
+{\footnotesize\ttfamily \label{class_event_logger_a5a4c73901330d9d9349a9847eff1d01a} 
+virtual Event\+Logger\+::\texorpdfstring{$\sim$}{\string~}\+Event\+Logger (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_event_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_logger_a2c940a1810714256735495415e238faa}\index{EventLogger@{EventLogger}!Update@{Update}}
+\index{Update@{Update}!EventLogger@{EventLogger}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_event_logger_a2c940a1810714256735495415e238faa} 
+void Event\+Logger\+::\+Update (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called by the \doxylink{class_subject}{Subject} when an event occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The generic event data. Cast to specific types (e.\+g., \doxylink{class_game_event}{Game\+Event}) to use. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_observer_a258cfc61fcbf3ca8af7bacf8387c3a79}{IObserver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+UI/include/\mbox{\hyperlink{_event_logger_8h}{Event\+Logger.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\doxysection{Pickup\+Service.\+h}
+\hypertarget{_pickup_service_8h_source}{}\label{_pickup_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/PickupService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/PickupService.h}}
+\mbox{\hyperlink{_pickup_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_pickup_service_8h}{Services/IPickupService.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_pickup_8h}{Types/PointPickup.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_position_8h}{Types/Position.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_service_ab604641fda15e415c489775e49020519}{PickupService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_pickup_service}{IPickupService}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<PointPickup>\ m\_Pickups;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_NextPickupId;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_PickupPoints;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_ScreenHeight;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//Refactor:\ No\ magic\ numbers,\ turned\ into\ constants}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ TWO\_PI\ =\ 6.28318530718f;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ MIN\_SPAWN\_RADIUS\_FACTOR\ =\ 0.0125f;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ MAX\_SPAWN\_RADIUS\_FACTOR\ =\ 0.05f;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ PICKUP\_SIZE\_FACTOR\ =\ 0.0075f;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_pickup_service_ab604641fda15e415c489775e49020519}{PickupService}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_pickup_service_aca2321177b32e44d89ccb020b9e64e51}{\string~PickupService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_aa02c116264e4a646ccb0fca14463e363}{Initialize}}(\textcolor{keywordtype}{float}\ screenHeight);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_a3c8d6111f35939ea6dfcff0371dda947}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_a23558186ef999279512d30478bf08be4}{Clear}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_a44da5f49802d7401472445a19bfea47b}{Reset}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_a0219a8abca1db71574035776fd5eff1c}{SpawnPointPickups}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_position}{Position}}\&\ origin,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{int}\ pointValue)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_a0219a8abca1db71574035776fd5eff1c}{SpawnPointPickups}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_position}{Position}}\&\ origin);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pickup_service_a6d5d5bb65789abbee3160085bcdc8af4}{CollectPickup}}(\textcolor{keywordtype}{int}\ pickupId)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ std::vector<PointPickup>\ \mbox{\hyperlink{class_pickup_service_a66b7650064b0dbbbcc606a32e1e3a0e2}{ProcessPickupCollection}}(\textcolor{keywordtype}{float}\ centerX,\ \textcolor{keywordtype}{float}\ centerY,\ \textcolor{keywordtype}{float}\ zoneSize);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_service_a66b7650064b0dbbbcc606a32e1e3a0e2}{ProcessPickupCollection}}(\textcolor{keywordtype}{float}\ mouseX,\ \textcolor{keywordtype}{float}\ mouseY,\ \textcolor{keywordtype}{float}\ damageZoneSize,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<PointPickup>\&\ collectedPickups)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PointPickup>\&\ \mbox{\hyperlink{class_pickup_service_a175fdd8f569de12cdc1ea7d9984ccbb7}{GetPickups}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pickup_service_a8fa5e691704cb1c914f883c2b4406e92}{GetPickupPoints}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{float}\ RandomRange(\textcolor{keywordtype}{float}\ minValue,\ \textcolor{keywordtype}{float}\ maxValue)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ CheckCollision(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point_pickup}{PointPickup}}\&\ pickup,\ \textcolor{keywordtype}{float}\ rectX,\ \textcolor{keywordtype}{float}\ rectY,\ \textcolor{keywordtype}{float}\ rectSize)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

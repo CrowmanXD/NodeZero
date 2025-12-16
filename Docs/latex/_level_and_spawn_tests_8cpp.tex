@@ -1,0 +1,73 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Tests/\+Level\+And\+Spawn\+Tests.cpp File Reference}
+\hypertarget{_level_and_spawn_tests_8cpp}{}\label{_level_and_spawn_tests_8cpp}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/LevelAndSpawnTests.cpp@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Tests/LevelAndSpawnTests.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Level\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/src/\+Services/\+Spawn\+Service.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Config/\+Game\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Enums/\+Node\+Shape.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Node\+Zero.\+Core/include/\+Types/\+Spawn\+Info.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_level_service_test}{Level\+Service\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for progression, difficulty scaling, and boss timers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_spawn_service_test}{Spawn\+Service\+Test}}
+\begin{DoxyCompactList}\small\item\em Tests for enemy generation logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_level_and_spawn_tests_8cpp_a09ea4291041dd6f648c9beba640ae0df}{TEST\+\_\+F}} (\mbox{\hyperlink{class_level_service_test}{Level\+Service\+Test}}, Start\+Next\+Level\+Works)
+\begin{DoxyCompactList}\small\item\em Verifies level increments work. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_level_and_spawn_tests_8cpp_a95b74e3eea060308cc6f8a2b9ede20b0}{TEST\+\_\+F}} (\mbox{\hyperlink{class_level_service_test}{Level\+Service\+Test}}, Boss\+Spawning\+Logic)
+\begin{DoxyCompactList}\small\item\em Verifies that the boss spawn flag triggers only after the level duration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_level_and_spawn_tests_8cpp_a482900352450c84d9e862d03ec446c79}{TEST\+\_\+F}} (\mbox{\hyperlink{class_spawn_service_test}{Spawn\+Service\+Test}}, Higher\+Levels\+Spawn\+Faster)
+\begin{DoxyCompactList}\small\item\em Verifies that spawn rate increases (interval decreases) at higher levels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_level_and_spawn_tests_8cpp_aa723da9b0a9664016916e772ddcaf6ab}{TEST\+\_\+F}} (\mbox{\hyperlink{class_spawn_service_test}{Spawn\+Service\+Test}}, HPScales\+With\+Level)
+\begin{DoxyCompactList}\small\item\em Verifies enemy HP scaling formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_level_and_spawn_tests_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_level_and_spawn_tests_8cpp_a95b74e3eea060308cc6f8a2b9ede20b0}\index{LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{_level_and_spawn_tests_8cpp_a95b74e3eea060308cc6f8a2b9ede20b0} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_level_service_test}{Level\+Service\+Test}}}]{}{, }\item[{Boss\+Spawning\+Logic}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that the boss spawn flag triggers only after the level duration. 
+
+\Hypertarget{_level_and_spawn_tests_8cpp_a09ea4291041dd6f648c9beba640ae0df}\index{LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{_level_and_spawn_tests_8cpp_a09ea4291041dd6f648c9beba640ae0df} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_level_service_test}{Level\+Service\+Test}}}]{}{, }\item[{Start\+Next\+Level\+Works}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies level increments work. 
+
+\Hypertarget{_level_and_spawn_tests_8cpp_a482900352450c84d9e862d03ec446c79}\index{LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{_level_and_spawn_tests_8cpp_a482900352450c84d9e862d03ec446c79} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spawn_service_test}{Spawn\+Service\+Test}}}]{}{, }\item[{Higher\+Levels\+Spawn\+Faster}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies that spawn rate increases (interval decreases) at higher levels. 
+
+\Hypertarget{_level_and_spawn_tests_8cpp_aa723da9b0a9664016916e772ddcaf6ab}\index{LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!LevelAndSpawnTests.cpp@{LevelAndSpawnTests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{_level_and_spawn_tests_8cpp_aa723da9b0a9664016916e772ddcaf6ab} 
+TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_spawn_service_test}{Spawn\+Service\+Test}}}]{}{, }\item[{HPScales\+With\+Level}]{}{}\end{DoxyParamCaption})}
+
+
+
+Verifies enemy HP scaling formula. 
+

@@ -1,0 +1,276 @@
+\doxysection{Health\+Service Class Reference}
+\hypertarget{class_health_service}{}\label{class_health_service}\index{HealthService@{HealthService}}
+
+
+Concrete implementation of the health system.  
+
+
+
+
+{\ttfamily \#include $<$Health\+Service.\+h$>$}
+
+Inheritance diagram for Health\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_health_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_health_service_a748ed28a65c15542a7e7aabca4ea1893}{Health\+Service}} ()
+\item 
+\mbox{\hyperlink{class_health_service_a3a024bd156060edc9858c029811f7b78}{\texorpdfstring{$\sim$}{\string~}\+Health\+Service}} () override=default
+\item 
+void \mbox{\hyperlink{class_health_service_a3404e277504a88a3cac6669c5e479f0e}{Initialize}} (float max\+Health, float regen\+Rate) override
+\begin{DoxyCompactList}\small\item\em Initializes the health service with starting values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_a68354cef59249a66e06c25f2e2fd73f4}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Updates the health logic (regeneration and depletion). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_a19a063d12ec8eb38954af834d4b07e17}{Reset}} (float max\+Health)
+\begin{DoxyCompactList}\small\item\em Resets the service to a specific max health state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_a7f929fa174688e9c7031167754029b83}{Reduce}} (float amount) override
+\begin{DoxyCompactList}\small\item\em Reduces current health by a specific amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_aba78a610ebf630d9aff29e778a2142ff}{Set\+Max\+Health}} (float max\+Health)
+\begin{DoxyCompactList}\small\item\em Sets a new maximum health value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_adb4b1d280904c465118c851985373786}{Set\+Regen\+Rate}} (float regen\+Rate)
+\begin{DoxyCompactList}\small\item\em Sets a new regeneration rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_ac02636fa7f7493425db8029717c51697}{Set\+Current\+Level}} (int level)
+\begin{DoxyCompactList}\small\item\em Sets the current game level, which scales the passive depletion rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_service_aec5a10d51eda760e521171258109bb94}{Restore\+To\+Max}} () override
+\begin{DoxyCompactList}\small\item\em Instantly restores health to the maximum value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_health_service_a97ad0e864272c39561a69969835c6450}{Get\+Current}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current health value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_health_service_a50226581b53ed61d023e13c5aef37c26}{Get\+Max}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the maximum health value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_health_service_a099905df1f1df8a71792d34b017a58cd}{Is\+Zero}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the entity is dead (health \texorpdfstring{$<$}{<}= 0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_health_service}{IHealth\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_health_service_ae1f65189e99c9b0124aecc8d2822fb74}{\texorpdfstring{$\sim$}{\string~}\+IHealth\+Service}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the health system. 
+
+Implements logic for taking damage, regenerating health over time, and handling passive health depletion based on game levels. 
+
+\label{doc-constructors}
+\Hypertarget{class_health_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_health_service_a748ed28a65c15542a7e7aabca4ea1893}\index{HealthService@{HealthService}!HealthService@{HealthService}}
+\index{HealthService@{HealthService}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{HealthService()}{HealthService()}}
+{\footnotesize\ttfamily \label{class_health_service_a748ed28a65c15542a7e7aabca4ea1893} 
+Health\+Service\+::\+Health\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_health_service_a3a024bd156060edc9858c029811f7b78}\index{HealthService@{HealthService}!````~HealthService@{\texorpdfstring{$\sim$}{\string~}HealthService}}
+\index{````~HealthService@{\texorpdfstring{$\sim$}{\string~}HealthService}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}HealthService()}{\string~HealthService()}}
+{\footnotesize\ttfamily \label{class_health_service_a3a024bd156060edc9858c029811f7b78} 
+Health\+Service\+::\texorpdfstring{$\sim$}{\string~}\+Health\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_health_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_health_service_a97ad0e864272c39561a69969835c6450}\index{HealthService@{HealthService}!GetCurrent@{GetCurrent}}
+\index{GetCurrent@{GetCurrent}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{GetCurrent()}{GetCurrent()}}
+{\footnotesize\ttfamily \label{class_health_service_a97ad0e864272c39561a69969835c6450} 
+float Health\+Service\+::\+Get\+Current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current health value. 
+
+\begin{DoxyReturn}{Returns}
+The current health. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_ac547fd719799c9dc06e14e81191f0520}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_a50226581b53ed61d023e13c5aef37c26}\index{HealthService@{HealthService}!GetMax@{GetMax}}
+\index{GetMax@{GetMax}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{GetMax()}{GetMax()}}
+{\footnotesize\ttfamily \label{class_health_service_a50226581b53ed61d023e13c5aef37c26} 
+float Health\+Service\+::\+Get\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the maximum health value. 
+
+\begin{DoxyReturn}{Returns}
+The maximum health. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_a2b510122da8e333b046ba444352f2c82}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_a3404e277504a88a3cac6669c5e479f0e}\index{HealthService@{HealthService}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_health_service_a3404e277504a88a3cac6669c5e479f0e} 
+void Health\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{, }\item[{float}]{regen\+Rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the health service with starting values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Health} & The maximum health value. \\
+\hline
+{\em regen\+Rate} & The amount of health restored per second. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_addb41308baa30d851fdad926601dc203}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_a099905df1f1df8a71792d34b017a58cd}\index{HealthService@{HealthService}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{IsZero()}{IsZero()}}
+{\footnotesize\ttfamily \label{class_health_service_a099905df1f1df8a71792d34b017a58cd} 
+bool Health\+Service\+::\+Is\+Zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the entity is dead (health \texorpdfstring{$<$}{<}= 0). 
+
+\begin{DoxyReturn}{Returns}
+True if health is zero or less, False otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_a8be59dd4e14a82da1781ae6ac34c0513}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_a7f929fa174688e9c7031167754029b83}\index{HealthService@{HealthService}!Reduce@{Reduce}}
+\index{Reduce@{Reduce}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{Reduce()}{Reduce()}}
+{\footnotesize\ttfamily \label{class_health_service_a7f929fa174688e9c7031167754029b83} 
+void Health\+Service\+::\+Reduce (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reduces current health by a specific amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount of damage to take. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_acc7fffd08dbf6ff7f36091e3e37269a9}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_a19a063d12ec8eb38954af834d4b07e17}\index{HealthService@{HealthService}!Reset@{Reset}}
+\index{Reset@{Reset}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_health_service_a19a063d12ec8eb38954af834d4b07e17} 
+void Health\+Service\+::\+Reset (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{}\end{DoxyParamCaption})}
+
+
+
+Resets the service to a specific max health state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Health} & The new max health to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_health_service_aec5a10d51eda760e521171258109bb94}\index{HealthService@{HealthService}!RestoreToMax@{RestoreToMax}}
+\index{RestoreToMax@{RestoreToMax}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{RestoreToMax()}{RestoreToMax()}}
+{\footnotesize\ttfamily \label{class_health_service_aec5a10d51eda760e521171258109bb94} 
+void Health\+Service\+::\+Restore\+To\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Instantly restores health to the maximum value. 
+
+
+
+Implements \mbox{\hyperlink{class_i_health_service_a685274d8c98e86c43d21b362c201f975}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_ac02636fa7f7493425db8029717c51697}\index{HealthService@{HealthService}!SetCurrentLevel@{SetCurrentLevel}}
+\index{SetCurrentLevel@{SetCurrentLevel}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{SetCurrentLevel()}{SetCurrentLevel()}}
+{\footnotesize\ttfamily \label{class_health_service_ac02636fa7f7493425db8029717c51697} 
+void Health\+Service\+::\+Set\+Current\+Level (\begin{DoxyParamCaption}\item[{int}]{level}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current game level, which scales the passive depletion rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The current level index. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_health_service_aba78a610ebf630d9aff29e778a2142ff}\index{HealthService@{HealthService}!SetMaxHealth@{SetMaxHealth}}
+\index{SetMaxHealth@{SetMaxHealth}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{SetMaxHealth()}{SetMaxHealth()}}
+{\footnotesize\ttfamily \label{class_health_service_aba78a610ebf630d9aff29e778a2142ff} 
+void Health\+Service\+::\+Set\+Max\+Health (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets a new maximum health value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Health} & The new maximum health. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_af9202ddc2df966daafec21e6908be5bd}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_adb4b1d280904c465118c851985373786}\index{HealthService@{HealthService}!SetRegenRate@{SetRegenRate}}
+\index{SetRegenRate@{SetRegenRate}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{SetRegenRate()}{SetRegenRate()}}
+{\footnotesize\ttfamily \label{class_health_service_adb4b1d280904c465118c851985373786} 
+void Health\+Service\+::\+Set\+Regen\+Rate (\begin{DoxyParamCaption}\item[{float}]{regen\+Rate}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets a new regeneration rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em regen\+Rate} & The new regeneration rate per second. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_a1f81090ac2e7e3cd82526aca6bbf7ea2}{IHealth\+Service}}.
+
+\Hypertarget{class_health_service_a68354cef59249a66e06c25f2e2fd73f4}\index{HealthService@{HealthService}!Update@{Update}}
+\index{Update@{Update}!HealthService@{HealthService}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_health_service_a68354cef59249a66e06c25f2e2fd73f4} 
+void Health\+Service\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the health logic (regeneration and depletion). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time elapsed since the last frame (in seconds). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_health_service_ab6d6c6bbc789c4a161bb75657df699a7}{IHealth\+Service}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_health_service_8h}{Health\+Service.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_health_service_8cpp}{Health\+Service.\+cpp}}\end{DoxyCompactItemize}

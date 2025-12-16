@@ -1,0 +1,255 @@
+\doxysection{Game\+Event Class Reference}
+\hypertarget{class_game_event}{}\label{class_game_event}\index{GameEvent@{GameEvent}}
+
+
+A comprehensive event structure holding data for game logic events.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Events.\+h$>$}
+
+Inheritance diagram for Game\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_event_ad7de75d7d0b067161d8c2195a2c0f705}{Game\+Event}} (float \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}})
+\begin{DoxyCompactList}\small\item\em Default/\+Generic Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_event_a59cc80b167b61a1fd0ee6fb58dd0cc2a}{Game\+Event}} (float \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}, \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} \mbox{\hyperlink{class_game_event_af33798a4b2be18409ae2f18e32c130f5}{shape}}, \mbox{\hyperlink{struct_position}{Position}} pos, float \mbox{\hyperlink{class_game_event_a5753fb2be1b45d51d42128656589afb6}{size}})
+\begin{DoxyCompactList}\small\item\em Constructor for Node-\/related events (Spawn, Damage, etc.). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_event_a57d3d8c9e0d9ae5801d01eedc1269b6f}{Game\+Event}} (float \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}, \mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}, int \mbox{\hyperlink{class_game_event_a39053cc5aba1d8df833653d73051df08}{points}}, float \mbox{\hyperlink{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}{multiplier}})
+\begin{DoxyCompactList}\small\item\em Constructor for Score/\+Multiplier events. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_game_event_acc67abc12755cd044e6d38a1b6ff70ad}{Get\+Timestamp}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the time the event occurred. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_game_event_a85cbec912318e3be2a348b467cdbaafe}{Get\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the string representation of the event type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_event}{IEvent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_event_a37c201e7a45ac21a4ad0e387a6d9b47d}{\texorpdfstring{$\sim$}{\string~}\+IEvent}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} \mbox{\hyperlink{class_game_event_a8705cd216825446546eb523778150f38}{type}}
+\item 
+float \mbox{\hyperlink{class_game_event_a3d04f76eb2c140b166c5408005954cf9}{timestamp}}
+\item 
+\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} \mbox{\hyperlink{class_game_event_af33798a4b2be18409ae2f18e32c130f5}{shape}} = \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70a30954d90085f6eaaf5817917fc5fecb3}{Node\+Shape\+::\+Circle}}
+\item 
+\mbox{\hyperlink{struct_position}{Position}} \mbox{\hyperlink{class_game_event_aa538f12a1ecd8c90e805f75c02c50073}{position}} = \{ 0.\+0f, 0.\+0f \}
+\item 
+float \mbox{\hyperlink{class_game_event_a5753fb2be1b45d51d42128656589afb6}{size}} = 0.\+0f
+\item 
+int \mbox{\hyperlink{class_game_event_a9a6f658498e72488c4ad7b5ddfd1f593}{hp}} = 0
+\item 
+int \mbox{\hyperlink{class_game_event_ad2f44a1535fef02a9a517fa686cdb1b1}{damage}} = 0
+\item 
+int \mbox{\hyperlink{class_game_event_a39053cc5aba1d8df833653d73051df08}{points}} = 0
+\item 
+int \mbox{\hyperlink{class_game_event_a3ec9bc7c72cec8aa11c98ca15f0b4ed4}{delta}} = 0
+\item 
+float \mbox{\hyperlink{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}{multiplier}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_game_event_a177e18ba275c8391a3f8cfd23fef0425}{old\+Multiplier}} = 1.\+0f
+\item 
+\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}} \mbox{\hyperlink{class_game_event_a73a08a51f341909a78425000eb394f1c}{screen\+State}} = \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{Game\+Screen\+::\+Main\+Menu}}
+\item 
+\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}} \mbox{\hyperlink{class_game_event_abf122b087e51469cac71107def9ca857}{old\+Screen\+State}} = \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{Game\+Screen\+::\+Main\+Menu}}
+\item 
+int \mbox{\hyperlink{class_game_event_aa110c45ba6aa3969b4e76c5af3aca47f}{level}} = 1
+\item 
+int \mbox{\hyperlink{class_game_event_ae4b124c214d9a79e172ee28389b9124f}{next\+Level}} = 1
+\item 
+float \mbox{\hyperlink{class_game_event_a7bc935a99568c175cb1ce43c1fcfd62e}{boss\+HP}} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A comprehensive event structure holding data for game logic events. 
+
+This "{}\+God Class"{} approach allows a single type to handle data for nodes, scoring, game states, and level progression. 
+
+\label{doc-constructors}
+\Hypertarget{class_game_event_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_event_ad7de75d7d0b067161d8c2195a2c0f705}\index{GameEvent@{GameEvent}!GameEvent@{GameEvent}}
+\index{GameEvent@{GameEvent}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{GameEvent()}{GameEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_game_event_ad7de75d7d0b067161d8c2195a2c0f705} 
+Game\+Event\+::\+Game\+Event (\begin{DoxyParamCaption}\item[{float}]{timestamp}{, }\item[{\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default/\+Generic Constructor. 
+
+\Hypertarget{class_game_event_a59cc80b167b61a1fd0ee6fb58dd0cc2a}\index{GameEvent@{GameEvent}!GameEvent@{GameEvent}}
+\index{GameEvent@{GameEvent}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{GameEvent()}{GameEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_game_event_a59cc80b167b61a1fd0ee6fb58dd0cc2a} 
+Game\+Event\+::\+Game\+Event (\begin{DoxyParamCaption}\item[{float}]{timestamp}{, }\item[{\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}}}]{type}{, }\item[{\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}}}]{shape}{, }\item[{\mbox{\hyperlink{struct_position}{Position}}}]{pos}{, }\item[{float}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for Node-\/related events (Spawn, Damage, etc.). 
+
+\Hypertarget{class_game_event_a57d3d8c9e0d9ae5801d01eedc1269b6f}\index{GameEvent@{GameEvent}!GameEvent@{GameEvent}}
+\index{GameEvent@{GameEvent}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{GameEvent()}{GameEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_game_event_a57d3d8c9e0d9ae5801d01eedc1269b6f} 
+Game\+Event\+::\+Game\+Event (\begin{DoxyParamCaption}\item[{float}]{timestamp}{, }\item[{\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}}}]{type}{, }\item[{int}]{points}{, }\item[{float}]{multiplier}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for Score/\+Multiplier events. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_game_event_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_event_acc67abc12755cd044e6d38a1b6ff70ad}\index{GameEvent@{GameEvent}!GetTimestamp@{GetTimestamp}}
+\index{GetTimestamp@{GetTimestamp}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{GetTimestamp()}{GetTimestamp()}}
+{\footnotesize\ttfamily \label{class_game_event_acc67abc12755cd044e6d38a1b6ff70ad} 
+float Game\+Event\+::\+Get\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the time the event occurred. 
+
+\begin{DoxyReturn}{Returns}
+Timestamp in seconds. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_event_af49507732b0097c0d56fefcea1704cef}{IEvent}}.
+
+\Hypertarget{class_game_event_a85cbec912318e3be2a348b467cdbaafe}\index{GameEvent@{GameEvent}!GetType@{GetType}}
+\index{GetType@{GetType}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \label{class_game_event_a85cbec912318e3be2a348b467cdbaafe} 
+std\+::string Game\+Event\+::\+Get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the string representation of the event type. 
+
+\begin{DoxyReturn}{Returns}
+A string (e.\+g., "{}\+Node\+Spawned"{}). Useful for logging/debugging. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_event_ac26c81430074fbe966324606a53ed5de}{IEvent}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_game_event_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_event_a7bc935a99568c175cb1ce43c1fcfd62e}\index{GameEvent@{GameEvent}!bossHP@{bossHP}}
+\index{bossHP@{bossHP}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{bossHP}{bossHP}}
+{\footnotesize\ttfamily \label{class_game_event_a7bc935a99568c175cb1ce43c1fcfd62e} 
+float Game\+Event\+::boss\+HP = 0.\+0f}
+
+\Hypertarget{class_game_event_ad2f44a1535fef02a9a517fa686cdb1b1}\index{GameEvent@{GameEvent}!damage@{damage}}
+\index{damage@{damage}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{damage}{damage}}
+{\footnotesize\ttfamily \label{class_game_event_ad2f44a1535fef02a9a517fa686cdb1b1} 
+int Game\+Event\+::damage = 0}
+
+\Hypertarget{class_game_event_a3ec9bc7c72cec8aa11c98ca15f0b4ed4}\index{GameEvent@{GameEvent}!delta@{delta}}
+\index{delta@{delta}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{delta}{delta}}
+{\footnotesize\ttfamily \label{class_game_event_a3ec9bc7c72cec8aa11c98ca15f0b4ed4} 
+int Game\+Event\+::delta = 0}
+
+\Hypertarget{class_game_event_a9a6f658498e72488c4ad7b5ddfd1f593}\index{GameEvent@{GameEvent}!hp@{hp}}
+\index{hp@{hp}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{hp}{hp}}
+{\footnotesize\ttfamily \label{class_game_event_a9a6f658498e72488c4ad7b5ddfd1f593} 
+int Game\+Event\+::hp = 0}
+
+\Hypertarget{class_game_event_aa110c45ba6aa3969b4e76c5af3aca47f}\index{GameEvent@{GameEvent}!level@{level}}
+\index{level@{level}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \label{class_game_event_aa110c45ba6aa3969b4e76c5af3aca47f} 
+int Game\+Event\+::level = 1}
+
+\Hypertarget{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293}\index{GameEvent@{GameEvent}!multiplier@{multiplier}}
+\index{multiplier@{multiplier}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{multiplier}{multiplier}}
+{\footnotesize\ttfamily \label{class_game_event_a6b913ed30d79b4d5aab7a3ff91fe3293} 
+float Game\+Event\+::multiplier = 1.\+0f}
+
+\Hypertarget{class_game_event_ae4b124c214d9a79e172ee28389b9124f}\index{GameEvent@{GameEvent}!nextLevel@{nextLevel}}
+\index{nextLevel@{nextLevel}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{nextLevel}{nextLevel}}
+{\footnotesize\ttfamily \label{class_game_event_ae4b124c214d9a79e172ee28389b9124f} 
+int Game\+Event\+::next\+Level = 1}
+
+\Hypertarget{class_game_event_a177e18ba275c8391a3f8cfd23fef0425}\index{GameEvent@{GameEvent}!oldMultiplier@{oldMultiplier}}
+\index{oldMultiplier@{oldMultiplier}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{oldMultiplier}{oldMultiplier}}
+{\footnotesize\ttfamily \label{class_game_event_a177e18ba275c8391a3f8cfd23fef0425} 
+float Game\+Event\+::old\+Multiplier = 1.\+0f}
+
+\Hypertarget{class_game_event_abf122b087e51469cac71107def9ca857}\index{GameEvent@{GameEvent}!oldScreenState@{oldScreenState}}
+\index{oldScreenState@{oldScreenState}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{oldScreenState}{oldScreenState}}
+{\footnotesize\ttfamily \label{class_game_event_abf122b087e51469cac71107def9ca857} 
+\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}} Game\+Event\+::old\+Screen\+State = \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{Game\+Screen\+::\+Main\+Menu}}}
+
+\Hypertarget{class_game_event_a39053cc5aba1d8df833653d73051df08}\index{GameEvent@{GameEvent}!points@{points}}
+\index{points@{points}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \label{class_game_event_a39053cc5aba1d8df833653d73051df08} 
+int Game\+Event\+::points = 0}
+
+\Hypertarget{class_game_event_aa538f12a1ecd8c90e805f75c02c50073}\index{GameEvent@{GameEvent}!position@{position}}
+\index{position@{position}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{class_game_event_aa538f12a1ecd8c90e805f75c02c50073} 
+\mbox{\hyperlink{struct_position}{Position}} Game\+Event\+::position = \{ 0.\+0f, 0.\+0f \}}
+
+\Hypertarget{class_game_event_a73a08a51f341909a78425000eb394f1c}\index{GameEvent@{GameEvent}!screenState@{screenState}}
+\index{screenState@{screenState}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{screenState}{screenState}}
+{\footnotesize\ttfamily \label{class_game_event_a73a08a51f341909a78425000eb394f1c} 
+\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}} Game\+Event\+::screen\+State = \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{Game\+Screen\+::\+Main\+Menu}}}
+
+\Hypertarget{class_game_event_af33798a4b2be18409ae2f18e32c130f5}\index{GameEvent@{GameEvent}!shape@{shape}}
+\index{shape@{shape}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily \label{class_game_event_af33798a4b2be18409ae2f18e32c130f5} 
+\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{Node\+Shape}} Game\+Event\+::shape = \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70a30954d90085f6eaaf5817917fc5fecb3}{Node\+Shape\+::\+Circle}}}
+
+\Hypertarget{class_game_event_a5753fb2be1b45d51d42128656589afb6}\index{GameEvent@{GameEvent}!size@{size}}
+\index{size@{size}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{class_game_event_a5753fb2be1b45d51d42128656589afb6} 
+float Game\+Event\+::size = 0.\+0f}
+
+\Hypertarget{class_game_event_a3d04f76eb2c140b166c5408005954cf9}\index{GameEvent@{GameEvent}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily \label{class_game_event_a3d04f76eb2c140b166c5408005954cf9} 
+float Game\+Event\+::timestamp}
+
+\Hypertarget{class_game_event_a8705cd216825446546eb523778150f38}\index{GameEvent@{GameEvent}!type@{type}}
+\index{type@{type}!GameEvent@{GameEvent}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{class_game_event_a8705cd216825446546eb523778150f38} 
+\mbox{\hyperlink{_event_type_8h_a2628ea8d12e8b2563c32f05dc7fff6fa}{Event\+Type}} Game\+Event\+::type}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Events/\mbox{\hyperlink{_game_events_8h}{Game\+Events.\+h}}\end{DoxyCompactItemize}

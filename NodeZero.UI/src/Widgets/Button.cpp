@@ -1,0 +1,90 @@
+#include "Widgets/Button.h"
+
+Button::Button(float x, float y, float width, float height, const char* text, Font font)
+    : m_X(x),
+    m_Y(y),
+    m_Width(width),
+    m_Height(height),
+    m_Text(text),
+    m_NormalColor(LIGHTGRAY),
+    m_HoverColor(GRAY),
+    m_PressedColor(DARKGRAY),
+    m_TextColor(BLACK),
+    m_IsActive(true),
+    m_OnClick(nullptr),
+    m_Font(font) {
+}
+
+void Button::Draw() {
+    if (!m_IsActive)
+        return;
+
+    Color currentColor = m_NormalColor;
+
+    if (IsHovered()) {
+        if (IsMouseButtonDown(MOUSE_LEFT_BUTTON))
+            currentColor = m_PressedColor;
+        else
+            currentColor = m_HoverColor;
+    }
+
+    // Draw background
+    DrawRectangle(
+        static_cast<int>(m_X),
+        static_cast<int>(m_Y),
+        static_cast<int>(m_Width),
+        static_cast<int>(m_Height),
+        currentColor);
+
+    // Draw border
+    DrawRectangleLines(
+        static_cast<int>(m_X),
+        static_cast<int>(m_Y),
+        static_cast<int>(m_Width),
+        static_cast<int>(m_Height),
+        BLACK);
+
+    // Draw text (Refactor: Use constant for size ratio)
+    float fontSize = m_Height * TEXT_SIZE_RATIO;
+    Vector2 textSize = MeasureTextEx(m_Font, m_Text.c_str(), fontSize, 1);
+    float textX = m_X + (m_Width - textSize.x) / 2;
+    float textY = m_Y + (m_Height - textSize.y) / 2;
+
+    DrawTextEx(m_Font, m_Text.c_str(), Vector2{ textX, textY }, fontSize, 1, m_TextColor);
+}
+
+void Button::Update() {
+    if (!m_IsActive)
+        return;
+
+    // Check for click release on the same frame it was pressed
+    if (IsHovered() && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+        if (m_OnClick)
+            m_OnClick();
+    }
+}
+
+bool Button::IsHovered() const {
+    Vector2 mousePos = GetMousePosition();
+    // Use Raylib's built-in collision check for cleaner code
+    return CheckCollisionPointRec(mousePos, Rectangle{ m_X, m_Y, m_Width, m_Height });
+}
+
+bool Button::IsActive() const {
+    return m_IsActive;
+}
+
+void Button::SetActive(bool active) {
+    m_IsActive = active;
+}
+
+void Button::SetOnClick(std::function<void()> callback) {
+    m_OnClick = callback;
+}
+
+void Button::SetColors(Color normal, Color hover, Color pressed, Color text) {
+    m_NormalColor = normal;
+    m_HoverColor = hover;
+    m_PressedColor = pressed;
+    m_TextColor = text;
+}

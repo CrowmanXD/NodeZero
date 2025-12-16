@@ -1,0 +1,58 @@
+#pragma once
+
+#include <vector>
+#include "Events/ISubject.h"
+#include "Types/PointPickup.h"
+#include "Types/SpawnInfo.h"
+
+// Forward declarations
+class INode;
+class IUpgradeService;
+class IPickupService;
+class IHealthService;
+class ILevelService;
+class IDamageZoneService;
+class ISpawnService;
+class ISaveService;
+
+/**
+ * @class IGame
+ * @brief Central hub interface for the game application.
+ *
+ * Acts as a Mediator between different services (Score, Health, Spawning)
+ * and the main game loop. It also implements the Subject interface to
+ * broadcast events to the UI and Audio systems.
+ */
+class IGame : public ISubject {
+public:
+    virtual ~IGame() = default;
+
+    virtual void Initialize(float screenWidth, float screenHeight) = 0;
+    virtual void Update(float deltaTime) = 0;
+    virtual void Reset() = 0;
+    virtual void StartNextLevel() = 0;
+
+    // --- Inputs ---
+    virtual void SetMousePosition(float x, float y) = 0;
+
+    // --- Entity Management ---
+    virtual void SpawnNode(const SpawnInfo& info) = 0;
+    virtual const std::vector<INode*>& GetNodes() const = 0;
+    virtual std::vector<PointPickup> GetCollectedPickupsThisFrame() const = 0;
+
+    // --- Game State/Stats ---
+    virtual float GetScreenWidth() const = 0;
+    virtual float GetScreenHeight() const = 0;
+    virtual int GetNodesDestroyed() const = 0;
+    virtual int GetHighPoints() const = 0;
+    virtual void SaveProgress() = 0;
+
+    // --- Service Accessors ---
+    virtual IUpgradeService& GetUpgradeService() = 0;
+    virtual IPickupService& GetPickupService() = 0;
+    virtual IHealthService& GetHealthService() = 0;
+    virtual ILevelService& GetLevelService() = 0;
+    virtual IDamageZoneService& GetDamageZoneService() = 0;
+    virtual ISpawnService& GetSpawnService() = 0;
+    virtual ISaveService& GetSaveService() = 0;
+};

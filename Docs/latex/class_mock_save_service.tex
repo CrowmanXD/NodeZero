@@ -1,0 +1,135 @@
+\doxysection{Mock\+Save\+Service Class Reference}
+\hypertarget{class_mock_save_service}{}\label{class_mock_save_service}\index{MockSaveService@{MockSaveService}}
+
+
+Mock implementation to isolate \doxylink{class_upgrade_service}{Upgrade\+Service} tests from disk I/O.  
+
+
+Inheritance diagram for Mock\+Save\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mock_save_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mock_save_service_aaa11e39b604c5ada8b89ed0705a6748a}{Mock\+Save\+Service}} ()
+\item 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} \mbox{\hyperlink{class_mock_save_service_a96444d6e86253c761cc0d4d40c0de483}{Load\+Progress}} () override
+\begin{DoxyCompactList}\small\item\em Loads game progress from the disk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mock_save_service_aaeb6855fa0e40b92d39237f58e9c0f16}{Save\+Progress}} (const \mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Saves the current game progress to disk. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mock_save_service_aa522be2b9b6c3e7ee505e987a5b668a8}{Get\+Points}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the current available currency/points from the cached data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mock_save_service_a9d4c124a437cdd07d5300857055a5ddb}{Get\+High\+Points}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the all-\/time high score from the cached data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} \mbox{\hyperlink{class_mock_save_service_a3835509aaaddb2b0e5a9913cbb7004fa}{Get\+Current\+Data}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the full cached save data object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_save_service}{ISave\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_save_service_a521f49b3df66c26f3bdf8f1bed6c8e9c}{\texorpdfstring{$\sim$}{\string~}\+ISave\+Service}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mock implementation to isolate \doxylink{class_upgrade_service}{Upgrade\+Service} tests from disk I/O. 
+
+\label{doc-constructors}
+\Hypertarget{class_mock_save_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mock_save_service_aaa11e39b604c5ada8b89ed0705a6748a}\index{MockSaveService@{MockSaveService}!MockSaveService@{MockSaveService}}
+\index{MockSaveService@{MockSaveService}!MockSaveService@{MockSaveService}}
+\doxysubsubsection{\texorpdfstring{MockSaveService()}{MockSaveService()}}
+{\footnotesize\ttfamily \label{class_mock_save_service_aaa11e39b604c5ada8b89ed0705a6748a} 
+Mock\+Save\+Service\+::\+Mock\+Save\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_mock_save_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mock_save_service_a3835509aaaddb2b0e5a9913cbb7004fa}\index{MockSaveService@{MockSaveService}!GetCurrentData@{GetCurrentData}}
+\index{GetCurrentData@{GetCurrentData}!MockSaveService@{MockSaveService}}
+\doxysubsubsection{\texorpdfstring{GetCurrentData()}{GetCurrentData()}}
+{\footnotesize\ttfamily \label{class_mock_save_service_a3835509aaaddb2b0e5a9913cbb7004fa} 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} Mock\+Save\+Service\+::\+Get\+Current\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the full cached save data object. 
+
+
+
+Implements \mbox{\hyperlink{class_i_save_service_a6a5de9a05ee672f957fe361ff6d99e0f}{ISave\+Service}}.
+
+\Hypertarget{class_mock_save_service_a9d4c124a437cdd07d5300857055a5ddb}\index{MockSaveService@{MockSaveService}!GetHighPoints@{GetHighPoints}}
+\index{GetHighPoints@{GetHighPoints}!MockSaveService@{MockSaveService}}
+\doxysubsubsection{\texorpdfstring{GetHighPoints()}{GetHighPoints()}}
+{\footnotesize\ttfamily \label{class_mock_save_service_a9d4c124a437cdd07d5300857055a5ddb} 
+int Mock\+Save\+Service\+::\+Get\+High\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the all-\/time high score from the cached data. 
+
+
+
+Implements \mbox{\hyperlink{class_i_save_service_ac3047e4e8ab1c5672bfb969d246e7cc2}{ISave\+Service}}.
+
+\Hypertarget{class_mock_save_service_aa522be2b9b6c3e7ee505e987a5b668a8}\index{MockSaveService@{MockSaveService}!GetPoints@{GetPoints}}
+\index{GetPoints@{GetPoints}!MockSaveService@{MockSaveService}}
+\doxysubsubsection{\texorpdfstring{GetPoints()}{GetPoints()}}
+{\footnotesize\ttfamily \label{class_mock_save_service_aa522be2b9b6c3e7ee505e987a5b668a8} 
+int Mock\+Save\+Service\+::\+Get\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the current available currency/points from the cached data. 
+
+
+
+Implements \mbox{\hyperlink{class_i_save_service_aeaf85ded37fcb3875c8d74bbb41180f1}{ISave\+Service}}.
+
+\Hypertarget{class_mock_save_service_a96444d6e86253c761cc0d4d40c0de483}\index{MockSaveService@{MockSaveService}!LoadProgress@{LoadProgress}}
+\index{LoadProgress@{LoadProgress}!MockSaveService@{MockSaveService}}
+\doxysubsubsection{\texorpdfstring{LoadProgress()}{LoadProgress()}}
+{\footnotesize\ttfamily \label{class_mock_save_service_a96444d6e86253c761cc0d4d40c0de483} 
+\mbox{\hyperlink{struct_save_data}{Save\+Data}} Mock\+Save\+Service\+::\+Load\+Progress (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads game progress from the disk. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_save_data}{Save\+Data} structure containing the loaded values, or defaults if no save exists. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_save_service_a477c7f189b31e13d73612ff8e6088f6c}{ISave\+Service}}.
+
+\Hypertarget{class_mock_save_service_aaeb6855fa0e40b92d39237f58e9c0f16}\index{MockSaveService@{MockSaveService}!SaveProgress@{SaveProgress}}
+\index{SaveProgress@{SaveProgress}!MockSaveService@{MockSaveService}}
+\doxysubsubsection{\texorpdfstring{SaveProgress()}{SaveProgress()}}
+{\footnotesize\ttfamily \label{class_mock_save_service_aaeb6855fa0e40b92d39237f58e9c0f16} 
+void Mock\+Save\+Service\+::\+Save\+Progress (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Saves the current game progress to disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data structure containing values to serialize. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_save_service_af2df49bfee25e6a07f42528b23151233}{ISave\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Tests/\mbox{\hyperlink{_service_tests_8cpp}{Service\+Tests.\+cpp}}\end{DoxyCompactItemize}

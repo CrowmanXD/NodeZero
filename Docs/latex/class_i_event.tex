@@ -1,0 +1,86 @@
+\doxysection{IEvent Class Reference}
+\hypertarget{class_i_event}{}\label{class_i_event}\index{IEvent@{IEvent}}
+
+
+Base interface for all system events.  
+
+
+
+
+{\ttfamily \#include $<$IEvent.\+h$>$}
+
+Inheritance diagram for IEvent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_event_a37c201e7a45ac21a4ad0e387a6d9b47d}{\texorpdfstring{$\sim$}{\string~}\+IEvent}} ()=default
+\item 
+virtual std\+::string \mbox{\hyperlink{class_i_event_ac26c81430074fbe966324606a53ed5de}{Get\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the string representation of the event type. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_event_af49507732b0097c0d56fefcea1704cef}{Get\+Timestamp}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the time the event occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base interface for all system events. 
+
+Provides a common type that can be passed through the Event Bus (\doxylink{class_subject}{Subject}). Specific event data should be casted based on the type. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_event_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_event_a37c201e7a45ac21a4ad0e387a6d9b47d}\index{IEvent@{IEvent}!````~IEvent@{\texorpdfstring{$\sim$}{\string~}IEvent}}
+\index{````~IEvent@{\texorpdfstring{$\sim$}{\string~}IEvent}!IEvent@{IEvent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IEvent()}{\string~IEvent()}}
+{\footnotesize\ttfamily \label{class_i_event_a37c201e7a45ac21a4ad0e387a6d9b47d} 
+virtual IEvent\+::\texorpdfstring{$\sim$}{\string~}\+IEvent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_event_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_event_af49507732b0097c0d56fefcea1704cef}\index{IEvent@{IEvent}!GetTimestamp@{GetTimestamp}}
+\index{GetTimestamp@{GetTimestamp}!IEvent@{IEvent}}
+\doxysubsubsection{\texorpdfstring{GetTimestamp()}{GetTimestamp()}}
+{\footnotesize\ttfamily \label{class_i_event_af49507732b0097c0d56fefcea1704cef} 
+virtual float IEvent\+::\+Get\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the time the event occurred. 
+
+\begin{DoxyReturn}{Returns}
+Timestamp in seconds. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_game_event_acc67abc12755cd044e6d38a1b6ff70ad}{Game\+Event}}.
+
+\Hypertarget{class_i_event_ac26c81430074fbe966324606a53ed5de}\index{IEvent@{IEvent}!GetType@{GetType}}
+\index{GetType@{GetType}!IEvent@{IEvent}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \label{class_i_event_ac26c81430074fbe966324606a53ed5de} 
+virtual std\+::string IEvent\+::\+Get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the string representation of the event type. 
+
+\begin{DoxyReturn}{Returns}
+A string (e.\+g., "{}\+Node\+Spawned"{}). Useful for logging/debugging. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_game_event_a85cbec912318e3be2a348b467cdbaafe}{Game\+Event}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Events/\mbox{\hyperlink{_i_event_8h}{IEvent.\+h}}\end{DoxyCompactItemize}

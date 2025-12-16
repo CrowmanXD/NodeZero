@@ -1,0 +1,233 @@
+\doxysection{ILevel\+Service Class Reference}
+\hypertarget{class_i_level_service}{}\label{class_i_level_service}\index{ILevelService@{ILevelService}}
+
+
+Interface for managing game level progression.  
+
+
+
+
+{\ttfamily \#include $<$ILevel\+Service.\+h$>$}
+
+Inheritance diagram for ILevel\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_level_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_level_service_a5603aa4535c947222577c7b3794a036b}{\texorpdfstring{$\sim$}{\string~}\+ILevel\+Service}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_level_service_af074f74a12a09069549a94df1e901467}{Initialize}} (int start\+Level)=0
+\begin{DoxyCompactList}\small\item\em Initializes the service starting at a specific level. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_level_service_a028266dabec35fd9faadadc948bf63f2}{Update}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates the level timer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_level_service_a0d08a6e283698d5ee5d95ad98c9be17f}{Start\+Next\+Level}} ()=0
+\begin{DoxyCompactList}\small\item\em Advances the game to the next level. Resets timers and boss status. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_level_service_aa399644f58a7f7b53986c1f277ad7d99}{Increment\+Nodes\+Destroyed}} ()=0
+\begin{DoxyCompactList}\small\item\em Tracks that a node has been destroyed in the current level. Used for statistics or unlocking achievements. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_level_service_aa4a415accfd37b5d695ae912f5618d7a}{Reset}} ()=0
+\begin{DoxyCompactList}\small\item\em Resets the service to the default state (Level 1). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_i_level_service_a6db3b81757307267017458b2c1a9a631}{Get\+Current\+Level}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current active level number. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_i_level_service_a61296d65a15a9cb070c127a02303854b}{Get\+Nodes\+Destroyed\+This\+Level}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the count of nodes destroyed in the current level. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_level_service_a7468454bc07f5bf452a5d2e75bd36477}{Get\+Progress\+Bar\+Percentage}} () const =0
+\begin{DoxyCompactList}\small\item\em Calculates the completion percentage of the current level\textquotesingle{}s duration. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_level_service_a5d0f1d90a41c8fbd89f84a947b7f8a1b}{Is\+Level\+Completed}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the level is fully complete (Boss defeated). \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_level_service_ac7c53c2f9762c25f2fd9d227503670b1}{Should\+Spawn\+Boss}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the level timer has expired and the boss should spawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for managing game level progression. 
+
+This service tracks the current level number, the duration timer for the level, node destruction statistics, and determines when the boss should spawn. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_level_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_level_service_a5603aa4535c947222577c7b3794a036b}\index{ILevelService@{ILevelService}!````~ILevelService@{\texorpdfstring{$\sim$}{\string~}ILevelService}}
+\index{````~ILevelService@{\texorpdfstring{$\sim$}{\string~}ILevelService}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ILevelService()}{\string~ILevelService()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a5603aa4535c947222577c7b3794a036b} 
+virtual ILevel\+Service\+::\texorpdfstring{$\sim$}{\string~}\+ILevel\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_level_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_level_service_a6db3b81757307267017458b2c1a9a631}\index{ILevelService@{ILevelService}!GetCurrentLevel@{GetCurrentLevel}}
+\index{GetCurrentLevel@{GetCurrentLevel}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{GetCurrentLevel()}{GetCurrentLevel()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a6db3b81757307267017458b2c1a9a631} 
+virtual int ILevel\+Service\+::\+Get\+Current\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current active level number. 
+
+\begin{DoxyReturn}{Returns}
+The current level (1-\/based index). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_ac9d6120da0a6ca1264744f8d0cb07946}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_a61296d65a15a9cb070c127a02303854b}\index{ILevelService@{ILevelService}!GetNodesDestroyedThisLevel@{GetNodesDestroyedThisLevel}}
+\index{GetNodesDestroyedThisLevel@{GetNodesDestroyedThisLevel}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{GetNodesDestroyedThisLevel()}{GetNodesDestroyedThisLevel()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a61296d65a15a9cb070c127a02303854b} 
+virtual int ILevel\+Service\+::\+Get\+Nodes\+Destroyed\+This\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the count of nodes destroyed in the current level. 
+
+\begin{DoxyReturn}{Returns}
+The integer count of destroyed nodes. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_a421af1c5c25487f975cca6ceecc3b69f}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_a7468454bc07f5bf452a5d2e75bd36477}\index{ILevelService@{ILevelService}!GetProgressBarPercentage@{GetProgressBarPercentage}}
+\index{GetProgressBarPercentage@{GetProgressBarPercentage}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{GetProgressBarPercentage()}{GetProgressBarPercentage()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a7468454bc07f5bf452a5d2e75bd36477} 
+virtual float ILevel\+Service\+::\+Get\+Progress\+Bar\+Percentage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the completion percentage of the current level\textquotesingle{}s duration. 
+
+\begin{DoxyReturn}{Returns}
+A float between 0.\+0 and 100.\+0 representing progress. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_af7f70c5e160f8702b71a0063d1551213}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_aa399644f58a7f7b53986c1f277ad7d99}\index{ILevelService@{ILevelService}!IncrementNodesDestroyed@{IncrementNodesDestroyed}}
+\index{IncrementNodesDestroyed@{IncrementNodesDestroyed}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{IncrementNodesDestroyed()}{IncrementNodesDestroyed()}}
+{\footnotesize\ttfamily \label{class_i_level_service_aa399644f58a7f7b53986c1f277ad7d99} 
+virtual void ILevel\+Service\+::\+Increment\+Nodes\+Destroyed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Tracks that a node has been destroyed in the current level. Used for statistics or unlocking achievements. 
+
+
+
+Implemented in \mbox{\hyperlink{class_level_service_aace2f364ee217014059c40d8825bb8b6}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_af074f74a12a09069549a94df1e901467}\index{ILevelService@{ILevelService}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_i_level_service_af074f74a12a09069549a94df1e901467} 
+virtual void ILevel\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{int}]{start\+Level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initializes the service starting at a specific level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Level} & The level to start on (must be \texorpdfstring{$>$}{>}= 1). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_aaa61a6d1527b3d02c611e88547285b19}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_a5d0f1d90a41c8fbd89f84a947b7f8a1b}\index{ILevelService@{ILevelService}!IsLevelCompleted@{IsLevelCompleted}}
+\index{IsLevelCompleted@{IsLevelCompleted}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{IsLevelCompleted()}{IsLevelCompleted()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a5d0f1d90a41c8fbd89f84a947b7f8a1b} 
+virtual bool ILevel\+Service\+::\+Is\+Level\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the level is fully complete (Boss defeated). 
+
+\begin{DoxyReturn}{Returns}
+True if the level is finished, False otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_a03a66aa8764e5bfb66085c0a445c98f6}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_aa4a415accfd37b5d695ae912f5618d7a}\index{ILevelService@{ILevelService}!Reset@{Reset}}
+\index{Reset@{Reset}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_i_level_service_aa4a415accfd37b5d695ae912f5618d7a} 
+virtual void ILevel\+Service\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Resets the service to the default state (Level 1). 
+
+
+
+Implemented in \mbox{\hyperlink{class_level_service_a120bf8c6a7fe957ef5d40e10584649f4}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_ac7c53c2f9762c25f2fd9d227503670b1}\index{ILevelService@{ILevelService}!ShouldSpawnBoss@{ShouldSpawnBoss}}
+\index{ShouldSpawnBoss@{ShouldSpawnBoss}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{ShouldSpawnBoss()}{ShouldSpawnBoss()}}
+{\footnotesize\ttfamily \label{class_i_level_service_ac7c53c2f9762c25f2fd9d227503670b1} 
+virtual bool ILevel\+Service\+::\+Should\+Spawn\+Boss (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the level timer has expired and the boss should spawn. 
+
+\begin{DoxyReturn}{Returns}
+True if time is up and boss is not yet active. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_ab1fa1525ec85c85a4018579263294ee3}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_a0d08a6e283698d5ee5d95ad98c9be17f}\index{ILevelService@{ILevelService}!StartNextLevel@{StartNextLevel}}
+\index{StartNextLevel@{StartNextLevel}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{StartNextLevel()}{StartNextLevel()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a0d08a6e283698d5ee5d95ad98c9be17f} 
+virtual void ILevel\+Service\+::\+Start\+Next\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Advances the game to the next level. Resets timers and boss status. 
+
+
+
+Implemented in \mbox{\hyperlink{class_level_service_a6782dc65894b28abcab6134e5c150c47}{Level\+Service}}.
+
+\Hypertarget{class_i_level_service_a028266dabec35fd9faadadc948bf63f2}\index{ILevelService@{ILevelService}!Update@{Update}}
+\index{Update@{Update}!ILevelService@{ILevelService}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_i_level_service_a028266dabec35fd9faadadc948bf63f2} 
+virtual void ILevel\+Service\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the level timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time elapsed since the last frame (in seconds). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_level_service_abd1da0feafd6cb91b6ef4b2a1e7acdfa}{Level\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Services/\mbox{\hyperlink{_i_level_service_8h}{ILevel\+Service.\+h}}\end{DoxyCompactItemize}

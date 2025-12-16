@@ -1,0 +1,110 @@
+\doxysection{Subject Class Reference}
+\hypertarget{class_subject}{}\label{class_subject}\index{Subject@{Subject}}
+
+
+Concrete implementation of the \doxylink{class_i_subject}{ISubject} interface.  
+
+
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+Inheritance diagram for Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_subject_ab4f33719b83034be37c7f8223f1a5e63}{Subject}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_subject_af9723476c61afcceeb91bee3211258c7}{\texorpdfstring{$\sim$}{\string~}\+Subject}} ()=default
+\item 
+void \mbox{\hyperlink{class_subject_a1ad7c3dfa77e8b4d06601f3c22510cb2}{Attach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Registers an observer to receive notifications. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_ac36c9756a9df9b4b0f787b744b1cd477}{Detach}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$ observer) override
+\begin{DoxyCompactList}\small\item\em Unregisters an observer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_subject_a163cfae64cb06d87e74b36a499747356}{Notify}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&event) override
+\begin{DoxyCompactList}\small\item\em Broadcasts an event to all attached observers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_subject}{ISubject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_subject_ae7264a3f132816d45581a1b31845ecac}{\texorpdfstring{$\sim$}{\string~}\+ISubject}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the \doxylink{class_i_subject}{ISubject} interface. 
+
+Maintains a thread-\/unsafe list of observers. Note\+: \doxylink{class_subject_a163cfae64cb06d87e74b36a499747356}{Notify()} is safe against observers detaching themselves during the update loop. 
+
+\label{doc-constructors}
+\Hypertarget{class_subject_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_subject_ab4f33719b83034be37c7f8223f1a5e63}\index{Subject@{Subject}!Subject@{Subject}}
+\index{Subject@{Subject}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{Subject()}{Subject()}}
+{\footnotesize\ttfamily \label{class_subject_ab4f33719b83034be37c7f8223f1a5e63} 
+Subject\+::\+Subject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_subject_af9723476c61afcceeb91bee3211258c7}\index{Subject@{Subject}!````~Subject@{\texorpdfstring{$\sim$}{\string~}Subject}}
+\index{````~Subject@{\texorpdfstring{$\sim$}{\string~}Subject}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Subject()}{\string~Subject()}}
+{\footnotesize\ttfamily \label{class_subject_af9723476c61afcceeb91bee3211258c7} 
+virtual Subject\+::\texorpdfstring{$\sim$}{\string~}\+Subject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_subject_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_subject_a1ad7c3dfa77e8b4d06601f3c22510cb2}\index{Subject@{Subject}!Attach@{Attach}}
+\index{Attach@{Attach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily \label{class_subject_a1ad7c3dfa77e8b4d06601f3c22510cb2} 
+void Subject\+::\+Attach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Registers an observer to receive notifications. 
+
+
+
+Implements \mbox{\hyperlink{class_i_subject_a49b5debdf1d06d9f9911d2369aa032b1}{ISubject}}.
+
+\Hypertarget{class_subject_ac36c9756a9df9b4b0f787b744b1cd477}\index{Subject@{Subject}!Detach@{Detach}}
+\index{Detach@{Detach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily \label{class_subject_ac36c9756a9df9b4b0f787b744b1cd477} 
+void Subject\+::\+Detach (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_observer}{IObserver}} $>$}]{observer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unregisters an observer. 
+
+
+
+Implements \mbox{\hyperlink{class_i_subject_a790eabbfafd693f9ac55173cc774c314}{ISubject}}.
+
+\Hypertarget{class_subject_a163cfae64cb06d87e74b36a499747356}\index{Subject@{Subject}!Notify@{Notify}}
+\index{Notify@{Notify}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily \label{class_subject_a163cfae64cb06d87e74b36a499747356} 
+void Subject\+::\+Notify (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_event}{IEvent}} $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Broadcasts an event to all attached observers. 
+
+
+
+Implements \mbox{\hyperlink{class_i_subject_a7b4f818be6b31354f24e7c6025da0263}{ISubject}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Events/\mbox{\hyperlink{_subject_8h}{Subject.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Events/\mbox{\hyperlink{_subject_8cpp}{Subject.\+cpp}}\end{DoxyCompactItemize}

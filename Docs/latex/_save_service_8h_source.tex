@@ -1,0 +1,49 @@
+\doxysection{Save\+Service.\+h}
+\hypertarget{_save_service_8h_source}{}\label{_save_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/SaveService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/SaveService.h}}
+\mbox{\hyperlink{_save_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_save_service_8h}{Services/ISaveService.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_save_data_8h}{Types/SaveData.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save_service_ab85e79d65de26d650ccfc1752012eb97}{SaveService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_save_service}{ISaveService}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_save_data}{SaveData}}\ m\_CurrentData;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//Refactor:\ No\ magic\ strings,\ turned\ into\ constants}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ SAVE\_FILE\_NAME\ =\ \textcolor{stringliteral}{"{}save.dat"{}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_HIGH\_POINTS\ =\ \textcolor{stringliteral}{"{}highPoints"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_POINTS\ =\ \textcolor{stringliteral}{"{}points"{}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_GAMES\_PLAYED\ =\ \textcolor{stringliteral}{"{}gamesPlayed"{}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_NODES\_DESTROYED\ =\ \textcolor{stringliteral}{"{}totalNodesDestroyed"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_LEVEL\ =\ \textcolor{stringliteral}{"{}currentLevel"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_MAX\_HEALTH\ =\ \textcolor{stringliteral}{"{}maxHealth"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_REGEN\_RATE\ =\ \textcolor{stringliteral}{"{}regenRate"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_ZONE\_SIZE\ =\ \textcolor{stringliteral}{"{}damageZoneSize"{}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ KEY\_DAMAGE\_TICK\ =\ \textcolor{stringliteral}{"{}damagePerTick"{}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_save_service_ab85e79d65de26d650ccfc1752012eb97}{SaveService}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_save_service_a7850aacd9977bcede3698d2f6960f109}{\string~SaveService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_service_a40bf71aaceeb0abfe24182dd5242a84e}{Initialize}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_save_data}{SaveData}}\ \mbox{\hyperlink{class_save_service_aa11baf98639cc7eca50f31b5acdfe0cf}{LoadProgress}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_service_a5f64bd7ffbeb020a1be7c02d74fece87}{SaveProgress}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_save_data}{SaveData}}\&\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_save_service_a13ee241e72f135a6a685709fec7fb1a5}{GetPoints}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_save_service_ad8af30fda87343add9fb6d642582b72f}{GetHighPoints}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_save_data}{SaveData}}\ \mbox{\hyperlink{class_save_service_af22a45c1f53e18de4d1ed77160207ac5}{GetCurrentData}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ std::string\ GetSavePath()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ WriteToFile(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_save_data}{SaveData}}\&\ data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{struct_save_data}{SaveData}}\ ReadFromFile()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,33 @@
+\doxysection{IPickup\+Service.\+h}
+\hypertarget{_i_pickup_service_8h_source}{}\label{_i_pickup_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Services/IPickupService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Services/IPickupService.h}}
+\mbox{\hyperlink{_i_pickup_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_pickup_8h}{../Types/PointPickup.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_position_8h}{../Types/Position.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_pickup_service}{IPickupService}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_pickup_service_aff4b58c8efaf708f10d09a4cbff6ab91}{\string~IPickupService}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_pickup_service_a3813540cf8c43508d8d5831c1484a46e}{SpawnPointPickups}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_position}{Position}}\&\ origin,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{int}\ pointValue)\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_pickup_service_abd441cdb44e02545c43d2898afc89c33}{CollectPickup}}(\textcolor{keywordtype}{int}\ pickupId)\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_pickup_service_a866449dbe3d10f94bc92dd53251e8ab7}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_pickup_service_a75858bbf85aeca5ecd89e88901f96dd1}{Clear}}()\ =\ 0;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<PointPickup>\&\ \mbox{\hyperlink{class_i_pickup_service_a9eeb1c89a3c9cd59bc5c3406109f8e00}{GetPickups}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_i_pickup_service_a2d48c868306fb39f4e3d21bd049522a6}{GetPickupPoints}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_pickup_service_adef683ff12ce5beaec656855619fc55d}{ProcessPickupCollection}}(\textcolor{keywordtype}{float}\ mouseX,\ \textcolor{keywordtype}{float}\ mouseY,\ \textcolor{keywordtype}{float}\ damageZoneSize,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<PointPickup>\&\ collectedPickups)\ =\ 0;}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

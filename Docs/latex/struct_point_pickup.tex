@@ -1,0 +1,151 @@
+\doxysection{Point\+Pickup Struct Reference}
+\hypertarget{struct_point_pickup}{}\label{struct_point_pickup}\index{PointPickup@{PointPickup}}
+
+
+Represents a collectible item dropped by destroyed enemies.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Pickup.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_point_pickup_a66c787689bfe24c356988b1a1198d163}{Get\+Life\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the percentage of life remaining. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_point_pickup_aa0d6565b808ae023a3e12d4ccf8216cb}{Get\+Age}} () const
+\begin{DoxyCompactList}\small\item\em Calculates how long the pickup has been alive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_point_pickup_a6b81f1ec48a56559acdd199387e5e365}{id}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Unique identifier for collection logic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_position}{Position}} \mbox{\hyperlink{struct_point_pickup_a7d4dd2752d98f06117f99654b17d479e}{position}}
+\begin{DoxyCompactList}\small\item\em Current world position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_position}{Position}} \mbox{\hyperlink{struct_point_pickup_a7f5df4e320b21b838af634bc2a240931}{spawn\+Origin}}
+\begin{DoxyCompactList}\small\item\em The center point where this cluster of pickups spawned. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_point_pickup_a55e6f9d5f570fd47c74ef0e0528c0cb6}{size}} \{ 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em Visual radius of the pickup. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54}{lifetime}} \{ 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em Total duration this pickup lasts before despawning (Seconds). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_point_pickup_ab24fa82f821cf7d235eff64a8cdf6f74}{remaining\+Time}} \{ 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em Current time left before despawn (Seconds). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_point_pickup_a228a95dc945eeb660a461952d68f90d1}{points}} \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Value added to score/currency when collected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a collectible item dropped by destroyed enemies. 
+
+Contains logic to track its own lifetime and fading status. 
+
+\label{doc-func-members}
+\Hypertarget{struct_point_pickup_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_point_pickup_aa0d6565b808ae023a3e12d4ccf8216cb}\index{PointPickup@{PointPickup}!GetAge@{GetAge}}
+\index{GetAge@{GetAge}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{GetAge()}{GetAge()}}
+{\footnotesize\ttfamily \label{struct_point_pickup_aa0d6565b808ae023a3e12d4ccf8216cb} 
+float Point\+Pickup\+::\+Get\+Age (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Calculates how long the pickup has been alive. 
+
+\begin{DoxyReturn}{Returns}
+Time elapsed since spawn (Seconds). 
+\end{DoxyReturn}
+\Hypertarget{struct_point_pickup_a66c787689bfe24c356988b1a1198d163}\index{PointPickup@{PointPickup}!GetLifeRatio@{GetLifeRatio}}
+\index{GetLifeRatio@{GetLifeRatio}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{GetLifeRatio()}{GetLifeRatio()}}
+{\footnotesize\ttfamily \label{struct_point_pickup_a66c787689bfe24c356988b1a1198d163} 
+float Point\+Pickup\+::\+Get\+Life\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}}
+
+
+
+Calculates the percentage of life remaining. 
+
+\begin{DoxyReturn}{Returns}
+A value between 0.\+0 (expired) and 1.\+0 (fresh). Useful for fading animations (alpha). 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_point_pickup_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_point_pickup_a6b81f1ec48a56559acdd199387e5e365}\index{PointPickup@{PointPickup}!id@{id}}
+\index{id@{id}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{struct_point_pickup_a6b81f1ec48a56559acdd199387e5e365} 
+int Point\+Pickup\+::id \{ 0 \}}
+
+
+
+Unique identifier for collection logic. 
+
+\Hypertarget{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54}\index{PointPickup@{PointPickup}!lifetime@{lifetime}}
+\index{lifetime@{lifetime}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{lifetime}{lifetime}}
+{\footnotesize\ttfamily \label{struct_point_pickup_ac6f3a679f9a4ca54359d5f7c680bcc54} 
+float Point\+Pickup\+::lifetime \{ 0.\+0f \}}
+
+
+
+Total duration this pickup lasts before despawning (Seconds). 
+
+\Hypertarget{struct_point_pickup_a228a95dc945eeb660a461952d68f90d1}\index{PointPickup@{PointPickup}!points@{points}}
+\index{points@{points}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \label{struct_point_pickup_a228a95dc945eeb660a461952d68f90d1} 
+int Point\+Pickup\+::points \{ 0 \}}
+
+
+
+Value added to score/currency when collected. 
+
+\Hypertarget{struct_point_pickup_a7d4dd2752d98f06117f99654b17d479e}\index{PointPickup@{PointPickup}!position@{position}}
+\index{position@{position}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{struct_point_pickup_a7d4dd2752d98f06117f99654b17d479e} 
+\mbox{\hyperlink{struct_position}{Position}} Point\+Pickup\+::position}
+
+
+
+Current world position. 
+
+\Hypertarget{struct_point_pickup_ab24fa82f821cf7d235eff64a8cdf6f74}\index{PointPickup@{PointPickup}!remainingTime@{remainingTime}}
+\index{remainingTime@{remainingTime}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{remainingTime}{remainingTime}}
+{\footnotesize\ttfamily \label{struct_point_pickup_ab24fa82f821cf7d235eff64a8cdf6f74} 
+float Point\+Pickup\+::remaining\+Time \{ 0.\+0f \}}
+
+
+
+Current time left before despawn (Seconds). 
+
+\Hypertarget{struct_point_pickup_a55e6f9d5f570fd47c74ef0e0528c0cb6}\index{PointPickup@{PointPickup}!size@{size}}
+\index{size@{size}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_point_pickup_a55e6f9d5f570fd47c74ef0e0528c0cb6} 
+float Point\+Pickup\+::size \{ 0.\+0f \}}
+
+
+
+Visual radius of the pickup. 
+
+\Hypertarget{struct_point_pickup_a7f5df4e320b21b838af634bc2a240931}\index{PointPickup@{PointPickup}!spawnOrigin@{spawnOrigin}}
+\index{spawnOrigin@{spawnOrigin}!PointPickup@{PointPickup}}
+\doxysubsubsection{\texorpdfstring{spawnOrigin}{spawnOrigin}}
+{\footnotesize\ttfamily \label{struct_point_pickup_a7f5df4e320b21b838af634bc2a240931} 
+\mbox{\hyperlink{struct_position}{Position}} Point\+Pickup\+::spawn\+Origin}
+
+
+
+The center point where this cluster of pickups spawned. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Types/\mbox{\hyperlink{_point_pickup_8h}{Point\+Pickup.\+h}}\end{DoxyCompactItemize}

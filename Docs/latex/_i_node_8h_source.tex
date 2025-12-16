@@ -1,0 +1,45 @@
+\doxysection{INode.\+h}
+\hypertarget{_i_node_8h_source}{}\label{_i_node_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/INode.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/INode.h}}
+\mbox{\hyperlink{_i_node_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_shape_8h}{Enums/NodeShape.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_node_state_8h}{Enums/NodeState.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_position_8h}{Types/Position.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_node}{INode}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_node_afe66f59fcd91f356300a251f6d21ff95}{\string~INode}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ State\ Accessors\ -\/-\/-\/}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_position}{Position}}\&\ \mbox{\hyperlink{class_i_node_a1c104572699c0693d0b9bff5b80af497}{GetPosition}}()\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_position}{Position}}\&\ \mbox{\hyperlink{class_i_node_afae30a20b44a7f09419a3a15a19efc62}{GetPosition}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ \mbox{\hyperlink{class_i_node_adfbf60f300eb71d0cdee9fc2aff18ee4}{GetShape}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{NodeState}}\ \mbox{\hyperlink{class_i_node_a608cf99df5a4ed76f71bebb0cbb29cd6}{GetState}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Physical\ Properties\ -\/-\/-\/}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_i_node_ae1aa08545006f33e3e797aec19a1f404}{GetSize}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_i_node_a7608f2cf61cf3f17bfc681e28d527ddc}{GetSpeed}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_i_node_a051d06d4d5e12c091774279aa16ebb43}{GetRotation}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Health\ System\ -\/-\/-\/}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_i_node_a551566babd138ef48d81d4cb5769e6e6}{GetHP}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_i_node_a27c12c206958acf0a33dacf73568e6ab}{GetMaxHP}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_node_ae23221df37b237971d2f26510e82e2fc}{SetHP}}(\textcolor{keywordtype}{float}\ hp)\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_node_a7dfeefb540a74edbc0b032c8197a06b0}{TakeDamage}}(\textcolor{keywordtype}{float}\ damage)\ =\ 0;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_node_a7eacc9a4678062c2035c4292c37ed25e}{Kill}}()\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Logic\ -\/-\/-\/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_node_a0b19053567d4be5d65f13e90bffd4604}{Spawn}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_node_ab953205b8667d600db70897d2936d1a3}{SetDirection}}(\textcolor{keywordtype}{float}\ dirX,\ \textcolor{keywordtype}{float}\ dirY)\ =\ 0;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_node_a0f8914c5813a647901b02ef70a50c76d}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ =\ 0;}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

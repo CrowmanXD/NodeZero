@@ -1,0 +1,50 @@
+\doxysection{Node.\+h}
+\hypertarget{_node_8h_source}{}\label{_node_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Node.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Node.h}}
+\mbox{\hyperlink{_node_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_node_8h}{INode.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_node_a87597d861774951e4a4032c6ddf221c2}{Node}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_node}{INode}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{struct_position}{Position}}\ m\_Position;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ m\_Shape;}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{NodeState}}\ m\_State;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Size;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Speed;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_HP;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_MaxHP;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_VelocityX;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_VelocityY;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Rotation;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Refactor:\ No\ magic\ numbers,\ turned\ into\ constants}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ ROTATION\_SPEED\ =\ 30.0f;\ \textcolor{comment}{//\ Degrees\ per\ second}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_node_a87597d861774951e4a4032c6ddf221c2}{Node}}(\mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ shape,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{float}\ speed);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_node_a24339ba7da6ab5785edda7664f645bd7}{\string~Node}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_position}{Position}}\&\ \mbox{\hyperlink{class_node_af214b2b0c6bd06db92fa14f7d4b04633}{GetPosition}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_position}{Position}}\&\ \mbox{\hyperlink{class_node_af214b2b0c6bd06db92fa14f7d4b04633}{GetPosition}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_node_shape_8h_a37e50858781617a826d3709db82aba70}{NodeShape}}\ \mbox{\hyperlink{class_node_a4c4a8c09c3a296bb23f1bda84a98211c}{GetShape}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_node_state_8h_a55999f3c61e69a9b5d871dcf480a8c5e}{NodeState}}\ \mbox{\hyperlink{class_node_aed5536d86027ec1860b9d2ee6e81a6e2}{GetState}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_node_a03b38566850b6ccc0e92bb1522ac2e84}{GetSize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_node_a54439c91a400ff934f51c39c39989c0f}{GetSpeed}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_node_a308d9102362c961fd4e0eb50c03deeeb}{GetRotation}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_node_aa4ef2137a47b95458a0a144d42dfa4b1}{GetHP}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_node_ac999e07eb947a05f6a96635a1f740006}{GetMaxHP}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_a31606488465508a603205211b93c716b}{SetHP}}(\textcolor{keywordtype}{float}\ hp)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_aa9595a62426cf9a2fc816194b72205a4}{Spawn}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_ac41de145952ab53d2ba44ca13cd0a54e}{SetDirection}}(\textcolor{keywordtype}{float}\ dirX,\ \textcolor{keywordtype}{float}\ dirY)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_a160d1ad8634fdda5229594d00e85f860}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_ac46d4d9b7aef6d8fa7f757fed7bac864}{Kill}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_a86751403d53ac4b162462b74a3e56249}{TakeDamage}}(\textcolor{keywordtype}{float}\ damage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

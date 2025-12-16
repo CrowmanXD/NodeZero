@@ -1,0 +1,61 @@
+\doxysection{C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.Core/include/\+Enums/\+Game\+Screen.h File Reference}
+\hypertarget{_game_screen_8h}{}\label{_game_screen_8h}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Enums/GameScreen.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/include/Enums/GameScreen.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}} \{ \newline
+\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}{Main\+Menu}}
+, \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402ac9dbb2b7c84159b632d71e512eba8428}{Playing}}
+, \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402ae99180abf47a8b3a856e0bcb2656990a}{Paused}}
+, \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402af3f8a8d70e59a2f75919906f9429e8c2}{Level\+Completed}}
+, \newline
+\mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a8f347bc7cebca9fa6d97e70c6bc29eb3}{Game\+Over}}
+, \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a240f9686efc9548a1d556d924c143924}{Upgrades}}
+, \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a0d82790b0612935992bd564a17ce37d6}{Quit}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the current UI/\+State of the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{_game_screen_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}\index{GameScreen.h@{GameScreen.h}!GameScreen@{GameScreen}}
+\index{GameScreen@{GameScreen}!GameScreen.h@{GameScreen.h}}
+\doxysubsubsection{\texorpdfstring{GameScreen}{GameScreen}}
+{\footnotesize\ttfamily \label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402} 
+enum class \mbox{\hyperlink{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402}{Game\+Screen}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the current UI/\+State of the application. 
+
+Dictates which "{}\+Screen"{} class is currently updating and rendering. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MainMenu@{MainMenu}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!MainMenu@{MainMenu}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402aad1111b48f98329333237912fc3b371b} 
+Main\+Menu&The starting screen with options to start game or quit. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Playing@{Playing}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!Playing@{Playing}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402ac9dbb2b7c84159b632d71e512eba8428}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402ac9dbb2b7c84159b632d71e512eba8428} 
+Playing&The main active gameplay loop. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Paused@{Paused}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!Paused@{Paused}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402ae99180abf47a8b3a856e0bcb2656990a}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402ae99180abf47a8b3a856e0bcb2656990a} 
+Paused&The game loop is frozen, showing the pause menu. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LevelCompleted@{LevelCompleted}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!LevelCompleted@{LevelCompleted}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402af3f8a8d70e59a2f75919906f9429e8c2}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402af3f8a8d70e59a2f75919906f9429e8c2} 
+Level\+Completed&The screen shown between levels (Success state). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameOver@{GameOver}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!GameOver@{GameOver}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a8f347bc7cebca9fa6d97e70c6bc29eb3}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a8f347bc7cebca9fa6d97e70c6bc29eb3} 
+Game\+Over&The screen shown when the player dies (Failure state). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Upgrades@{Upgrades}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!Upgrades@{Upgrades}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a240f9686efc9548a1d556d924c143924}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a240f9686efc9548a1d556d924c143924} 
+Upgrades&The shop/upgrade screen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quit@{Quit}!GameScreen.h@{GameScreen.h}}\index{GameScreen.h@{GameScreen.h}!Quit@{Quit}}}\Hypertarget{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a0d82790b0612935992bd564a17ce37d6}\label{_game_screen_8h_a74fa4be11c0eaf0601894bed6ed01402a0d82790b0612935992bd564a17ce37d6} 
+Quit&Signal to the engine to close the application window. \\
+\hline
+
+\end{DoxyEnumFields}

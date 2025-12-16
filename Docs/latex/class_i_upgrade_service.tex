@@ -1,0 +1,236 @@
+\doxysection{IUpgrade\+Service Class Reference}
+\hypertarget{class_i_upgrade_service}{}\label{class_i_upgrade_service}\index{IUpgradeService@{IUpgradeService}}
+
+
+Interface for the game\textquotesingle{}s upgrade and progression system.  
+
+
+
+
+{\ttfamily \#include $<$IUpgrade\+Service.\+h$>$}
+
+Inheritance diagram for IUpgrade\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_upgrade_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_upgrade_service_a337d88db5bb3bf5ce1e73e2ef64ab7a4}{\texorpdfstring{$\sim$}{\string~}\+IUpgrade\+Service}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_i_upgrade_service_a71577cd88516de36a6a91bb6edaf4915}{Buy\+Health\+Upgrade}} ()=0
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Maximum Health upgrade. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_upgrade_service_a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1}{Buy\+Regen\+Upgrade}} ()=0
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Health Regeneration upgrade. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_upgrade_service_a50ef46de54df87f96ccaae024939f292}{Buy\+Damage\+Zone\+Upgrade}} ()=0
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Damage Zone size upgrade. Capped at a maximum size. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_upgrade_service_a58b7f534c7c38b76dc9fac6c6bc7ba57}{Buy\+Damage\+Upgrade}} ()=0
+\begin{DoxyCompactList}\small\item\em Attempts to purchase a Damage Per Tick upgrade. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_upgrade_service_a7af399b732c988459bcb2bdf99ab45c4}{Get\+Max\+Health}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current maximum health value including upgrades. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_upgrade_service_ab796fb8616841d0d844e68117e702e97}{Get\+Regen\+Rate}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current regeneration rate per second. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_upgrade_service_af7a9247440335ab1df49a03ce5f57b16}{Get\+Damage\+Zone\+Size}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current size of the damage zone. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_upgrade_service_abc3f8cc301a4f07a976a90e80cde97a5}{Get\+Damage\+Per\+Tick}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the current damage dealt per tick. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_i_upgrade_service_a8b8c38a9f7fc97a3688128c2e7bf8971}{Get\+Health\+Upgrade\+Cost}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_upgrade_service_a42607eee379c8133298caa4e6a30b1fe}{Get\+Regen\+Upgrade\+Cost}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_upgrade_service_a20e6254bffb8a4c68673d1dfd94ab0fb}{Get\+Damage\+Zone\+Upgrade\+Cost}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_i_upgrade_service_adad68ef5ff90883aba88a7643d1950b4}{Get\+Damage\+Upgrade\+Cost}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the game\textquotesingle{}s upgrade and progression system. 
+
+Handles the logic for purchasing permanent player improvements using currency (points). It manages Health, Regeneration, Area of Effect (Zone), and Damage output upgrades. 
+
+\label{doc-constructors}
+\Hypertarget{class_i_upgrade_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_upgrade_service_a337d88db5bb3bf5ce1e73e2ef64ab7a4}\index{IUpgradeService@{IUpgradeService}!````~IUpgradeService@{\texorpdfstring{$\sim$}{\string~}IUpgradeService}}
+\index{````~IUpgradeService@{\texorpdfstring{$\sim$}{\string~}IUpgradeService}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IUpgradeService()}{\string~IUpgradeService()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a337d88db5bb3bf5ce1e73e2ef64ab7a4} 
+virtual IUpgrade\+Service\+::\texorpdfstring{$\sim$}{\string~}\+IUpgrade\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_upgrade_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_upgrade_service_a58b7f534c7c38b76dc9fac6c6bc7ba57}\index{IUpgradeService@{IUpgradeService}!BuyDamageUpgrade@{BuyDamageUpgrade}}
+\index{BuyDamageUpgrade@{BuyDamageUpgrade}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyDamageUpgrade()}{BuyDamageUpgrade()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a58b7f534c7c38b76dc9fac6c6bc7ba57} 
+virtual bool IUpgrade\+Service\+::\+Buy\+Damage\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to purchase a Damage Per Tick upgrade. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, False otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_ae4a57f6157571b596db8d71c38a42c6a}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a50ef46de54df87f96ccaae024939f292}\index{IUpgradeService@{IUpgradeService}!BuyDamageZoneUpgrade@{BuyDamageZoneUpgrade}}
+\index{BuyDamageZoneUpgrade@{BuyDamageZoneUpgrade}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyDamageZoneUpgrade()}{BuyDamageZoneUpgrade()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a50ef46de54df87f96ccaae024939f292} 
+virtual bool IUpgrade\+Service\+::\+Buy\+Damage\+Zone\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to purchase a Damage Zone size upgrade. Capped at a maximum size. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, False if insufficient funds or max level reached. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a4661886c0fac0c9c05c8ab7be6fb130a}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a71577cd88516de36a6a91bb6edaf4915}\index{IUpgradeService@{IUpgradeService}!BuyHealthUpgrade@{BuyHealthUpgrade}}
+\index{BuyHealthUpgrade@{BuyHealthUpgrade}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyHealthUpgrade()}{BuyHealthUpgrade()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a71577cd88516de36a6a91bb6edaf4915} 
+virtual bool IUpgrade\+Service\+::\+Buy\+Health\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to purchase a Maximum Health upgrade. 
+
+\begin{DoxyReturn}{Returns}
+True if the purchase was successful, False if insufficient funds. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a8ded3e1b083aed40c39a7509c5c7fc55}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1}\index{IUpgradeService@{IUpgradeService}!BuyRegenUpgrade@{BuyRegenUpgrade}}
+\index{BuyRegenUpgrade@{BuyRegenUpgrade}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{BuyRegenUpgrade()}{BuyRegenUpgrade()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1} 
+virtual bool IUpgrade\+Service\+::\+Buy\+Regen\+Upgrade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempts to purchase a Health Regeneration upgrade. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, False otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_ab9bb5279bc08f1d5be2d9810f5a0c31a}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_abc3f8cc301a4f07a976a90e80cde97a5}\index{IUpgradeService@{IUpgradeService}!GetDamagePerTick@{GetDamagePerTick}}
+\index{GetDamagePerTick@{GetDamagePerTick}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamagePerTick()}{GetDamagePerTick()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_abc3f8cc301a4f07a976a90e80cde97a5} 
+virtual float IUpgrade\+Service\+::\+Get\+Damage\+Per\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current damage dealt per tick. 
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_aa54bf3f51a31cfc7ac013c31379291ae}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_adad68ef5ff90883aba88a7643d1950b4}\index{IUpgradeService@{IUpgradeService}!GetDamageUpgradeCost@{GetDamageUpgradeCost}}
+\index{GetDamageUpgradeCost@{GetDamageUpgradeCost}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamageUpgradeCost()}{GetDamageUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_adad68ef5ff90883aba88a7643d1950b4} 
+virtual int IUpgrade\+Service\+::\+Get\+Damage\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a9fd55b6e80ae4cc83c5ca48f09940ba4}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_af7a9247440335ab1df49a03ce5f57b16}\index{IUpgradeService@{IUpgradeService}!GetDamageZoneSize@{GetDamageZoneSize}}
+\index{GetDamageZoneSize@{GetDamageZoneSize}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamageZoneSize()}{GetDamageZoneSize()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_af7a9247440335ab1df49a03ce5f57b16} 
+virtual float IUpgrade\+Service\+::\+Get\+Damage\+Zone\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current size of the damage zone. 
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a17d970da64048a3572a22534483ecd45}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a20e6254bffb8a4c68673d1dfd94ab0fb}\index{IUpgradeService@{IUpgradeService}!GetDamageZoneUpgradeCost@{GetDamageZoneUpgradeCost}}
+\index{GetDamageZoneUpgradeCost@{GetDamageZoneUpgradeCost}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetDamageZoneUpgradeCost()}{GetDamageZoneUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a20e6254bffb8a4c68673d1dfd94ab0fb} 
+virtual int IUpgrade\+Service\+::\+Get\+Damage\+Zone\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_af150878af602071e242384d90f9a73bc}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a8b8c38a9f7fc97a3688128c2e7bf8971}\index{IUpgradeService@{IUpgradeService}!GetHealthUpgradeCost@{GetHealthUpgradeCost}}
+\index{GetHealthUpgradeCost@{GetHealthUpgradeCost}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetHealthUpgradeCost()}{GetHealthUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a8b8c38a9f7fc97a3688128c2e7bf8971} 
+virtual int IUpgrade\+Service\+::\+Get\+Health\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a7a33dc837874cfe4e1ba221389d7a6f8}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a7af399b732c988459bcb2bdf99ab45c4}\index{IUpgradeService@{IUpgradeService}!GetMaxHealth@{GetMaxHealth}}
+\index{GetMaxHealth@{GetMaxHealth}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetMaxHealth()}{GetMaxHealth()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a7af399b732c988459bcb2bdf99ab45c4} 
+virtual float IUpgrade\+Service\+::\+Get\+Max\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current maximum health value including upgrades. 
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_aee35e6eb278ee34cc61e7e4e53e590ee}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_ab796fb8616841d0d844e68117e702e97}\index{IUpgradeService@{IUpgradeService}!GetRegenRate@{GetRegenRate}}
+\index{GetRegenRate@{GetRegenRate}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetRegenRate()}{GetRegenRate()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_ab796fb8616841d0d844e68117e702e97} 
+virtual float IUpgrade\+Service\+::\+Get\+Regen\+Rate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the current regeneration rate per second. 
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a711086fe6b15daaca1fb14b009253688}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a42607eee379c8133298caa4e6a30b1fe}\index{IUpgradeService@{IUpgradeService}!GetRegenUpgradeCost@{GetRegenUpgradeCost}}
+\index{GetRegenUpgradeCost@{GetRegenUpgradeCost}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{GetRegenUpgradeCost()}{GetRegenUpgradeCost()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a42607eee379c8133298caa4e6a30b1fe} 
+virtual int IUpgrade\+Service\+::\+Get\+Regen\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_aa80128209d4444af16ee87c2f01bda1e}{Upgrade\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Services/\mbox{\hyperlink{_i_upgrade_service_8h}{IUpgrade\+Service.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\doxysection{Button.\+h}
+\hypertarget{_button_8h_source}{}\label{_button_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/Widgets/Button.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.UI/include/Widgets/Button.h}}
+\mbox{\hyperlink{_button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_widget_8h}{IWidget.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}raylib.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_a1ab645bfb73c6095e9ff7c66297999b4}{Button}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_widget}{IWidget}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_X;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Y;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Width;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Height;}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ m\_Text;}
+\DoxyCodeLine{00022\ \ \ \ \ Color\ m\_NormalColor;}
+\DoxyCodeLine{00023\ \ \ \ \ Color\ m\_HoverColor;}
+\DoxyCodeLine{00024\ \ \ \ \ Color\ m\_PressedColor;}
+\DoxyCodeLine{00025\ \ \ \ \ Color\ m\_TextColor;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_IsActive;}
+\DoxyCodeLine{00027\ \ \ \ \ std::function<void()>\ m\_OnClick;}
+\DoxyCodeLine{00028\ \ \ \ \ Font\ m\_Font;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Refactor:\ No\ magic\ number,\ turned\ into\ constant}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ TEXT\_SIZE\_RATIO\ =\ 0.4f;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_button_a1ab645bfb73c6095e9ff7c66297999b4}{Button}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text,\ Font\ font);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a592226e08baaecbea531fa4539f558ca}{Draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a25bb759f840f630f901d349b9efbcd28}{Update}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_a98d4cfa253ca5ab72c1096163ea1784f}{IsHovered}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_a9cfbfe39990feb874e8f7f84f43036d0}{IsActive}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_ab9ac7233eb67a5682d91e80a9bac1931}{SetActive}}(\textcolor{keywordtype}{bool}\ active)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a78b5dd1e4f3ad295d0cc06511ad1b602}{SetOnClick}}(std::function<\textcolor{keywordtype}{void}()>\ callback);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_a0d02e244213f7fc66c53fc27d501989d}{SetColors}}(Color\ normal,\ Color\ hover,\ Color\ pressed,\ Color\ text);}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

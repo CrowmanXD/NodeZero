@@ -1,0 +1,131 @@
+\doxysection{ISpawn\+Service Class Reference}
+\hypertarget{class_i_spawn_service}{}\label{class_i_spawn_service}\index{ISpawnService@{ISpawnService}}
+
+
+Interface for the enemy spawning system.  
+
+
+
+
+{\ttfamily \#include $<$ISpawn\+Service.\+h$>$}
+
+Inheritance diagram for ISpawn\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_spawn_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_spawn_service_a4231ad96c5e551c7fb3f45bacca569b7}{\texorpdfstring{$\sim$}{\string~}\+ISpawn\+Service}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_spawn_service_a1275a0fd044d5a9d592773b610ce3738}{Update\+Auto\+Spawn}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Updates the internal spawn timer. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_i_spawn_service_a777395dcaaca2c7bf60a11a5175a71e8}{Should\+Auto\+Spawn}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the timer has exceeded the spawn interval. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_spawn_info}{Spawn\+Info}} \mbox{\hyperlink{class_i_spawn_service_a9e248fa16884034f09d4304b4577e82e}{Get\+Next\+Spawn}} () const =0
+\begin{DoxyCompactList}\small\item\em Calculates all necessary data for a new enemy instance. Generates a position on the screen edge and a direction vector. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{class_i_spawn_service_ac7e2b65f2ac3fc9a028f60a532109a7f}{Calculate\+Node\+HP}} (float base\+HP) const =0
+\begin{DoxyCompactList}\small\item\em Calculates enemy health based on base stats and current level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the enemy spawning system. 
+
+Handles the logic for when and where enemies appear, including position calculation (screen edges), trajectory targeting, and difficulty scaling (HP calculations). 
+
+\label{doc-constructors}
+\Hypertarget{class_i_spawn_service_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_spawn_service_a4231ad96c5e551c7fb3f45bacca569b7}\index{ISpawnService@{ISpawnService}!````~ISpawnService@{\texorpdfstring{$\sim$}{\string~}ISpawnService}}
+\index{````~ISpawnService@{\texorpdfstring{$\sim$}{\string~}ISpawnService}!ISpawnService@{ISpawnService}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ISpawnService()}{\string~ISpawnService()}}
+{\footnotesize\ttfamily \label{class_i_spawn_service_a4231ad96c5e551c7fb3f45bacca569b7} 
+virtual ISpawn\+Service\+::\texorpdfstring{$\sim$}{\string~}\+ISpawn\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_spawn_service_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_spawn_service_ac7e2b65f2ac3fc9a028f60a532109a7f}\index{ISpawnService@{ISpawnService}!CalculateNodeHP@{CalculateNodeHP}}
+\index{CalculateNodeHP@{CalculateNodeHP}!ISpawnService@{ISpawnService}}
+\doxysubsubsection{\texorpdfstring{CalculateNodeHP()}{CalculateNodeHP()}}
+{\footnotesize\ttfamily \label{class_i_spawn_service_ac7e2b65f2ac3fc9a028f60a532109a7f} 
+virtual float ISpawn\+Service\+::\+Calculate\+Node\+HP (\begin{DoxyParamCaption}\item[{float}]{base\+HP}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates enemy health based on base stats and current level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+HP} & The standard health value for the enemy type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled health value. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_spawn_service_a99125fc2c2abe6c552d5c4bf262dec4c}{Spawn\+Service}}.
+
+\Hypertarget{class_i_spawn_service_a9e248fa16884034f09d4304b4577e82e}\index{ISpawnService@{ISpawnService}!GetNextSpawn@{GetNextSpawn}}
+\index{GetNextSpawn@{GetNextSpawn}!ISpawnService@{ISpawnService}}
+\doxysubsubsection{\texorpdfstring{GetNextSpawn()}{GetNextSpawn()}}
+{\footnotesize\ttfamily \label{class_i_spawn_service_a9e248fa16884034f09d4304b4577e82e} 
+virtual \mbox{\hyperlink{struct_spawn_info}{Spawn\+Info}} ISpawn\+Service\+::\+Get\+Next\+Spawn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates all necessary data for a new enemy instance. Generates a position on the screen edge and a direction vector. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_spawn_info}{Spawn\+Info} struct containing position, shape, and velocity. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_spawn_service_ab182e601f8d561c72e0e5d1ec4dc62dd}{Spawn\+Service}}.
+
+\Hypertarget{class_i_spawn_service_a777395dcaaca2c7bf60a11a5175a71e8}\index{ISpawnService@{ISpawnService}!ShouldAutoSpawn@{ShouldAutoSpawn}}
+\index{ShouldAutoSpawn@{ShouldAutoSpawn}!ISpawnService@{ISpawnService}}
+\doxysubsubsection{\texorpdfstring{ShouldAutoSpawn()}{ShouldAutoSpawn()}}
+{\footnotesize\ttfamily \label{class_i_spawn_service_a777395dcaaca2c7bf60a11a5175a71e8} 
+virtual bool ISpawn\+Service\+::\+Should\+Auto\+Spawn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the timer has exceeded the spawn interval. 
+
+\begin{DoxyReturn}{Returns}
+True if it is time to spawn a new enemy, False otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_spawn_service_a268daef330e6eef1122f9330aed5129a}{Spawn\+Service}}.
+
+\Hypertarget{class_i_spawn_service_a1275a0fd044d5a9d592773b610ce3738}\index{ISpawnService@{ISpawnService}!UpdateAutoSpawn@{UpdateAutoSpawn}}
+\index{UpdateAutoSpawn@{UpdateAutoSpawn}!ISpawnService@{ISpawnService}}
+\doxysubsubsection{\texorpdfstring{UpdateAutoSpawn()}{UpdateAutoSpawn()}}
+{\footnotesize\ttfamily \label{class_i_spawn_service_a1275a0fd044d5a9d592773b610ce3738} 
+virtual void ISpawn\+Service\+::\+Update\+Auto\+Spawn (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the internal spawn timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time elapsed since the last frame (in seconds). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_spawn_service_a88a000d6220068ea306a661c9c99ad18}{Spawn\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/include/\+Services/\mbox{\hyperlink{_i_spawn_service_8h}{ISpawn\+Service.\+h}}\end{DoxyCompactItemize}

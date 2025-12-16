@@ -1,0 +1,52 @@
+\doxysection{Upgrade\+Service.\+h}
+\hypertarget{_upgrade_service_8h_source}{}\label{_upgrade_service_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/UpgradeService.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/UpgradeService.h}}
+\mbox{\hyperlink{_upgrade_service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_upgrade_service_8h}{Services/IUpgradeService.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_save_service}{ISaveService}};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_save_data}{SaveData}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e}{UpgradeService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_upgrade_service}{IUpgradeService}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_MaxHealth;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_RegenRate;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_DamageZoneSize;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_DamagePerTick;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_i_save_service}{ISaveService}}*\ m\_SaveService;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//Refactor:\ No\ magic\ numbers,\ turned\ into\ constant}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ HEALTH\_INCREMENT\ =\ 1.0f;\ \textcolor{comment}{//\ Fixed:\ Was\ hardcoded\ 1.0f}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e}{UpgradeService}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_upgrade_service_a46a404e10767223f2c56a0714857fe87}{\string~UpgradeService}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7}{Initialize}}(\textcolor{keywordtype}{float}\ maxHealth,\ \textcolor{keywordtype}{float}\ regenRate,\ \textcolor{keywordtype}{float}\ damageZoneSize,\ \textcolor{keywordtype}{float}\ damagePerTick);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_upgrade_service_ace26654bca8c5a60f5b2d386fb42e06a}{SetSaveService}}(\mbox{\hyperlink{class_i_save_service}{ISaveService}}*\ saveService);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_upgrade_service_a8ded3e1b083aed40c39a7509c5c7fc55}{BuyHealthUpgrade}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upgrade_service_a7a33dc837874cfe4e1ba221389d7a6f8}{GetHealthUpgradeCost}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upgrade_service_aee35e6eb278ee34cc61e7e4e53e590ee}{GetMaxHealth}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_upgrade_service_ab9bb5279bc08f1d5be2d9810f5a0c31a}{BuyRegenUpgrade}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upgrade_service_aa80128209d4444af16ee87c2f01bda1e}{GetRegenUpgradeCost}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upgrade_service_a711086fe6b15daaca1fb14b009253688}{GetRegenRate}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_upgrade_service_a4661886c0fac0c9c05c8ab7be6fb130a}{BuyDamageZoneUpgrade}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upgrade_service_af150878af602071e242384d90f9a73bc}{GetDamageZoneUpgradeCost}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upgrade_service_a17d970da64048a3572a22534483ecd45}{GetDamageZoneSize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_upgrade_service_ae4a57f6157571b596db8d71c38a42c6a}{BuyDamageUpgrade}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upgrade_service_a9fd55b6e80ae4cc83c5ca48f09940ba4}{GetDamageUpgradeCost}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upgrade_service_aa54bf3f51a31cfc7ac013c31379291ae}{GetDamagePerTick}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ AttemptPurchase(\textcolor{keywordtype}{int}\ cost,\ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{struct_save_data}{SaveData}}\&)>\&\ applyEffect);}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

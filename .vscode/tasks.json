@@ -1,0 +1,121 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B",
+                "${workspaceFolder}/build",
+                "-G",
+                "Visual Studio 17 2022"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build (Debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile",
+            "dependsOn": ["CMake: Configure"]
+        },
+        {
+            "label": "CMake: Build (Release)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Release"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "dependsOn": ["CMake: Configure"]
+        },
+        {
+            "label": "CMake: Clean",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--target",
+                "clean"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build Tests (Debug)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug",
+                "--target",
+                "NodeZero.Tests"
+            ],
+            "group": "test",
+            "problemMatcher": "$msCompile",
+            "dependsOn": ["CMake: Configure"]
+        },
+        {
+            "label": "CMake: Run Tests",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/bin/Debug/NodeZero.Tests.exe",
+            "args": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "dependsOn": ["CMake: Build Tests (Debug)"]
+        },
+        {
+            "label": "CMake: Build Tests (Release)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Release",
+                "--target",
+                "NodeZero.Tests"
+            ],
+            "group": "test",
+            "problemMatcher": "$msCompile",
+            "dependsOn": ["CMake: Configure"]
+        },
+        {
+            "label": "CMake: Run CTest",
+            "type": "shell",
+            "command": "ctest",
+            "args": [
+                "--test-dir",
+                "${workspaceFolder}/build",
+                "-C",
+                "Debug",
+                "--output-on-failure"
+            ],
+            "group": "test",
+            "problemMatcher": [],
+            "dependsOn": ["CMake: Build Tests (Debug)"]
+        }
+    ]
+}
