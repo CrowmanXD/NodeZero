@@ -2,7 +2,7 @@
 \hypertarget{class_upgrade_service}{}\label{class_upgrade_service}\index{UpgradeService@{UpgradeService}}
 
 
-Concrete implementation of the upgrade logic.  
+Concrete implementation of player upgrades using the Strategy Pattern.  
 
 
 
@@ -19,13 +19,13 @@ Inheritance diagram for Upgrade\+Service\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e}{Upgrade\+Service}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor initializing stats with game configuration defaults. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_upgrade_service_a46a404e10767223f2c56a0714857fe87}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Service}} () override=default
 \item 
-void \mbox{\hyperlink{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7}{Initialize}} (float max\+Health, float regen\+Rate, float damage\+Zone\+Size, float damage\+Per\+Tick)
-\begin{DoxyCompactList}\small\item\em Initializes the service with values loaded from the save file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_upgrade_service_a9c51453f501513f069dc090a86bf76a9}{Initialize}} (float max\+Health, float regen\+Rate, float damage\+Zone\+Size, float damage\+Per\+Tick) override
+\begin{DoxyCompactList}\small\item\em Initializes the service with values typically loaded from persistent storage. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_upgrade_service_ace26654bca8c5a60f5b2d386fb42e06a}{Set\+Save\+Service}} (\mbox{\hyperlink{class_i_save_service}{ISave\+Service}} \texorpdfstring{$\ast$}{*}save\+Service)
-\begin{DoxyCompactList}\small\item\em Injects the \doxylink{class_save_service}{Save\+Service} dependency. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Injects the dependency for the save system. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_upgrade_service_a8ded3e1b083aed40c39a7509c5c7fc55}{Buy\+Health\+Upgrade}} () override
 \begin{DoxyCompactList}\small\item\em Attempts to purchase a Maximum Health upgrade. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_upgrade_service_a7a33dc837874cfe4e1ba221389d7a6f8}{Get\+Health\+Upgrade\+Cost}} () const override
@@ -43,7 +43,7 @@ bool \mbox{\hyperlink{class_upgrade_service_a4661886c0fac0c9c05c8ab7be6fb130a}{B
 int \mbox{\hyperlink{class_upgrade_service_af150878af602071e242384d90f9a73bc}{Get\+Damage\+Zone\+Upgrade\+Cost}} () const override
 \item 
 float \mbox{\hyperlink{class_upgrade_service_a17d970da64048a3572a22534483ecd45}{Get\+Damage\+Zone\+Size}} () const override
-\begin{DoxyCompactList}\small\item\em Gets the current size of the damage zone. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the current radius/size of the damage zone. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_upgrade_service_ae4a57f6157571b596db8d71c38a42c6a}{Buy\+Damage\+Upgrade}} () override
 \begin{DoxyCompactList}\small\item\em Attempts to purchase a Damage Per Tick upgrade. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_upgrade_service_a9fd55b6e80ae4cc83c5ca48f09940ba4}{Get\+Damage\+Upgrade\+Cost}} () const override
@@ -58,9 +58,9 @@ virtual \mbox{\hyperlink{class_i_upgrade_service_a337d88db5bb3bf5ce1e73e2ef64ab7
 
 
 \doxysubsection{Detailed Description}
-Concrete implementation of the upgrade logic. 
+Concrete implementation of player upgrades using the Strategy Pattern. 
 
-Interacts with the \doxylink{class_save_service}{Save\+Service} to persist upgrades immediately upon purchase. Validates point balances and applies stat changes. 
+This service manages the purchase flow, validating funds and persisting changes through the \doxylink{class_save_service}{Save\+Service}. 
 
 \label{doc-constructors}
 \Hypertarget{class_upgrade_service_doc-constructors}
@@ -70,6 +70,10 @@ Interacts with the \doxylink{class_save_service}{Save\+Service} to persist upgra
 \doxysubsubsection{\texorpdfstring{UpgradeService()}{UpgradeService()}}
 {\footnotesize\ttfamily \label{class_upgrade_service_a48e7d12d1e7dcc3133f0ddcdb36b616e} 
 Upgrade\+Service\+::\+Upgrade\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor initializing stats with game configuration defaults. 
 
 \Hypertarget{class_upgrade_service_a46a404e10767223f2c56a0714857fe87}\index{UpgradeService@{UpgradeService}!````~UpgradeService@{\texorpdfstring{$\sim$}{\string~}UpgradeService}}
 \index{````~UpgradeService@{\texorpdfstring{$\sim$}{\string~}UpgradeService}!UpgradeService@{UpgradeService}}
@@ -182,7 +186,7 @@ float Upgrade\+Service\+::\+Get\+Damage\+Zone\+Size (\begin{DoxyParamCaption}{}{
 
 
 
-Gets the current size of the damage zone. 
+Gets the current radius/size of the damage zone. 
 
 
 
@@ -246,15 +250,19 @@ int Upgrade\+Service\+::\+Get\+Regen\+Upgrade\+Cost (\begin{DoxyParamCaption}{}{
 
 Implements \mbox{\hyperlink{class_i_upgrade_service_a42607eee379c8133298caa4e6a30b1fe}{IUpgrade\+Service}}.
 
-\Hypertarget{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7}\index{UpgradeService@{UpgradeService}!Initialize@{Initialize}}
+\Hypertarget{class_upgrade_service_a9c51453f501513f069dc090a86bf76a9}\index{UpgradeService@{UpgradeService}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!UpgradeService@{UpgradeService}}
 \doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
-{\footnotesize\ttfamily \label{class_upgrade_service_a53e52df1c3778bf32ef2ddf6e35f1bd7} 
-void Upgrade\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{, }\item[{float}]{regen\+Rate}{, }\item[{float}]{damage\+Zone\+Size}{, }\item[{float}]{damage\+Per\+Tick}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_upgrade_service_a9c51453f501513f069dc090a86bf76a9} 
+void Upgrade\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{, }\item[{float}]{regen\+Rate}{, }\item[{float}]{damage\+Zone\+Size}{, }\item[{float}]{damage\+Per\+Tick}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Initializes the service with values loaded from the save file. 
+Initializes the service with values typically loaded from persistent storage. 
+
+
+
+Implements \mbox{\hyperlink{class_i_upgrade_service_a215ce0b216c270db6e8b0715c7f8a042}{IUpgrade\+Service}}.
 
 \Hypertarget{class_upgrade_service_ace26654bca8c5a60f5b2d386fb42e06a}\index{UpgradeService@{UpgradeService}!SetSaveService@{SetSaveService}}
 \index{SetSaveService@{SetSaveService}!UpgradeService@{UpgradeService}}
@@ -264,7 +272,7 @@ void Upgrade\+Service\+::\+Set\+Save\+Service (\begin{DoxyParamCaption}\item[{\m
 
 
 
-Injects the \doxylink{class_save_service}{Save\+Service} dependency. 
+Injects the dependency for the save system. 
 
 
 

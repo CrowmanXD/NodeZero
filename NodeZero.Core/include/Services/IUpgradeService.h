@@ -9,8 +9,17 @@
  * and Damage output upgrades.
  */
 class IUpgradeService {
-   public:
+public:
     virtual ~IUpgradeService() = default;
+
+    /**
+     * @brief Initializes the service with values loaded from the save file.
+     * * @param maxHealth Current maximum health capacity.
+     * @param regenRate Current health regeneration per second.
+     * @param damageZoneSize Current radius of the damage zone.
+     * @param damagePerTick Current damage dealt per tick.
+     */
+    virtual void Initialize(float maxHealth, float regenRate, float damageZoneSize, float damagePerTick) = 0;
 
     /**
      * @brief Attempts to purchase a Maximum Health upgrade.
@@ -48,7 +57,7 @@ class IUpgradeService {
     virtual float GetRegenRate() const = 0;
 
     /**
-     * @brief Gets the current size of the damage zone.
+     * @brief Gets the current radius/size of the damage zone.
      */
     virtual float GetDamageZoneSize() const = 0;
 

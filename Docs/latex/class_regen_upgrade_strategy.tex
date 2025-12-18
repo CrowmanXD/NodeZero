@@ -1,0 +1,80 @@
+\doxysection{Regen\+Upgrade\+Strategy Class Reference}
+\hypertarget{class_regen_upgrade_strategy}{}\label{class_regen_upgrade_strategy}\index{RegenUpgradeStrategy@{RegenUpgradeStrategy}}
+
+
+Strategy for increasing the player\textquotesingle{}s passive health regeneration rate.  
+
+
+
+
+{\ttfamily \#include $<$Regen\+Upgrade\+Strategy.\+h$>$}
+
+Inheritance diagram for Regen\+Upgrade\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_regen_upgrade_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_regen_upgrade_strategy_adc2085fd6824d67ca83c7b49d0881e64}{Get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the cost of the regeneration upgrade. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_regen_upgrade_strategy_a3274f41c18c686ae407e823dbcfbf5b3}{Apply}} (\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Increases the regeneration rate in the save data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_upgrade_strategy}{Upgrade\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Strategy}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f}{Can\+Apply}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if requirements for the upgrade are met. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy for increasing the player\textquotesingle{}s passive health regeneration rate. 
+
+\label{doc-func-members}
+\Hypertarget{class_regen_upgrade_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_regen_upgrade_strategy_a3274f41c18c686ae407e823dbcfbf5b3}\index{RegenUpgradeStrategy@{RegenUpgradeStrategy}!Apply@{Apply}}
+\index{Apply@{Apply}!RegenUpgradeStrategy@{RegenUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_regen_upgrade_strategy_a3274f41c18c686ae407e823dbcfbf5b3} 
+void Regen\+Upgrade\+Strategy\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Increases the regeneration rate in the save data. 
+
+\texorpdfstring{$\ast$}{*}
+\begin{DoxyParams}{Parameters}
+{\em data} & The save data structure to modify. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_regen_upgrade_strategy_adc2085fd6824d67ca83c7b49d0881e64}\index{RegenUpgradeStrategy@{RegenUpgradeStrategy}!GetCost@{GetCost}}
+\index{GetCost@{GetCost}!RegenUpgradeStrategy@{RegenUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetCost()}{GetCost()}}
+{\footnotesize\ttfamily \label{class_regen_upgrade_strategy_adc2085fd6824d67ca83c7b49d0881e64} 
+int Regen\+Upgrade\+Strategy\+::\+Get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the cost of the regeneration upgrade. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+The point cost defined in \doxylink{struct_game_config}{Game\+Config}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}{Upgrade\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\+Upgrades/\mbox{\hyperlink{_regen_upgrade_strategy_8h}{Regen\+Upgrade\+Strategy.\+h}}\end{DoxyCompactItemize}

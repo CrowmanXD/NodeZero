@@ -1,0 +1,82 @@
+\doxysection{Health\+Upgrade\+Strategy Class Reference}
+\hypertarget{class_health_upgrade_strategy}{}\label{class_health_upgrade_strategy}\index{HealthUpgradeStrategy@{HealthUpgradeStrategy}}
+
+
+Strategy for increasing the player\textquotesingle{}s maximum health capacity.  
+
+
+
+
+{\ttfamily \#include $<$Health\+Upgrade\+Strategy.\+h$>$}
+
+Inheritance diagram for Health\+Upgrade\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_health_upgrade_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_health_upgrade_strategy_ad726837df6fa77b6ab951d0b9883d31a}{Get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the cost of the health upgrade. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_upgrade_strategy_a54a0d1a86306e354f3c989fcf70627e9}{Apply}} (\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Adds a fixed amount (1.\+0) to the player\textquotesingle{}s maximum health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_upgrade_strategy}{Upgrade\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Strategy}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f}{Can\+Apply}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if requirements for the upgrade are met. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy for increasing the player\textquotesingle{}s maximum health capacity. 
+
+Each successful application increases the base health pool by a fixed increment. 
+
+\label{doc-func-members}
+\Hypertarget{class_health_upgrade_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_health_upgrade_strategy_a54a0d1a86306e354f3c989fcf70627e9}\index{HealthUpgradeStrategy@{HealthUpgradeStrategy}!Apply@{Apply}}
+\index{Apply@{Apply}!HealthUpgradeStrategy@{HealthUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_health_upgrade_strategy_a54a0d1a86306e354f3c989fcf70627e9} 
+void Health\+Upgrade\+Strategy\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a fixed amount (1.\+0) to the player\textquotesingle{}s maximum health. 
+
+\texorpdfstring{$\ast$}{*}
+\begin{DoxyParams}{Parameters}
+{\em data} & The save data structure to modify. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_health_upgrade_strategy_ad726837df6fa77b6ab951d0b9883d31a}\index{HealthUpgradeStrategy@{HealthUpgradeStrategy}!GetCost@{GetCost}}
+\index{GetCost@{GetCost}!HealthUpgradeStrategy@{HealthUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetCost()}{GetCost()}}
+{\footnotesize\ttfamily \label{class_health_upgrade_strategy_ad726837df6fa77b6ab951d0b9883d31a} 
+int Health\+Upgrade\+Strategy\+::\+Get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the cost of the health upgrade. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+The point cost defined in \doxylink{struct_game_config}{Game\+Config}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}{Upgrade\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\+Upgrades/\mbox{\hyperlink{_health_upgrade_strategy_8h}{Health\+Upgrade\+Strategy.\+h}}\end{DoxyCompactItemize}

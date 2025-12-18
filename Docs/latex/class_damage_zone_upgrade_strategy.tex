@@ -1,0 +1,116 @@
+\doxysection{Damage\+Zone\+Upgrade\+Strategy Class Reference}
+\hypertarget{class_damage_zone_upgrade_strategy}{}\label{class_damage_zone_upgrade_strategy}\index{DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}}
+
+
+Strategy for increasing the radius of the player\textquotesingle{}s damage zone.  
+
+
+
+
+{\ttfamily \#include $<$Damage\+Zone\+Upgrade\+Strategy.\+h$>$}
+
+Inheritance diagram for Damage\+Zone\+Upgrade\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_damage_zone_upgrade_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_damage_zone_upgrade_strategy_a058603c1e4e5ef5c8eaafd5699da1f16}{Get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the cost of the zone size upgrade. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_damage_zone_upgrade_strategy_ac8fac480017f620f396f413ae36ebbb5}{Can\+Apply}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the upgrade can be applied based on the size cap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_zone_upgrade_strategy_aa839c747bcbd745f373d45b956ad1dbb}{Set\+Current\+Size}} (float size)
+\begin{DoxyCompactList}\small\item\em Sets the current size context for the limit check. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_zone_upgrade_strategy_aaf00cb2fd0a672b7cde37e51ffdbbaf2}{Apply}} (\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Increases the zone size in the save data, respecting the hard cap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_upgrade_strategy}{Upgrade\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Strategy}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy for increasing the radius of the player\textquotesingle{}s damage zone. 
+
+Unlike other upgrades, this strategy includes a cap check to ensure the zone does not exceed the maximum allowed size. 
+
+\label{doc-func-members}
+\Hypertarget{class_damage_zone_upgrade_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_damage_zone_upgrade_strategy_aaf00cb2fd0a672b7cde37e51ffdbbaf2}\index{DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}!Apply@{Apply}}
+\index{Apply@{Apply}!DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_damage_zone_upgrade_strategy_aaf00cb2fd0a672b7cde37e51ffdbbaf2} 
+void Damage\+Zone\+Upgrade\+Strategy\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Increases the zone size in the save data, respecting the hard cap. 
+
+\texorpdfstring{$\ast$}{*}
+\begin{DoxyParams}{Parameters}
+{\em data} & The save data structure to modify. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_damage_zone_upgrade_strategy_ac8fac480017f620f396f413ae36ebbb5}\index{DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}!CanApply@{CanApply}}
+\index{CanApply@{CanApply}!DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{CanApply()}{CanApply()}}
+{\footnotesize\ttfamily \label{class_damage_zone_upgrade_strategy_ac8fac480017f620f396f413ae36ebbb5} 
+bool Damage\+Zone\+Upgrade\+Strategy\+::\+Can\+Apply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the upgrade can be applied based on the size cap. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+True if the current size is below the maximum allowed size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_damage_zone_upgrade_strategy_a058603c1e4e5ef5c8eaafd5699da1f16}\index{DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}!GetCost@{GetCost}}
+\index{GetCost@{GetCost}!DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetCost()}{GetCost()}}
+{\footnotesize\ttfamily \label{class_damage_zone_upgrade_strategy_a058603c1e4e5ef5c8eaafd5699da1f16} 
+int Damage\+Zone\+Upgrade\+Strategy\+::\+Get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the cost of the zone size upgrade. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+The point cost defined in \doxylink{struct_game_config}{Game\+Config}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_damage_zone_upgrade_strategy_aa839c747bcbd745f373d45b956ad1dbb}\index{DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}!SetCurrentSize@{SetCurrentSize}}
+\index{SetCurrentSize@{SetCurrentSize}!DamageZoneUpgradeStrategy@{DamageZoneUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{SetCurrentSize()}{SetCurrentSize()}}
+{\footnotesize\ttfamily \label{class_damage_zone_upgrade_strategy_aa839c747bcbd745f373d45b956ad1dbb} 
+void Damage\+Zone\+Upgrade\+Strategy\+::\+Set\+Current\+Size (\begin{DoxyParamCaption}\item[{float}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the current size context for the limit check. 
+
+\texorpdfstring{$\ast$}{*}
+\begin{DoxyParams}{Parameters}
+{\em size} & The current damage zone size from the service. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\+Upgrades/\mbox{\hyperlink{_damage_zone_upgrade_strategy_8h}{Damage\+Zone\+Upgrade\+Strategy.\+h}}\end{DoxyCompactItemize}

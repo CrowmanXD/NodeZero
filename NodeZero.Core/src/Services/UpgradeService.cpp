@@ -9,6 +9,9 @@
 #include "Services/Upgrades/DamageZoneUpgradeStrategy.h"
 #include "Services/Upgrades/DamageUpgradeStrategy.h"
 
+/**
+ * @brief Default constructor initializing stats with game configuration defaults.
+ */
 UpgradeService::UpgradeService()
     : m_MaxHealth(GameConfig::HEALTH_DEFAULT),
     m_RegenRate(0.0f),
@@ -17,6 +20,9 @@ UpgradeService::UpgradeService()
     m_SaveService(nullptr) {
 }
 
+/**
+ * @brief Initializes the service with values typically loaded from persistent storage.
+ */
 void UpgradeService::Initialize(float maxHealth, float regenRate, float damageZoneSize, float damagePerTick) {
     m_MaxHealth = maxHealth;
     m_RegenRate = regenRate;
@@ -24,30 +30,30 @@ void UpgradeService::Initialize(float maxHealth, float regenRate, float damageZo
     m_DamagePerTick = damagePerTick;
 }
 
+/**
+ * @brief Injects the dependency for the save system.
+ */
 void UpgradeService::SetSaveService(ISaveService* saveService) {
     m_SaveService = saveService;
 }
 
-// -----------------------------------------------------------------------------
-// Implemented strategy pattern for upgrade purchases
-// -----------------------------------------------------------------------------
-
-bool UpgradeService::AttemptPurchase(UpgradeStrategy& strategy)
-{
-    if (!m_SaveService) {
-        return false;
-    }
+/**
+ * @brief Executes a generic purchase transaction.
+ * * This method coordinates with the SaveService to validate points, apply the
+ * specific upgrade logic defined in the strategy, and persist changes.
+ */
+bool UpgradeService::AttemptPurchase(UpgradeStrategy& strategy) {
+    if (!m_SaveService) return false;
 
     SaveData saveData = m_SaveService->GetCurrentData();
 
-    if (saveData.points < strategy.GetCost()) {
+    if (saveData.points < strategy.GetCost() || !strategy.CanApply()) {
         return false;
     }
 
     saveData.points -= strategy.GetCost();
     strategy.Apply(saveData);
 
-    // Sync internal cached values
     m_MaxHealth = saveData.maxHealth;
     m_RegenRate = saveData.regenRate;
     m_DamageZoneSize = saveData.damageZoneSize;
@@ -56,8 +62,6 @@ bool UpgradeService::AttemptPurchase(UpgradeStrategy& strategy)
     m_SaveService->SaveProgress(saveData);
     return true;
 }
-
-
 
 bool UpgradeService::BuyHealthUpgrade() {
     HealthUpgradeStrategy strategy;
@@ -79,7 +83,6 @@ bool UpgradeService::BuyDamageUpgrade() {
     DamageUpgradeStrategy strategy;
     return AttemptPurchase(strategy);
 }
-
 
 int UpgradeService::GetHealthUpgradeCost() const {
     return GameConfig::HEALTH_UPGRADE_COST;

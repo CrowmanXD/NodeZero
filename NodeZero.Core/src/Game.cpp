@@ -24,6 +24,7 @@ Game::Game()
 
     m_UpgradeService.SetSaveService(&m_SaveService);
     m_UpgradeService.Initialize(saveData.maxHealth, saveData.regenRate, saveData.damageZoneSize, saveData.damagePerTick);
+
     m_HealthService.Initialize(saveData.maxHealth, saveData.regenRate);
     m_LevelService.Initialize(saveData.currentLevel);
 }
@@ -45,28 +46,29 @@ void Game::Initialize(float screenWidth, float screenHeight) {
 }
 
 // -----------------------------------------------------------------------------
-// Core Loop (Refactored)
+// Core Loop
 // -----------------------------------------------------------------------------
 
 void Game::Update(float deltaTime) {
     m_CollectedPickupsThisFrame.clear();
 
-    // 1. Update Services
+    // Update Services
     m_HealthService.Update(deltaTime);
     m_HealthService.SetCurrentLevel(m_LevelService.GetCurrentLevel());
     m_LevelService.Update(deltaTime, m_LevelService.IsBossActive());
 
-    // 2. Logic Steps extracted to helpers
+    // Logic Steps
     HandleSpawning(deltaTime);
     HandleDamageZones(deltaTime);
 
-    // 3. Pickups
-    m_CollectedPickupsThisFrame = m_PickupService.ProcessPickupCollection(
-        m_MouseX, m_MouseY, m_UpgradeService.GetDamageZoneSize()
+    // Pickups
+    m_CollectedPickupsThisFrame.clear();
+    m_PickupService.ProcessPickupCollection(
+        m_MouseX, m_MouseY, m_UpgradeService.GetDamageZoneSize(), m_CollectedPickupsThisFrame
     );
     m_PickupService.Update(deltaTime);
 
-    // 4. Update Entities and check for deaths
+    // Update Entities and check for deaths
     UpdateNodes(deltaTime);
 
     m_ElapsedTime += deltaTime;
@@ -98,12 +100,7 @@ void Game::HandleDamageZones(float deltaTime) {
         m_DamageZoneService.ResetTimer();
 
         // Lambda to handle what happens when a specific node gets hit
-        auto onNodeDamaged = [this](INode* node, float healthCost) { // generic INode*
-            // Refactor: Using INode interface methods
-            if (Node* concreteNode = dynamic_cast<Node*>(node)) { // safety cast if needed, though INode suffices for most
-                // Events usually expect Position
-            }
-
+        auto onNodeDamaged = [this](INode* node, float healthCost) {
             auto event = std::make_shared<GameEvent>(m_ElapsedTime, EventType::NodeDamaged);
             event->position = node->GetPosition();
             event->damage = static_cast<int>(m_UpgradeService.GetDamagePerTick());
@@ -113,14 +110,6 @@ void Game::HandleDamageZones(float deltaTime) {
             m_HealthService.Reduce(healthCost);
             };
 
-        // Note: We cast m_Nodes to vector<Node*> inside the service? 
-        // Ideally the service should accept vector<INode*>, but for now we rely on the implementation.
-        // Since we changed m_Nodes to INode*, we might need a cast if the service signature strictly demands Node*.
-        // Assuming you updated IDamageZoneService to take vector<INode*> or cast appropriately.
-
-        // For this code to compile with your *existing* IDamageZoneService (which takes vector<Node*>), 
-        // we'd have to cast back. But since we are refactoring, we assume the Service now takes INode* or we do a transform.
-        // To keep it simple for this file:
         std::vector<Node*> castedNodes;
         for (auto* n : m_Nodes) castedNodes.push_back(dynamic_cast<Node*>(n));
 
@@ -140,50 +129,47 @@ void Game::UpdateNodes(float deltaTime) {
         node->Update(deltaTime);
     }
 
-    // Remove Dead Nodes
-    m_Nodes.erase(
-        std::remove_if(m_Nodes.begin(), m_Nodes.end(),
-            [this](INode* node) {
-                bool isBoss = node->GetShape() == NodeShape::Boss;
+    auto it = std::remove_if(m_Nodes.begin(), m_Nodes.end(),
+        [this](INode* node) {
+            bool isBoss = node->GetShape() == NodeShape::Boss;
 
-                // Logic: Remove if Dead OR Offscreen (unless it's the boss)
-                bool isOffScreen = node->GetPosition().x < BOSS_OFFSCREEN_LIMIT;
-                if (isBoss) isOffScreen = false;
+            // Logic: Remove if Dead OR Offscreen (unless it's the boss)
+            bool isOffScreen = node->GetPosition().x < -200.0f;
+            if (isBoss) isOffScreen = false;
 
-                bool shouldRemove = node->GetState() == NodeState::Dead || isOffScreen;
+            bool shouldRemove = node->GetState() == NodeState::Dead || isOffScreen;
 
-                if (shouldRemove) {
-                    if (node->GetState() == NodeState::Dead) {
-                        if (isBoss) {
-                            // Boss Defeat Logic
-                            int pointsGained = POINTS_BOSS * m_LevelService.GetCurrentLevel();
-                            auto event = std::make_shared<GameEvent>(m_ElapsedTime, EventType::BossDefeated);
-                            event->level = m_LevelService.GetCurrentLevel();
-                            event->points = pointsGained;
-                            Notify(event);
+            if (shouldRemove) {
+                if (node->GetState() == NodeState::Dead) {
+                    if (isBoss) {
+                        int pointsGained = 500 * m_LevelService.GetCurrentLevel();
+                        auto event = std::make_shared<GameEvent>(m_ElapsedTime, EventType::BossDefeated);
+                        event->level = m_LevelService.GetCurrentLevel();
+                        event->points = pointsGained;
+                        Notify(event);
 
-                            m_LevelService.SetBossActive(false);
-                            m_Boss = nullptr;
-                            m_LevelService.SetLevelCompleted(true);
-                        }
-                        else {
-                            // Normal Enemy Defeat Logic
-                            auto event = std::make_shared<GameEvent>(m_ElapsedTime, EventType::NodeDestroyed);
-                            event->shape = node->GetShape();
-                            event->position = node->GetPosition();
-                            event->points = POINTS_NODE;
-                            Notify(event);
-
-                            m_PickupService.SpawnPointPickups(node->GetPosition());
-                            m_NodesDestroyed++;
-                            m_LevelService.IncrementNodesDestroyed();
-                        }
+                        m_LevelService.SetBossActive(false);
+                        m_Boss = nullptr;
+                        m_LevelService.SetLevelCompleted(true);
                     }
-                    delete node;
+                    else {
+                        auto event = std::make_shared<GameEvent>(m_ElapsedTime, EventType::NodeDestroyed);
+                        event->shape = node->GetShape();
+                        event->position = node->GetPosition();
+                        event->points = 100;
+                        Notify(event);
+
+                        m_PickupService.SpawnPointPickups(node->GetPosition());
+                        m_NodesDestroyed++;
+                        m_LevelService.IncrementNodesDestroyed();
+                    }
                 }
-                return shouldRemove;
-            }),
-        m_Nodes.end());
+                delete node;
+            }
+            return shouldRemove;
+        });
+
+    m_Nodes.erase(it, m_Nodes.end());
 }
 
 // -----------------------------------------------------------------------------
@@ -193,7 +179,6 @@ void Game::UpdateNodes(float deltaTime) {
 float Game::GetScreenWidth() const { return m_ScreenWidth; }
 float Game::GetScreenHeight() const { return m_ScreenHeight; }
 
-// Safe implementation now
 const std::vector<INode*>& Game::GetNodes() const {
     return m_Nodes;
 }
@@ -213,7 +198,7 @@ void Game::SpawnNode(const SpawnInfo& info) {
 
     float baseHP = node->GetHP();
     float scaledHP = m_SpawnService.CalculateNodeHP(baseHP);
-    node->SetHP(scaledHP); // This works now because SetHP is in INode
+    node->SetHP(scaledHP);
 
     node->Spawn(info.position.x, info.position.y);
     node->SetDirection(info.directionX, info.directionY);
@@ -236,7 +221,6 @@ void Game::SpawnBoss() {
 
     m_Boss->SetHP(bossHP);
 
-    // Random edge spawning logic
     float spawnX, spawnY;
     int edge = std::rand() % 4;
     float offset = bossSize * 1.5f;
@@ -250,7 +234,6 @@ void Game::SpawnBoss() {
 
     m_Boss->Spawn(spawnX, spawnY);
 
-    // Calc Direction to Center
     float centerX = m_ScreenWidth / 2.0f;
     float centerY = m_ScreenHeight / 2.0f;
     float dirX = centerX - spawnX;

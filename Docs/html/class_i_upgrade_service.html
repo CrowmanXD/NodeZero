@@ -102,13 +102,15 @@ Inheritance diagram for IUpgradeService:</div>
  <div class="center">
   <img src="class_i_upgrade_service.png" usemap="#IUpgradeService_map" alt=""/>
   <map id="IUpgradeService_map" name="IUpgradeService_map">
-<area href="class_upgrade_service.html" title="Concrete implementation of the upgrade logic." alt="UpgradeService" shape="rect" coords="0,56,107,80"/>
+<area href="class_upgrade_service.html" title="Concrete implementation of player upgrades using the Strategy Pattern." alt="UpgradeService" shape="rect" coords="0,56,107,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a337d88db5bb3bf5ce1e73e2ef64ab7a4" id="r_a337d88db5bb3bf5ce1e73e2ef64ab7a4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a337d88db5bb3bf5ce1e73e2ef64ab7a4">~IUpgradeService</a> ()=default</td></tr>
+<tr class="memitem:a215ce0b216c270db6e8b0715c7f8a042" id="r_a215ce0b216c270db6e8b0715c7f8a042"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a215ce0b216c270db6e8b0715c7f8a042">Initialize</a> (float maxHealth, float regenRate, float damageZoneSize, float damagePerTick)=0</td></tr>
+<tr class="memdesc:a215ce0b216c270db6e8b0715c7f8a042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service with values loaded from the save file.  <br /></td></tr>
 <tr class="memitem:a71577cd88516de36a6a91bb6edaf4915" id="r_a71577cd88516de36a6a91bb6edaf4915"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71577cd88516de36a6a91bb6edaf4915">BuyHealthUpgrade</a> ()=0</td></tr>
 <tr class="memdesc:a71577cd88516de36a6a91bb6edaf4915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to purchase a Maximum Health upgrade.  <br /></td></tr>
 <tr class="memitem:a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1" id="r_a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1">BuyRegenUpgrade</a> ()=0</td></tr>
@@ -122,7 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab796fb8616841d0d844e68117e702e97" id="r_ab796fb8616841d0d844e68117e702e97"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab796fb8616841d0d844e68117e702e97">GetRegenRate</a> () const =0</td></tr>
 <tr class="memdesc:ab796fb8616841d0d844e68117e702e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current regeneration rate per second.  <br /></td></tr>
 <tr class="memitem:af7a9247440335ab1df49a03ce5f57b16" id="r_af7a9247440335ab1df49a03ce5f57b16"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a9247440335ab1df49a03ce5f57b16">GetDamageZoneSize</a> () const =0</td></tr>
-<tr class="memdesc:af7a9247440335ab1df49a03ce5f57b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current size of the damage zone.  <br /></td></tr>
+<tr class="memdesc:af7a9247440335ab1df49a03ce5f57b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current radius/size of the damage zone.  <br /></td></tr>
 <tr class="memitem:abc3f8cc301a4f07a976a90e80cde97a5" id="r_abc3f8cc301a4f07a976a90e80cde97a5"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3f8cc301a4f07a976a90e80cde97a5">GetDamagePerTick</a> () const =0</td></tr>
 <tr class="memdesc:abc3f8cc301a4f07a976a90e80cde97a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current damage dealt per tick.  <br /></td></tr>
 <tr class="memitem:a8b8c38a9f7fc97a3688128c2e7bf8971" id="r_a8b8c38a9f7fc97a3688128c2e7bf8971"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b8c38a9f7fc97a3688128c2e7bf8971">GetHealthUpgradeCost</a> () const =0</td></tr>
@@ -359,7 +361,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the current size of the damage zone. </p>
+<p>Gets the current radius/size of the damage zone. </p>
 
 <p>Implemented in <a class="el" href="class_upgrade_service.html#a17d970da64048a3572a22534483ecd45">UpgradeService</a>.</p>
 
@@ -501,6 +503,61 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="class_upgrade_service.html#aa80128209d4444af16ee87c2f01bda1e">UpgradeService</a>.</p>
+
+</div>
+</div>
+<a id="a215ce0b216c270db6e8b0715c7f8a042" name="a215ce0b216c270db6e8b0715c7f8a042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a215ce0b216c270db6e8b0715c7f8a042">&#9670;&#160;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IUpgradeService::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>maxHealth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>regenRate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>damageZoneSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>damagePerTick</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the service with values loaded from the save file. </p>
+<ul>
+<li><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxHealth</td><td>Current maximum health capacity. </td></tr>
+    <tr><td class="paramname">regenRate</td><td>Current health regeneration per second. </td></tr>
+    <tr><td class="paramname">damageZoneSize</td><td>Current radius of the damage zone. </td></tr>
+    <tr><td class="paramname">damagePerTick</td><td>Current damage dealt per tick. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
+
+<p>Implemented in <a class="el" href="class_upgrade_service.html#a9c51453f501513f069dc090a86bf76a9">UpgradeService</a>.</p>
 
 </div>
 </div>

@@ -1,3 +1,8 @@
+/**
+ * @file EnemyTests.cpp
+ * @brief Unit tests for Node (enemy) spawning, damage, and attributes.
+ */
+
 #include <gtest/gtest.h>
 #include <cmath>
 #include <memory>

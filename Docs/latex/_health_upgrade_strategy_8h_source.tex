@@ -1,0 +1,21 @@
+\doxysection{Health\+Upgrade\+Strategy.\+h}
+\hypertarget{_health_upgrade_strategy_8h_source}{}\label{_health_upgrade_strategy_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/Upgrades/HealthUpgradeStrategy.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/Upgrades/HealthUpgradeStrategy.h}}
+\mbox{\hyperlink{_health_upgrade_strategy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_upgrade_strategy_8h}{UpgradeStrategy.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_config_8h}{Config/GameConfig.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_health_upgrade_strategy}{HealthUpgradeStrategy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_upgrade_strategy}{UpgradeStrategy}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_health_upgrade_strategy_ad726837df6fa77b6ab951d0b9883d31a}{GetCost}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_game_config_afdef4094a71b5f2325b59c023d544151}{GameConfig::HEALTH\_UPGRADE\_COST}};}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_health_upgrade_strategy_a54a0d1a86306e354f3c989fcf70627e9}{Apply}}(\mbox{\hyperlink{struct_save_data}{SaveData}}\&\ data)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{struct_save_data_aebf102972ee50069b3b3554c0228b48f}{maxHealth}}\ +=\ 1.0f;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \};}
+
+\end{DoxyCode}

@@ -7,7 +7,9 @@ var searchData=
   ['healthservice_2ecpp_4',['HealthService.cpp',['../_health_service_8cpp.html',1,'']]],
   ['healthservice_2eh_5',['HealthService.h',['../_health_service_8h.html',1,'']]],
   ['healthservicetest_6',['HealthServiceTest',['../class_health_service_test.html',1,'']]],
-  ['hexagon_7',['Hexagon',['../_node_shape_8h.html#a37e50858781617a826d3709db82aba70a125e13c182697c5a282e4de6d7999eb0',1,'NodeShape.h']]],
-  ['highpoints_8',['highPoints',['../struct_save_data.html#a9604bdb21a7b5ed30d7efbf0c9d481df',1,'SaveData']]],
-  ['hp_9',['hp',['../class_game_event.html#a9a6f658498e72488c4ad7b5ddfd1f593',1,'GameEvent']]]
+  ['healthupgradestrategy_7',['HealthUpgradeStrategy',['../class_health_upgrade_strategy.html',1,'']]],
+  ['healthupgradestrategy_2eh_8',['HealthUpgradeStrategy.h',['../_health_upgrade_strategy_8h.html',1,'']]],
+  ['hexagon_9',['Hexagon',['../_node_shape_8h.html#a37e50858781617a826d3709db82aba70a125e13c182697c5a282e4de6d7999eb0',1,'NodeShape.h']]],
+  ['highpoints_10',['highPoints',['../struct_save_data.html#a9604bdb21a7b5ed30d7efbf0c9d481df',1,'SaveData']]],
+  ['hp_11',['hp',['../class_game_event.html#a9a6f658498e72488c4ad7b5ddfd1f593',1,'GameEvent']]]
 ];

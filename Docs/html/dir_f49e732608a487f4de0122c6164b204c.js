@@ -1,5 +1,6 @@
 var dir_f49e732608a487f4de0122c6164b204c =
 [
+    [ "Upgrades", "dir_b69a7913b2cad6085c69d39acd7801e3.html", "dir_b69a7913b2cad6085c69d39acd7801e3" ],
     [ "DamageZoneService.cpp", "_damage_zone_service_8cpp.html", null ],
     [ "DamageZoneService.h", "_damage_zone_service_8h.html", "_damage_zone_service_8h" ],
     [ "HealthService.cpp", "_health_service_8cpp.html", null ],
@@ -13,5 +14,6 @@ var dir_f49e732608a487f4de0122c6164b204c =
     [ "SpawnService.cpp", "_spawn_service_8cpp.html", null ],
     [ "SpawnService.h", "_spawn_service_8h.html", "_spawn_service_8h" ],
     [ "UpgradeService.cpp", "_upgrade_service_8cpp.html", null ],
-    [ "UpgradeService.h", "_upgrade_service_8h.html", "_upgrade_service_8h" ]
+    [ "UpgradeService.h", "_upgrade_service_8h.html", "_upgrade_service_8h" ],
+    [ "UpgradeStrategy.h", "_upgrade_strategy_8h.html", "_upgrade_strategy_8h" ]
 ];

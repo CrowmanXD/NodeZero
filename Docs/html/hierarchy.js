@@ -75,5 +75,12 @@ var hierarchy =
       [ "SpawnServiceTest", "class_spawn_service_test.html", null ],
       [ "UpgradeServiceTest", "class_upgrade_service_test.html", null ]
     ] ],
-    [ "UpgradesScreen", "class_upgrades_screen.html", null ]
+    [ "UpgradesScreen", "class_upgrades_screen.html", null ],
+    [ "UpgradeStrategy", "class_upgrade_strategy.html", [
+      [ "DamageUpgradeStrategy", "class_damage_upgrade_strategy.html", null ],
+      [ "DamageUpgradeStrategy", "class_damage_upgrade_strategy.html", null ],
+      [ "DamageZoneUpgradeStrategy", "class_damage_zone_upgrade_strategy.html", null ],
+      [ "HealthUpgradeStrategy", "class_health_upgrade_strategy.html", null ],
+      [ "RegenUpgradeStrategy", "class_regen_upgrade_strategy.html", null ]
+    ] ]
 ];

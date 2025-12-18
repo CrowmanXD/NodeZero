@@ -1,0 +1,96 @@
+\doxysection{Upgrade\+Strategy Class Reference}
+\hypertarget{class_upgrade_strategy}{}\label{class_upgrade_strategy}\index{UpgradeStrategy@{UpgradeStrategy}}
+
+
+Abstract base class for the Strategy Pattern used in player upgrades.  
+
+
+
+
+{\ttfamily \#include $<$Upgrade\+Strategy.\+h$>$}
+
+Inheritance diagram for Upgrade\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.172775cm]{class_upgrade_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Strategy}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}{Get\+Cost}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the point cost of the specific upgrade. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f}{Can\+Apply}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if requirements for the upgrade are met. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}{Apply}} (\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data)=0
+\begin{DoxyCompactList}\small\item\em Applies the specific stat changes to the provided \doxylink{struct_save_data}{Save\+Data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for the Strategy Pattern used in player upgrades. 
+
+Defines the contract for different types of upgrades (Health, Regen, etc.), allowing the \doxylink{class_upgrade_service}{Upgrade\+Service} to process purchases generically. 
+
+\label{doc-constructors}
+\Hypertarget{class_upgrade_strategy_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0}\index{UpgradeStrategy@{UpgradeStrategy}!````~UpgradeStrategy@{\texorpdfstring{$\sim$}{\string~}UpgradeStrategy}}
+\index{````~UpgradeStrategy@{\texorpdfstring{$\sim$}{\string~}UpgradeStrategy}!UpgradeStrategy@{UpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UpgradeStrategy()}{\string~UpgradeStrategy()}}
+{\footnotesize\ttfamily \label{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0} 
+virtual Upgrade\+Strategy\+::\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_upgrade_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}\index{UpgradeStrategy@{UpgradeStrategy}!Apply@{Apply}}
+\index{Apply@{Apply}!UpgradeStrategy@{UpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7} 
+virtual void Upgrade\+Strategy\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies the specific stat changes to the provided \doxylink{struct_save_data}{Save\+Data}. 
+
+
+
+Implemented in \mbox{\hyperlink{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906}{Damage\+Upgrade\+Strategy}}, \mbox{\hyperlink{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906}{Damage\+Upgrade\+Strategy}}, \mbox{\hyperlink{class_damage_zone_upgrade_strategy_aaf00cb2fd0a672b7cde37e51ffdbbaf2}{Damage\+Zone\+Upgrade\+Strategy}}, \mbox{\hyperlink{class_health_upgrade_strategy_a54a0d1a86306e354f3c989fcf70627e9}{Health\+Upgrade\+Strategy}}, and \mbox{\hyperlink{class_regen_upgrade_strategy_a3274f41c18c686ae407e823dbcfbf5b3}{Regen\+Upgrade\+Strategy}}.
+
+\Hypertarget{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f}\index{UpgradeStrategy@{UpgradeStrategy}!CanApply@{CanApply}}
+\index{CanApply@{CanApply}!UpgradeStrategy@{UpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{CanApply()}{CanApply()}}
+{\footnotesize\ttfamily \label{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f} 
+virtual bool Upgrade\+Strategy\+::\+Can\+Apply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns true if requirements for the upgrade are met. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_damage_zone_upgrade_strategy_ac8fac480017f620f396f413ae36ebbb5}{Damage\+Zone\+Upgrade\+Strategy}}.
+
+\Hypertarget{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}\index{UpgradeStrategy@{UpgradeStrategy}!GetCost@{GetCost}}
+\index{GetCost@{GetCost}!UpgradeStrategy@{UpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetCost()}{GetCost()}}
+{\footnotesize\ttfamily \label{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c} 
+virtual int Upgrade\+Strategy\+::\+Get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the point cost of the specific upgrade. 
+
+
+
+Implemented in \mbox{\hyperlink{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9}{Damage\+Upgrade\+Strategy}}, \mbox{\hyperlink{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9}{Damage\+Upgrade\+Strategy}}, \mbox{\hyperlink{class_damage_zone_upgrade_strategy_a058603c1e4e5ef5c8eaafd5699da1f16}{Damage\+Zone\+Upgrade\+Strategy}}, \mbox{\hyperlink{class_health_upgrade_strategy_ad726837df6fa77b6ab951d0b9883d31a}{Health\+Upgrade\+Strategy}}, and \mbox{\hyperlink{class_regen_upgrade_strategy_adc2085fd6824d67ca83c7b49d0881e64}{Regen\+Upgrade\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\mbox{\hyperlink{_upgrade_strategy_8h}{Upgrade\+Strategy.\+h}}\end{DoxyCompactItemize}

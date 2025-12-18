@@ -20,6 +20,8 @@ Inheritance diagram for IUpgrade\+Service\+:\begin{figure}[H]
 \item 
 virtual \mbox{\hyperlink{class_i_upgrade_service_a337d88db5bb3bf5ce1e73e2ef64ab7a4}{\texorpdfstring{$\sim$}{\string~}\+IUpgrade\+Service}} ()=default
 \item 
+virtual void \mbox{\hyperlink{class_i_upgrade_service_a215ce0b216c270db6e8b0715c7f8a042}{Initialize}} (float max\+Health, float regen\+Rate, float damage\+Zone\+Size, float damage\+Per\+Tick)=0
+\begin{DoxyCompactList}\small\item\em Initializes the service with values loaded from the save file. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_i_upgrade_service_a71577cd88516de36a6a91bb6edaf4915}{Buy\+Health\+Upgrade}} ()=0
 \begin{DoxyCompactList}\small\item\em Attempts to purchase a Maximum Health upgrade. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_i_upgrade_service_a9d0a1e3d0bc9c0c2fb4ad31b91d2fea1}{Buy\+Regen\+Upgrade}} ()=0
@@ -33,7 +35,7 @@ virtual float \mbox{\hyperlink{class_i_upgrade_service_a7af399b732c988459bcb2bdf
 virtual float \mbox{\hyperlink{class_i_upgrade_service_ab796fb8616841d0d844e68117e702e97}{Get\+Regen\+Rate}} () const =0
 \begin{DoxyCompactList}\small\item\em Gets the current regeneration rate per second. \end{DoxyCompactList}\item 
 virtual float \mbox{\hyperlink{class_i_upgrade_service_af7a9247440335ab1df49a03ce5f57b16}{Get\+Damage\+Zone\+Size}} () const =0
-\begin{DoxyCompactList}\small\item\em Gets the current size of the damage zone. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the current radius/size of the damage zone. \end{DoxyCompactList}\item 
 virtual float \mbox{\hyperlink{class_i_upgrade_service_abc3f8cc301a4f07a976a90e80cde97a5}{Get\+Damage\+Per\+Tick}} () const =0
 \begin{DoxyCompactList}\small\item\em Gets the current damage dealt per tick. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_i_upgrade_service_a8b8c38a9f7fc97a3688128c2e7bf8971}{Get\+Health\+Upgrade\+Cost}} () const =0
@@ -165,7 +167,7 @@ virtual float IUpgrade\+Service\+::\+Get\+Damage\+Zone\+Size (\begin{DoxyParamCa
 
 
 
-Gets the current size of the damage zone. 
+Gets the current radius/size of the damage zone. 
 
 
 
@@ -228,6 +230,34 @@ virtual int IUpgrade\+Service\+::\+Get\+Regen\+Upgrade\+Cost (\begin{DoxyParamCa
 
 
 Implemented in \mbox{\hyperlink{class_upgrade_service_aa80128209d4444af16ee87c2f01bda1e}{Upgrade\+Service}}.
+
+\Hypertarget{class_i_upgrade_service_a215ce0b216c270db6e8b0715c7f8a042}\index{IUpgradeService@{IUpgradeService}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!IUpgradeService@{IUpgradeService}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_i_upgrade_service_a215ce0b216c270db6e8b0715c7f8a042} 
+virtual void IUpgrade\+Service\+::\+Initialize (\begin{DoxyParamCaption}\item[{float}]{max\+Health}{, }\item[{float}]{regen\+Rate}{, }\item[{float}]{damage\+Zone\+Size}{, }\item[{float}]{damage\+Per\+Tick}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initializes the service with values loaded from the save file. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em max\+Health} & Current maximum health capacity. \\
+\hline
+{\em regen\+Rate} & Current health regeneration per second. \\
+\hline
+{\em damage\+Zone\+Size} & Current radius of the damage zone. \\
+\hline
+{\em damage\+Per\+Tick} & Current damage dealt per tick. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Implemented in \mbox{\hyperlink{class_upgrade_service_a9c51453f501513f069dc090a86bf76a9}{Upgrade\+Service}}.
 
 
 

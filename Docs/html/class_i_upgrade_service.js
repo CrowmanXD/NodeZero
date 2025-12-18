@@ -12,5 +12,6 @@ var class_i_upgrade_service =
     [ "GetHealthUpgradeCost", "class_i_upgrade_service.html#a8b8c38a9f7fc97a3688128c2e7bf8971", null ],
     [ "GetMaxHealth", "class_i_upgrade_service.html#a7af399b732c988459bcb2bdf99ab45c4", null ],
     [ "GetRegenRate", "class_i_upgrade_service.html#ab796fb8616841d0d844e68117e702e97", null ],
-    [ "GetRegenUpgradeCost", "class_i_upgrade_service.html#a42607eee379c8133298caa4e6a30b1fe", null ]
+    [ "GetRegenUpgradeCost", "class_i_upgrade_service.html#a42607eee379c8133298caa4e6a30b1fe", null ],
+    [ "Initialize", "class_i_upgrade_service.html#a215ce0b216c270db6e8b0715c7f8a042", null ]
 ];

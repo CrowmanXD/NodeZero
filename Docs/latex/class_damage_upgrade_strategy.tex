@@ -1,0 +1,125 @@
+\doxysection{Damage\+Upgrade\+Strategy Class Reference}
+\hypertarget{class_damage_upgrade_strategy}{}\label{class_damage_upgrade_strategy}\index{DamageUpgradeStrategy@{DamageUpgradeStrategy}}
+
+
+Strategy for increasing the player\textquotesingle{}s damage output.  
+
+
+
+
+{\ttfamily \#include $<$Damage\+Upgrade.\+h$>$}
+
+Inheritance diagram for Damage\+Upgrade\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_damage_upgrade_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9}{Get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the point cost required to purchase this upgrade. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906}{Apply}} (\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Applies the damage upgrade to the player\textquotesingle{}s save data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9}{Get\+Cost}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the cost of the damage upgrade from the game configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906}{Apply}} (\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&data) override
+\begin{DoxyCompactList}\small\item\em Applies the damage increase to the persistent save data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_upgrade_strategy}{Upgrade\+Strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_upgrade_strategy_af7240743c16df2415a7a52746e71d5c0}{\texorpdfstring{$\sim$}{\string~}\+Upgrade\+Strategy}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_upgrade_strategy_ad654dcdede2ef8df666f83e70343f49f}{Can\+Apply}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if requirements for the upgrade are met. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strategy for increasing the player\textquotesingle{}s damage output. 
+
+This concrete strategy handles the logic for purchasing a damage increase. It interacts with the \doxylink{struct_game_config}{Game\+Config} to determine costs and increment values.
+
+This strategy increases the damage dealt per tick to enemies within the player\textquotesingle{}s damage zone. 
+
+\label{doc-func-members}
+\Hypertarget{class_damage_upgrade_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906}\index{DamageUpgradeStrategy@{DamageUpgradeStrategy}!Apply@{Apply}}
+\index{Apply@{Apply}!DamageUpgradeStrategy@{DamageUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906} 
+void Damage\+Upgrade\+Strategy\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies the damage upgrade to the player\textquotesingle{}s save data. 
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Increases the {\ttfamily damage\+Per\+Tick} stat by the configured amount. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The persistent game data to be modified. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906}\index{DamageUpgradeStrategy@{DamageUpgradeStrategy}!Apply@{Apply}}
+\index{Apply@{Apply}!DamageUpgradeStrategy@{DamageUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_damage_upgrade_strategy_a88abc60d598cc07ecd3ddebf17c84906} 
+void Damage\+Upgrade\+Strategy\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies the damage increase to the persistent save data. 
+
+\texorpdfstring{$\ast$}{*}
+\begin{DoxyParams}{Parameters}
+{\em data} & The save data structure to modify. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_a24fad5e9286afe2d5d6b740828d889b7}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9}\index{DamageUpgradeStrategy@{DamageUpgradeStrategy}!GetCost@{GetCost}}
+\index{GetCost@{GetCost}!DamageUpgradeStrategy@{DamageUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetCost()}{GetCost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9} 
+int Damage\+Upgrade\+Strategy\+::\+Get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the point cost required to purchase this upgrade. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+The cost defined in \doxylink{struct_game_config_a9d41698744fee6d2b283b22504bd8a08}{Game\+Config\+::\+DAMAGE\+\_\+\+UPGRADE\+\_\+\+COST}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}{Upgrade\+Strategy}}.
+
+\Hypertarget{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9}\index{DamageUpgradeStrategy@{DamageUpgradeStrategy}!GetCost@{GetCost}}
+\index{GetCost@{GetCost}!DamageUpgradeStrategy@{DamageUpgradeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetCost()}{GetCost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_damage_upgrade_strategy_a4a9271e27fb496b770ca18583707a5b9} 
+int Damage\+Upgrade\+Strategy\+::\+Get\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the cost of the damage upgrade from the game configuration. 
+
+\texorpdfstring{$\ast$}{*}\begin{DoxyReturn}{Returns}
+The point cost defined in \doxylink{struct_game_config}{Game\+Config}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_upgrade_strategy_ad9d404eb7b7f1f1f43a6e9cbab9e153c}{Upgrade\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\+Upgrades/\mbox{\hyperlink{_damage_upgrade_8h}{Damage\+Upgrade.\+h}}\item 
+C\+:/\+Users/arsen/\+Downloads/\+Node\+Zero\+\_\+\+Team\+TBD/\+Node-\/\+Zero/\+Node\+Zero.\+Core/src/\+Services/\+Upgrades/\mbox{\hyperlink{_damage_upgrade_strategy_8h}{Damage\+Upgrade\+Strategy.\+h}}\end{DoxyCompactItemize}

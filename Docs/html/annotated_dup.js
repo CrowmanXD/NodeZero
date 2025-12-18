@@ -2,8 +2,10 @@ var annotated_dup =
 [
     [ "Button", "class_button.html", "class_button" ],
     [ "DamageParticle", "struct_damage_particle.html", "struct_damage_particle" ],
+    [ "DamageUpgradeStrategy", "class_damage_upgrade_strategy.html", "class_damage_upgrade_strategy" ],
     [ "DamageZoneService", "class_damage_zone_service.html", "class_damage_zone_service" ],
     [ "DamageZoneServiceTest", "class_damage_zone_service_test.html", "class_damage_zone_service_test" ],
+    [ "DamageZoneUpgradeStrategy", "class_damage_zone_upgrade_strategy.html", "class_damage_zone_upgrade_strategy" ],
     [ "EnemyDamageTest", "class_enemy_damage_test.html", "class_enemy_damage_test" ],
     [ "EnemyDestructionTest", "class_enemy_destruction_test.html", "class_enemy_destruction_test" ],
     [ "EnemyPropertiesTest", "class_enemy_properties_test.html", "class_enemy_properties_test" ],
@@ -19,6 +21,7 @@ var annotated_dup =
     [ "GameTest", "class_game_test.html", "class_game_test" ],
     [ "HealthService", "class_health_service.html", "class_health_service" ],
     [ "HealthServiceTest", "class_health_service_test.html", "class_health_service_test" ],
+    [ "HealthUpgradeStrategy", "class_health_upgrade_strategy.html", "class_health_upgrade_strategy" ],
     [ "IDamageZoneService", "class_i_damage_zone_service.html", "class_i_damage_zone_service" ],
     [ "IEvent", "class_i_event.html", "class_i_event" ],
     [ "IGame", "class_i_game.html", "class_i_game" ],
@@ -48,6 +51,7 @@ var annotated_dup =
     [ "PickupServiceTest", "class_pickup_service_test.html", "class_pickup_service_test" ],
     [ "PointPickup", "struct_point_pickup.html", "struct_point_pickup" ],
     [ "Position", "struct_position.html", "struct_position" ],
+    [ "RegenUpgradeStrategy", "class_regen_upgrade_strategy.html", "class_regen_upgrade_strategy" ],
     [ "Renderer", "class_renderer.html", null ],
     [ "SaveData", "struct_save_data.html", "struct_save_data" ],
     [ "SaveService", "class_save_service.html", "class_save_service" ],
@@ -57,5 +61,6 @@ var annotated_dup =
     [ "Subject", "class_subject.html", "class_subject" ],
     [ "UpgradeService", "class_upgrade_service.html", "class_upgrade_service" ],
     [ "UpgradeServiceTest", "class_upgrade_service_test.html", "class_upgrade_service_test" ],
-    [ "UpgradesScreen", "class_upgrades_screen.html", "class_upgrades_screen" ]
+    [ "UpgradesScreen", "class_upgrades_screen.html", "class_upgrades_screen" ],
+    [ "UpgradeStrategy", "class_upgrade_strategy.html", "class_upgrade_strategy" ]
 ];

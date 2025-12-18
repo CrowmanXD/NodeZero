@@ -1,0 +1,38 @@
+\doxysection{Damage\+Zone\+Upgrade\+Strategy.\+h}
+\hypertarget{_damage_zone_upgrade_strategy_8h_source}{}\label{_damage_zone_upgrade_strategy_8h_source}\index{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/Upgrades/DamageZoneUpgradeStrategy.h@{C:/Users/arsen/Downloads/NodeZero\_TeamTBD/Node-\/Zero/NodeZero.Core/src/Services/Upgrades/DamageZoneUpgradeStrategy.h}}
+\mbox{\hyperlink{_damage_zone_upgrade_strategy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_upgrade_strategy_8h}{UpgradeStrategy.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_config_8h}{Config/GameConfig.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_damage_zone_upgrade_strategy}{DamageZoneUpgradeStrategy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_upgrade_strategy}{UpgradeStrategy}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_damage_zone_upgrade_strategy_a058603c1e4e5ef5c8eaafd5699da1f16}{GetCost}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_game_config_a52dbbb32743ba42d5f3a089b031b2348}{GameConfig::DAMAGE\_ZONE\_UPGRADE\_COST}};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_damage_zone_upgrade_strategy_ac8fac480017f620f396f413ae36ebbb5}{CanApply}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ currentSize\ <\ \mbox{\hyperlink{struct_game_config_adca55adf7f4913629690484433c2afcd}{GameConfig::DAMAGE\_ZONE\_MAX\_SIZE}};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_zone_upgrade_strategy_aa839c747bcbd745f373d45b956ad1dbb}{SetCurrentSize}}(\textcolor{keywordtype}{float}\ size)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ currentSize\ =\ size;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_zone_upgrade_strategy_aaf00cb2fd0a672b7cde37e51ffdbbaf2}{Apply}}(\mbox{\hyperlink{struct_save_data}{SaveData}}\&\ data)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ currentSize\ +=\ \mbox{\hyperlink{struct_game_config_a492ca7dcc63281efccc87f11c5d84b6c}{GameConfig::DAMAGE\_ZONE\_UPGRADE\_AMOUNT}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentSize\ >\ \mbox{\hyperlink{struct_game_config_adca55adf7f4913629690484433c2afcd}{GameConfig::DAMAGE\_ZONE\_MAX\_SIZE}})\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ currentSize\ =\ \mbox{\hyperlink{struct_game_config_adca55adf7f4913629690484433c2afcd}{GameConfig::DAMAGE\_ZONE\_MAX\_SIZE}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{struct_save_data_a5d3ab0ac0f30743f2753a4b7083f7c1a}{damageZoneSize}}\ =\ currentSize;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ currentSize\ =\ 0.0f;}
+\DoxyCodeLine{00052\ \};}
+
+\end{DoxyCode}

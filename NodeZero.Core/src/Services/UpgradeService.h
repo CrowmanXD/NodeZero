@@ -9,10 +9,10 @@ struct SaveData;
 
 /**
  * @class UpgradeService
- * @brief Concrete implementation of the upgrade logic.
+ * @brief Concrete implementation of player upgrades using the Strategy Pattern.
  *
- * Interacts with the SaveService to persist upgrades immediately upon purchase.
- * Validates point balances and applies stat changes.
+ * This service manages the purchase flow, validating funds and persisting
+ * changes through the SaveService.
  */
 class UpgradeService : public IUpgradeService {
 private:
@@ -22,21 +22,14 @@ private:
     float m_DamagePerTick;
     ISaveService* m_SaveService;
 
-	//Refactor: No magic numbers, turned into constant
-    static constexpr float HEALTH_INCREMENT = 1.0f; // Fixed: Was hardcoded 1.0f
+    /** @brief Amount of Max HP added per upgrade level. */
+    static constexpr float HEALTH_INCREMENT = 1.0f;
 
 public:
     UpgradeService();
     ~UpgradeService() override = default;
 
-    /**
-     * @brief Initializes the service with values loaded from the save file.
-     */
-    void Initialize(float maxHealth, float regenRate, float damageZoneSize, float damagePerTick);
-
-    /**
-     * @brief Injects the SaveService dependency.
-     */
+    void Initialize(float maxHealth, float regenRate, float damageZoneSize, float damagePerTick) override;
     void SetSaveService(ISaveService* saveService);
 
     bool BuyHealthUpgrade() override;
@@ -57,14 +50,9 @@ public:
 
 private:
     /**
-     * @brief Refactoring Helper: generic transaction handler.
-     * * Handles the common logic of checking for the service, validating funds,
-     * deducting points, and saving the result.
-     *
-     * @param cost The cost of the upgrade.
-     * @param applyEffect A lambda function that applies the specific stat change.
-     * @return True if the transaction succeeded.
+     * @brief Executes the purchase transaction using a specific strategy.
+     * @param strategy The concrete upgrade strategy to execute.
+     * @return True if points were deducted and stats applied successfully.
      */
     bool AttemptPurchase(UpgradeStrategy& strategy);
-
 };

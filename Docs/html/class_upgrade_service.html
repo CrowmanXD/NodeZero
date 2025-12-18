@@ -92,7 +92,7 @@ $(function(){initNavTree('class_upgrade_service.html','','class_upgrade_service-
 </div><!--header-->
 <div class="contents">
 
-<p>Concrete implementation of the upgrade logic.  
+<p>Concrete implementation of player upgrades using the Strategy Pattern.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_upgrade_service_8h_source.html">UpgradeService.h</a>&gt;</code></p>
@@ -109,11 +109,12 @@ Inheritance diagram for UpgradeService:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a48e7d12d1e7dcc3133f0ddcdb36b616e" id="r_a48e7d12d1e7dcc3133f0ddcdb36b616e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48e7d12d1e7dcc3133f0ddcdb36b616e">UpgradeService</a> ()</td></tr>
+<tr class="memdesc:a48e7d12d1e7dcc3133f0ddcdb36b616e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor initializing stats with game configuration defaults.  <br /></td></tr>
 <tr class="memitem:a46a404e10767223f2c56a0714857fe87" id="r_a46a404e10767223f2c56a0714857fe87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a404e10767223f2c56a0714857fe87">~UpgradeService</a> () override=default</td></tr>
-<tr class="memitem:a53e52df1c3778bf32ef2ddf6e35f1bd7" id="r_a53e52df1c3778bf32ef2ddf6e35f1bd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53e52df1c3778bf32ef2ddf6e35f1bd7">Initialize</a> (float maxHealth, float regenRate, float damageZoneSize, float damagePerTick)</td></tr>
-<tr class="memdesc:a53e52df1c3778bf32ef2ddf6e35f1bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service with values loaded from the save file.  <br /></td></tr>
+<tr class="memitem:a9c51453f501513f069dc090a86bf76a9" id="r_a9c51453f501513f069dc090a86bf76a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c51453f501513f069dc090a86bf76a9">Initialize</a> (float maxHealth, float regenRate, float damageZoneSize, float damagePerTick) override</td></tr>
+<tr class="memdesc:a9c51453f501513f069dc090a86bf76a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the service with values typically loaded from persistent storage.  <br /></td></tr>
 <tr class="memitem:ace26654bca8c5a60f5b2d386fb42e06a" id="r_ace26654bca8c5a60f5b2d386fb42e06a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace26654bca8c5a60f5b2d386fb42e06a">SetSaveService</a> (<a class="el" href="class_i_save_service.html">ISaveService</a> *saveService)</td></tr>
-<tr class="memdesc:ace26654bca8c5a60f5b2d386fb42e06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injects the <a class="el" href="class_save_service.html" title="Concrete implementation of the save system using a simple text-based format.">SaveService</a> dependency.  <br /></td></tr>
+<tr class="memdesc:ace26654bca8c5a60f5b2d386fb42e06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Injects the dependency for the save system.  <br /></td></tr>
 <tr class="memitem:a8ded3e1b083aed40c39a7509c5c7fc55" id="r_a8ded3e1b083aed40c39a7509c5c7fc55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ded3e1b083aed40c39a7509c5c7fc55">BuyHealthUpgrade</a> () override</td></tr>
 <tr class="memdesc:a8ded3e1b083aed40c39a7509c5c7fc55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to purchase a Maximum Health upgrade.  <br /></td></tr>
 <tr class="memitem:a7a33dc837874cfe4e1ba221389d7a6f8" id="r_a7a33dc837874cfe4e1ba221389d7a6f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a33dc837874cfe4e1ba221389d7a6f8">GetHealthUpgradeCost</a> () const override</td></tr>
@@ -128,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4661886c0fac0c9c05c8ab7be6fb130a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to purchase a Damage Zone size upgrade. Capped at a maximum size.  <br /></td></tr>
 <tr class="memitem:af150878af602071e242384d90f9a73bc" id="r_af150878af602071e242384d90f9a73bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af150878af602071e242384d90f9a73bc">GetDamageZoneUpgradeCost</a> () const override</td></tr>
 <tr class="memitem:a17d970da64048a3572a22534483ecd45" id="r_a17d970da64048a3572a22534483ecd45"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17d970da64048a3572a22534483ecd45">GetDamageZoneSize</a> () const override</td></tr>
-<tr class="memdesc:a17d970da64048a3572a22534483ecd45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current size of the damage zone.  <br /></td></tr>
+<tr class="memdesc:a17d970da64048a3572a22534483ecd45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current radius/size of the damage zone.  <br /></td></tr>
 <tr class="memitem:ae4a57f6157571b596db8d71c38a42c6a" id="r_ae4a57f6157571b596db8d71c38a42c6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4a57f6157571b596db8d71c38a42c6a">BuyDamageUpgrade</a> () override</td></tr>
 <tr class="memdesc:ae4a57f6157571b596db8d71c38a42c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to purchase a Damage Per Tick upgrade.  <br /></td></tr>
 <tr class="memitem:a9fd55b6e80ae4cc83c5ca48f09940ba4" id="r_a9fd55b6e80ae4cc83c5ca48f09940ba4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fd55b6e80ae4cc83c5ca48f09940ba4">GetDamageUpgradeCost</a> () const override</td></tr>
@@ -138,8 +139,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a337d88db5bb3bf5ce1e73e2ef64ab7a4 inherit pub_methods_class_i_upgrade_service" id="r_a337d88db5bb3bf5ce1e73e2ef64ab7a4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_upgrade_service.html#a337d88db5bb3bf5ce1e73e2ef64ab7a4">~IUpgradeService</a> ()=default</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Concrete implementation of the upgrade logic. </p>
-<p>Interacts with the <a class="el" href="class_save_service.html" title="Concrete implementation of the save system using a simple text-based format.">SaveService</a> to persist upgrades immediately upon purchase. Validates point balances and applies stat changes. </p>
+<div class="textblock"><p>Concrete implementation of player upgrades using the Strategy Pattern. </p>
+<p>This service manages the purchase flow, validating funds and persisting changes through the <a class="el" href="class_save_service.html" title="Concrete implementation of the save system using a simple text-based format.">SaveService</a>. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a48e7d12d1e7dcc3133f0ddcdb36b616e" name="a48e7d12d1e7dcc3133f0ddcdb36b616e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48e7d12d1e7dcc3133f0ddcdb36b616e">&#9670;&#160;</a></span>UpgradeService()</h2>
@@ -155,6 +156,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor initializing stats with game configuration defaults. </p>
 
 </div>
 </div>
@@ -383,7 +386,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the current size of the damage zone. </p>
+<p>Gets the current radius/size of the damage zone. </p>
 
 <p>Implements <a class="el" href="class_i_upgrade_service.html#af7a9247440335ab1df49a03ce5f57b16">IUpgradeService</a>.</p>
 
@@ -528,11 +531,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a53e52df1c3778bf32ef2ddf6e35f1bd7" name="a53e52df1c3778bf32ef2ddf6e35f1bd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53e52df1c3778bf32ef2ddf6e35f1bd7">&#9670;&#160;</a></span>Initialize()</h2>
+<a id="a9c51453f501513f069dc090a86bf76a9" name="a9c51453f501513f069dc090a86bf76a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c51453f501513f069dc090a86bf76a9">&#9670;&#160;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void UpgradeService::Initialize </td>
@@ -555,9 +561,16 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>damagePerTick</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Initializes the service with values loaded from the save file. </p>
+<p>Initializes the service with values typically loaded from persistent storage. </p>
+
+<p>Implements <a class="el" href="class_i_upgrade_service.html#a215ce0b216c270db6e8b0715c7f8a042">IUpgradeService</a>.</p>
 
 </div>
 </div>
@@ -576,7 +589,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Injects the <a class="el" href="class_save_service.html" title="Concrete implementation of the save system using a simple text-based format.">SaveService</a> dependency. </p>
+<p>Injects the dependency for the save system. </p>
 
 </div>
 </div>

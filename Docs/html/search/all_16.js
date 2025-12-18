@@ -24,5 +24,6 @@ var searchData=
   ['_7esaveservice_21',['~SaveService',['../class_save_service.html#a7850aacd9977bcede3698d2f6960f109',1,'SaveService']]],
   ['_7espawnservice_22',['~SpawnService',['../class_spawn_service.html#a0b7338dd4befcf2f16b3af2d575e0ba6',1,'SpawnService']]],
   ['_7esubject_23',['~Subject',['../class_subject.html#af9723476c61afcceeb91bee3211258c7',1,'Subject']]],
-  ['_7eupgradeservice_24',['~UpgradeService',['../class_upgrade_service.html#a46a404e10767223f2c56a0714857fe87',1,'UpgradeService']]]
+  ['_7eupgradeservice_24',['~UpgradeService',['../class_upgrade_service.html#a46a404e10767223f2c56a0714857fe87',1,'UpgradeService']]],
+  ['_7eupgradestrategy_25',['~UpgradeStrategy',['../class_upgrade_strategy.html#af7240743c16df2415a7a52746e71d5c0',1,'UpgradeStrategy']]]
 ];

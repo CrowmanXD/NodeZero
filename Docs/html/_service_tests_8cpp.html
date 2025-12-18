@@ -91,6 +91,9 @@ $(function(){initNavTree('_service_tests_8cpp.html','',''); });
   <div class="headertitle"><div class="title">ServiceTests.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Unit tests for Health, Upgrade, and Save services.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="_health_service_8h_source.html">../NodeZero.Core/src/Services/HealthService.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_upgrade_service_8h_source.html">../NodeZero.Core/src/Services/UpgradeService.h</a>&quot;</code><br />
@@ -103,7 +106,7 @@ Classes</h2></td></tr>
 <tr class="memitem:HealthServiceTest" id="r_HealthServiceTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_health_service_test.html">HealthServiceTest</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests for player health, regeneration, and depletion.  <a href="class_health_service_test.html#details">More...</a><br /></td></tr>
 <tr class="memitem:MockSaveService" id="r_MockSaveService"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mock_save_service.html">MockSaveService</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation to isolate <a class="el" href="class_upgrade_service.html" title="Concrete implementation of the upgrade logic.">UpgradeService</a> tests from disk I/O.  <a href="class_mock_save_service.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock implementation to isolate <a class="el" href="class_upgrade_service.html" title="Concrete implementation of player upgrades using the Strategy Pattern.">UpgradeService</a> tests from disk I/O.  <a href="class_mock_save_service.html#details">More...</a><br /></td></tr>
 <tr class="memitem:UpgradeServiceTest" id="r_UpgradeServiceTest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_upgrade_service_test.html">UpgradeServiceTest</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests for the shop/purchase logic.  <a href="class_upgrade_service_test.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
@@ -118,7 +121,9 @@ Functions</h2></td></tr>
 <tr class="memitem:acae41f0e2c8da2f73ef81a310fe20746" id="r_acae41f0e2c8da2f73ef81a310fe20746"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae41f0e2c8da2f73ef81a310fe20746">TEST_F</a> (<a class="el" href="class_upgrade_service_test.html">UpgradeServiceTest</a>, UpgradesFailWithInsufficientPoints)</td></tr>
 <tr class="memdesc:acae41f0e2c8da2f73ef81a310fe20746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that upgrades fail gracefully when the player is poor.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Unit tests for Health, Upgrade, and Save services. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="aa26ef2cee7375701472e948a881d5f69" name="aa26ef2cee7375701472e948a881d5f69"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa26ef2cee7375701472e948a881d5f69">&#9670;&#160;</a></span>TEST_F() <span class="overload">[1/4]</span></h2>
 

@@ -11,5 +11,7 @@ var searchData=
   ['upgradeservicetest_8',['UpgradeServiceTest',['../class_upgrade_service_test.html',1,'']]],
   ['upgradesscreen_9',['UpgradesScreen',['../class_upgrades_screen.html',1,'UpgradesScreen'],['../class_upgrades_screen.html#a4a4e47c616f27dfe3d7606cdc030a3b5',1,'UpgradesScreen::UpgradesScreen()']]],
   ['upgradesscreen_2ecpp_10',['UpgradesScreen.cpp',['../_upgrades_screen_8cpp.html',1,'']]],
-  ['upgradesscreen_2eh_11',['UpgradesScreen.h',['../_upgrades_screen_8h.html',1,'']]]
+  ['upgradesscreen_2eh_11',['UpgradesScreen.h',['../_upgrades_screen_8h.html',1,'']]],
+  ['upgradestrategy_12',['UpgradeStrategy',['../class_upgrade_strategy.html',1,'']]],
+  ['upgradestrategy_2eh_13',['UpgradeStrategy.h',['../_upgrade_strategy_8h.html',1,'']]]
 ];

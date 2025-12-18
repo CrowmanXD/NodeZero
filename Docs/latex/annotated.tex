@@ -2,8 +2,10 @@
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{class_button}{Button}} \\*An interactive UI component that triggers an action on click }{\pageref{class_button}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_damage_particle}{Damage\+Particle}} \\*Tracks the state of a single particle spawned upon enemy damage (e.\+g., blood/gore) }{\pageref{struct_damage_particle}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_damage_upgrade_strategy}{Damage\+Upgrade\+Strategy}} \\*Strategy for increasing the player\textquotesingle{}s damage output }{\pageref{class_damage_upgrade_strategy}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_damage_zone_service}{Damage\+Zone\+Service}} \\*Concrete implementation of the damage zone logic }{\pageref{class_damage_zone_service}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_damage_zone_service_test}{Damage\+Zone\+Service\+Test}} \\*Tests for the player\textquotesingle{}s primary attack mechanic }{\pageref{class_damage_zone_service_test}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_damage_zone_upgrade_strategy}{Damage\+Zone\+Upgrade\+Strategy}} \\*Strategy for increasing the radius of the player\textquotesingle{}s damage zone }{\pageref{class_damage_zone_upgrade_strategy}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_enemy_damage_test}{Enemy\+Damage\+Test}} \\*Tests related to health reduction and death logic }{\pageref{class_enemy_damage_test}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_enemy_destruction_test}{Enemy\+Destruction\+Test}} \\*Tests related to the removal of enemies and score/stats updates }{\pageref{class_enemy_destruction_test}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_enemy_properties_test}{Enemy\+Properties\+Test}} \\*Tests for physical attributes (Speed, Size, Shape) }{\pageref{class_enemy_properties_test}}{}
@@ -19,6 +21,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{class_game_test}{Game\+Test}} \\*Integration tests for the main \doxylink{class_game}{Game} class }{\pageref{class_game_test}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_health_service}{Health\+Service}} \\*Concrete implementation of the health system }{\pageref{class_health_service}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_health_service_test}{Health\+Service\+Test}} \\*Tests for player health, regeneration, and depletion }{\pageref{class_health_service_test}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_health_upgrade_strategy}{Health\+Upgrade\+Strategy}} \\*Strategy for increasing the player\textquotesingle{}s maximum health capacity }{\pageref{class_health_upgrade_strategy}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_i_damage_zone_service}{IDamage\+Zone\+Service}} \\*Interface defining the contract for handling damage zones in the game }{\pageref{class_i_damage_zone_service}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_i_event}{IEvent}} \\*Base interface for all system events }{\pageref{class_i_event}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_i_game}{IGame}} \\*Central hub interface for the game application }{\pageref{class_i_game}}{}
@@ -48,6 +51,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{class_pickup_service_test}{Pickup\+Service\+Test}} \\*Tests for the loot/score system }{\pageref{class_pickup_service_test}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_point_pickup}{Point\+Pickup}} \\*Represents a collectible item dropped by destroyed enemies }{\pageref{struct_point_pickup}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_position}{Position}} \\*Represents a 2D coordinate in the game world }{\pageref{struct_position}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_regen_upgrade_strategy}{Regen\+Upgrade\+Strategy}} \\*Strategy for increasing the player\textquotesingle{}s passive health regeneration rate }{\pageref{class_regen_upgrade_strategy}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_renderer}{Renderer}} \\*Static utility class for all game rendering operations }{\pageref{class_renderer}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_save_data}{Save\+Data}} \\*Container for persistent player progression }{\pageref{struct_save_data}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_save_service}{Save\+Service}} \\*Concrete implementation of the save system using a simple text-\/based format }{\pageref{class_save_service}}{}
@@ -55,7 +59,8 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{class_spawn_service}{Spawn\+Service}} \\*Concrete implementation of the spawning logic }{\pageref{class_spawn_service}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_spawn_service_test}{Spawn\+Service\+Test}} \\*Tests for enemy generation logic }{\pageref{class_spawn_service_test}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_subject}{Subject}} \\*Concrete implementation of the \doxylink{class_i_subject}{ISubject} interface }{\pageref{class_subject}}{}
-\item\contentsline{section}{\mbox{\hyperlink{class_upgrade_service}{Upgrade\+Service}} \\*Concrete implementation of the upgrade logic }{\pageref{class_upgrade_service}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_upgrade_service}{Upgrade\+Service}} \\*Concrete implementation of player upgrades using the Strategy Pattern }{\pageref{class_upgrade_service}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_upgrade_service_test}{Upgrade\+Service\+Test}} \\*Tests for the shop/purchase logic }{\pageref{class_upgrade_service_test}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_upgrades_screen}{Upgrades\+Screen}} \\*Handles the screen where the player can spend points to purchase upgrades }{\pageref{class_upgrades_screen}}{}
+\item\contentsline{section}{\mbox{\hyperlink{class_upgrade_strategy}{Upgrade\+Strategy}} \\*Abstract base class for the Strategy Pattern used in player upgrades }{\pageref{class_upgrade_strategy}}{}
 \end{DoxyCompactList}
